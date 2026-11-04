@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>Monte Sagro Mármores | Mármores e granitos sob medida em Blumenau</title>
+<meta name="description" content="Bancadas, cozinhas, lavabos, escadas e áreas gourmet em mármore, granito e quartzo. Medição na obra e instalação em Blumenau e região.">
+<meta name="theme-color" content="#1A1F22">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:title" content="Monte Sagro Mármores, Blumenau">
+<meta property="og:description" content="Mármores e granitos sob medida, direto com a família que corta e instala.">
+<meta property="og:image" content="https://images.unsplash.com/photo-1682888813795-192fca4a10d9?auto=format&fit=crop&w=1200&h=630&q=80">
+<link rel="preload" href="assets/fonts/cinzel-latin-600-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/public-sans-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preconnect" href="https://images.unsplash.com">
+<link rel="stylesheet" href="assets/base.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"HomeAndConstructionBusiness","name":"Monte Sagro Mármores","description":"Mármores, granitos e quartzo sob medida com medição e instalação.","telephone":"+55-47-98422-5116","address":{"@type":"PostalAddress","streetAddress":"R. José Reuter","addressLocality":"Blumenau","addressRegion":"SC","addressCountry":"BR"},"areaServed":"Blumenau e região","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens":"08:00","closes":"18:00"}]}
+</script>
+<style>
+@font-face{font-family:Cinzel;src:url(assets/fonts/cinzel-latin-500-normal.woff2) format("woff2");font-weight:500;font-display:swap}
+@font-face{font-family:Cinzel;src:url(assets/fonts/cinzel-latin-600-normal.woff2) format("woff2");font-weight:600;font-display:swap}
+@font-face{font-family:Cinzel;src:url(assets/fonts/cinzel-latin-700-normal.woff2) format("woff2");font-weight:700;font-display:swap}
+@font-face{font-family:"Public Sans";src:url(assets/fonts/public-sans-latin-wght-normal.woff2) format("woff2");font-weight:100 900;font-display:swap}
+:root{
+  --claro:#F2F3F2;--pedra:#E3E5E3;--veio:#6B7370;--grafite:#262C2F;--granito:#1A1F22;--noite:#13171A;
+  --ubatuba:#2F4A3F;--ubatuba2:#3E6253;--latao:#A88A5A;--latao2:#C2A574;--texto:#3A4144;--linha:#CFD3D1;
+  --foco:#A88A5A;--loader-bg:#13171A;--loader-fg:#E3E5E3;--aviso-h:30px;--fb1:#DADDDB;--fb2:#B9BFBC;
+  --serif:Cinzel,"Times New Roman",serif;--sans:"Public Sans",system-ui,sans-serif;
+  --raio:6px;--w:1240px;
+}
+body{font-family:var(--sans);font-size:17px;line-height:1.65;color:var(--texto);background:var(--claro)}
+.w{max-width:var(--w);margin:0 auto;padding:0 32px}
+.serif{font-family:var(--serif)}
+h1,h2,h3{font-family:var(--serif);font-weight:500;color:var(--granito);line-height:1.08;letter-spacing:.01em}
+.aviso-demo{background:var(--noite);color:#A9B0AD}
+
+/* botões */
+.btn{display:inline-flex;align-items:center;gap:12px;background:var(--ubatuba);color:#fff;text-decoration:none;padding:17px 30px;border-radius:var(--raio);font-weight:600;font-size:16px;transition:background .25s,transform .25s}
+.btn:hover{background:var(--ubatuba2)}
+.btn svg{width:18px;height:18px;transition:transform .25s}
+.btn:hover svg{transform:translateX(3px)}
+.btn.vidro{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.35);backdrop-filter:blur(8px);color:#fff}
+.btn.vidro:hover{background:rgba(255,255,255,.22)}
+.btn.claro{background:#fff;color:var(--granito)}
+.btn.contorno{background:transparent;border:1.5px solid var(--granito);color:var(--granito)}
+.btn.contorno:hover{background:var(--granito);color:#fff}
+.btn.zap{background:#25D366;color:#0B2A16}.btn.zap:hover{background:#30E073}
+
+/* topo */
+.topo{color:#fff}
+.topo .w{display:flex;align-items:center;justify-content:space-between;height:84px;gap:24px;transition:height .3s}
+.topo.rolou{background:rgba(242,243,242,.92);backdrop-filter:blur(12px) saturate(1.2);color:var(--granito);box-shadow:0 1px 0 var(--linha)}
+.topo.rolou .w{height:70px}
+.marca{display:flex;align-items:center;gap:12px;text-decoration:none}
+.marca svg{width:38px;height:38px}
+.marca b{font-family:var(--serif);font-weight:700;font-size:19px;letter-spacing:.08em}
+.marca small{display:block;font-size:11px;letter-spacing:.06em;opacity:.7;font-weight:500;margin-top:-2px}
+.nav-d{display:flex;gap:34px;font-size:15px}
+.nav-d a{text-decoration:none;opacity:.85;position:relative}
+.nav-d a::after{content:"";position:absolute;left:0;right:0;bottom:-6px;height:1px;background:currentColor;transform:scaleX(0);transform-origin:right;transition:transform .35s}
+.nav-d a:hover{opacity:1}.nav-d a:hover::after{transform:scaleX(1);transform-origin:left}
+.topo .btn{padding:12px 20px;font-size:15px}
+.topo:not(.rolou) .btn{background:#fff;color:var(--granito)}
+.menu-mob{background:var(--noite);color:#E3E5E3}
+.menu-mob a{font-family:var(--serif)}
+.menu-mob .btn{margin-top:28px;align-self:flex-start;font-family:var(--sans);font-size:17px}
+.menu-aberto .topo{color:#fff;background:transparent;box-shadow:none}
+
+/* hero */
+.hero{position:relative;min-height:100svh;display:flex;align-items:flex-end;color:#fff;overflow:hidden;background:var(--noite)}
+.hero .foto{position:absolute;inset:0}
+.hero .foto img,.hero .foto .img-fb{width:100%;height:100%;object-fit:cover}
+.hero::before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(90deg,rgba(13,16,18,.86) 0%,rgba(13,16,18,.55) 45%,rgba(13,16,18,.1) 100%),linear-gradient(0deg,rgba(13,16,18,.7),transparent 45%)}
+.hero .w{position:relative;z-index:2;width:100%;padding-top:170px;padding-bottom:64px}
+.hero h1{color:#fff;font-size:clamp(48px,7.4vw,112px);line-height:.98;max-width:980px;letter-spacing:.005em}
+.hero .lead{font-size:clamp(18px,1.6vw,21px);max-width:560px;margin:30px 0 38px;color:#D7DCDA}
+.hero .acoes{display:flex;gap:14px;flex-wrap:wrap}
+.hero-pe{display:grid;grid-template-columns:auto 1fr auto;gap:28px;align-items:center;margin-top:72px;padding-top:26px;border-top:1px solid rgba(255,255,255,.18);font-size:14px;color:#C9CECC}
+.nota{display:flex;align-items:center;gap:12px}
+.nota b{font-family:var(--serif);font-size:30px;color:#fff;line-height:1}
+.estrelas{color:var(--latao2);letter-spacing:2px}
+.rolar{display:flex;align-items:center;gap:10px;text-decoration:none}
+.rolar i{width:1px;height:38px;background:rgba(255,255,255,.4);position:relative;overflow:hidden}
+.rolar i::after{content:"";position:absolute;left:0;right:0;height:14px;background:#fff;animation:desce 2s ease-in-out infinite}
+@keyframes desce{0%{top:-14px}100%{top:38px}}
+
+/* faixa números */
+.numeros{background:var(--granito);color:#E3E5E3}
+.numeros .w{display:grid;grid-template-columns:repeat(4,1fr)}
+.numeros .w>div{padding:40px 28px;border-left:1px solid #ffffff17}
+.numeros .w>div:first-child{border-left:0;padding-left:0}
+.numeros strong{display:block;font-family:var(--serif);font-weight:500;font-size:44px;color:#fff;line-height:1}
+.numeros span{display:block;margin-top:10px;font-size:14px;color:#9AA19F}
+
+section{padding:132px 0}
+.cab{display:grid;grid-template-columns:1.1fr 1fr;gap:48px;align-items:end;margin-bottom:64px}
+.cab h2{font-size:clamp(36px,4.6vw,64px)}
+.cab p{max-width:470px;justify-self:end;font-size:18px}
+.rotulo{display:block;font-size:14px;color:#7E6438;font-weight:600;margin-bottom:18px}
+
+/* manifesto */
+.manif{display:grid;grid-template-columns:1fr 1fr;gap:88px;align-items:center}
+.manif .quadro{aspect-ratio:4/5;overflow:hidden;border-radius:var(--raio);position:relative}
+.manif .quadro img,.manif .quadro .img-fb{width:100%;height:120%;object-fit:cover;margin-top:-10%}
+.manif .quadro small{position:absolute;left:18px;bottom:16px;z-index:2;color:#fff;font-size:13px;background:rgba(19,23,26,.6);padding:6px 12px;border-radius:999px}
+.manif h2{font-size:clamp(34px,3.8vw,54px);margin-bottom:28px}
+.manif p+p{margin-top:18px}
+.assin{display:flex;gap:40px;margin-top:40px;padding-top:28px;border-top:1px solid var(--linha)}
+.assin div b{display:block;font-family:var(--serif);font-size:20px;color:var(--granito);font-weight:600}
+.assin div span{font-size:14px;color:var(--veio)}
+
+/* configurador */
+.config{background:var(--noite);color:#C9CECC;overflow:hidden}
+.config h2,.config h3{color:#fff}
+.config .cab p{color:#9AA19F}.config .rotulo{color:var(--latao2)}
+.laje{position:relative;border-radius:10px;overflow:hidden;aspect-ratio:21/8;margin-bottom:28px}
+.laje .fundo,.laje .fundo svg{position:absolute;inset:0;width:100%;height:100%}
+.laje .nome{position:absolute;left:36px;bottom:30px;z-index:2}
+.laje .nome b{display:block;font-family:var(--serif);font-weight:600;font-size:clamp(28px,4vw,56px);color:var(--grav,#7F8784);text-shadow:0 1px 0 var(--luz,rgba(255,255,255,.9)),0 -1px 1px var(--sombra,rgba(0,0,0,.45));line-height:1}
+.laje .nome span{font-size:14px;color:var(--txt-hero,#262C2F);opacity:.8}
+.chips{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;margin-bottom:96px}
+.chip{text-align:left;border-radius:8px;overflow:hidden;background:#1F2528;border:1px solid #2C3337;transition:border-color .25s,transform .25s}
+.chip:hover{transform:translateY(-3px)}
+.chip[aria-pressed="true"]{border-color:var(--latao)}
+.chip .am{display:block;aspect-ratio:16/9}
+.chip .am svg{width:100%;height:100%}
+.chip .t{display:block;padding:12px 14px 14px}
+.chip .t b{display:block;color:#fff;font-weight:600;font-size:15px}
+.chip .t small{font-size:12.5px;color:#8E9592}
+.ficha-p{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin:-60px 0 96px;padding:28px 0;border-top:1px solid #2C3337;border-bottom:1px solid #2C3337}
+.ficha-p dt{font-size:13px;color:#8E9592;margin-bottom:6px}
+.ficha-p dd{color:#fff}
+.medidor{display:block;height:4px;background:#2C3337;border-radius:2px;margin-top:10px;overflow:hidden}
+.medidor i{display:block;height:100%;width:var(--v);background:var(--latao);transition:width .6s}
+.abas{display:flex;gap:4px;border-bottom:1px solid #2C3337;margin-bottom:44px;overflow-x:auto}
+.abas button{padding:16px 22px;font-weight:600;color:#8E9592;border-bottom:2px solid transparent;margin-bottom:-1px;white-space:nowrap}
+.abas button[aria-selected="true"]{color:#fff;border-bottom-color:var(--latao)}
+.painel{display:grid;grid-template-columns:1.3fr 1fr;gap:64px;align-items:center}
+.cena{background:#E9EBE9;border-radius:10px;padding:26px}
+.cena svg{width:100%;height:auto}
+.painel h3{font-size:36px;margin-bottom:14px}
+.painel ul{list-style:none;margin:26px 0 32px}
+.painel li{display:flex;justify-content:space-between;gap:16px;padding:14px 0;border-bottom:1px solid #2C3337;color:#E3E5E3}
+.painel li span:last-child{color:#8E9592;font-size:15px}
+.painel .leg{font-size:13px;color:#8E9592;margin-top:12px}
+
+/* galeria */
+.filtros{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:34px}
+.filtros button{padding:10px 18px;border-radius:999px;border:1.5px solid var(--linha);font-weight:500;font-size:15px;transition:all .2s}
+.filtros button[aria-pressed="true"]{background:var(--granito);border-color:var(--granito);color:#fff}
+.galeria{display:grid;grid-template-columns:repeat(12,1fr);grid-auto-rows:120px;gap:16px}
+.galeria a{position:relative;overflow:hidden;border-radius:var(--raio);display:block;background:var(--pedra)}
+.galeria a img,.galeria a .img-fb{width:100%;height:100%;object-fit:cover;transition:transform 1.2s cubic-bezier(.2,.7,.2,1)}
+.galeria a:hover img{transform:scale(1.05)}
+.galeria a span{position:absolute;left:16px;bottom:14px;z-index:2;color:#fff;font-size:14px;font-weight:500;opacity:0;transform:translateY(8px);transition:all .35s}
+.galeria a::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(13,16,18,.6),transparent 50%);opacity:0;transition:opacity .35s}
+.galeria a:hover span,.galeria a:focus-visible span{opacity:1;transform:none}
+.galeria a:hover::after{opacity:1}
+.g1{grid-column:span 7;grid-row:span 4}.g2{grid-column:span 5;grid-row:span 2}.g3{grid-column:span 5;grid-row:span 2}
+.g4{grid-column:span 4;grid-row:span 3}.g5{grid-column:span 4;grid-row:span 3}.g6{grid-column:span 4;grid-row:span 3}
+.nota-foto{font-size:13.5px;color:#565D5B;margin-top:18px}
+
+/* lote */
+.lote-s{background:var(--pedra)}
+.lote-s .w{display:grid;grid-template-columns:1.25fr 1fr;gap:88px;align-items:center}
+.lote-s blockquote{font-family:var(--serif);font-size:clamp(30px,3.6vw,50px);line-height:1.2;color:var(--granito)}
+.lote-s cite{display:block;font-style:normal;margin-top:22px;color:var(--veio);font-size:15px}
+.lote{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:26px}
+.lote div{aspect-ratio:1;border-radius:6px;overflow:hidden}
+.lote svg{width:100%;height:100%}
+.lote-leg{display:flex;justify-content:space-between;font-size:13px;color:var(--veio);margin-top:10px}
+
+/* simulador */
+.sim{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
+.form{background:#fff;border:1px solid #E1E4E2;border-radius:10px;padding:38px}
+.campo{margin-bottom:26px}
+.campo>label,.campo legend{display:block;font-weight:600;color:var(--granito);margin-bottom:10px}
+fieldset{border:0}
+.op{display:flex;flex-wrap:wrap;gap:8px}
+.op input{position:absolute;opacity:0;pointer-events:none}
+.op label{padding:10px 16px;border:1.5px solid var(--linha);border-radius:999px;cursor:pointer;font-size:15px;transition:all .2s}
+.op label:hover{border-color:var(--granito)}
+.op input:checked+label{background:var(--ubatuba);border-color:var(--ubatuba);color:#fff}
+.op input:focus-visible+label{outline:3px solid var(--latao);outline-offset:2px}
+.med{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.med input,.campo select,.campo textarea{width:100%;padding:14px 16px;border:1.5px solid var(--linha);border-radius:6px;background:#fff}
+.med small{font-size:13px;color:var(--veio)}
+.resumo{position:sticky;top:100px;background:var(--granito);color:#C9CECC;border-radius:10px;overflow:hidden}
+.resumo .am{height:180px}.resumo .am svg{width:100%;height:100%}
+.resumo .c{padding:32px}
+.resumo h3{color:#fff;font-size:28px;margin-bottom:18px}
+.resumo dl{display:grid;grid-template-columns:auto 1fr;gap:9px 20px;font-size:15px;margin-bottom:26px}
+.resumo dt{color:#8E9592}.resumo dd{color:#fff}
+.resumo .area{font-family:var(--serif);font-size:46px;color:#fff;line-height:1;margin-bottom:26px}
+.resumo .area small{font-family:var(--sans);font-size:15px;color:#8E9592}
+.resumo .btn{width:100%;justify-content:center}
+.resumo .obs{font-size:13px;color:#8E9592;margin-top:14px}
+
+/* avaliações */
+.aval{background:var(--claro);overflow:hidden}
+.g-sel{display:flex;align-items:center;gap:22px;margin-bottom:44px}
+.g-sel b{font-family:var(--serif);font-size:72px;color:var(--granito);line-height:1;font-weight:500}
+.marq-t figure{width:380px;flex:none;background:#fff;border:1px solid #E1E4E2;border-radius:10px;padding:28px;display:flex;flex-direction:column;gap:14px}
+.marq-t blockquote{color:var(--grafite)}
+.marq-t figcaption{margin-top:auto;font-size:14px;color:var(--veio);display:flex;align-items:center;gap:8px}
+.marq{display:grid;gap:18px}
+
+/* processo */
+.passos{list-style:none;display:grid;grid-template-columns:repeat(4,1fr);gap:32px;counter-reset:p}
+.passos li{counter-increment:p;border-top:1px solid var(--granito);padding-top:24px}
+.passos li::before{content:counter(p,decimal-leading-zero);display:block;font-family:var(--serif);font-size:15px;color:#7E6438;margin-bottom:22px;font-weight:600}
+.passos strong{display:block;font-family:var(--serif);font-weight:500;font-size:24px;color:var(--granito);margin-bottom:10px;line-height:1.15}
+
+/* faq */
+.faq{display:grid;grid-template-columns:1fr 1.5fr;gap:88px}
+.faq h2{font-size:clamp(36px,4.2vw,56px)}
+details.p summary{font-weight:600;font-size:19px;color:var(--granito)}
+details.p .r{color:#545C5F}
+
+/* contato */
+.contato{background:var(--granito);color:#C9CECC;padding:0}
+.contato .w{display:grid;grid-template-columns:1fr 1fr;gap:0;padding:0;max-width:none}
+.contato .txt{padding:120px max(32px,calc((100vw - var(--w))/2 + 32px)) 120px max(32px,calc((100vw - var(--w))/2 + 32px));padding-right:72px}
+.contato h2{color:#fff;font-size:clamp(38px,4.4vw,60px);margin-bottom:20px}
+.contato dl{margin:40px 0 44px;display:grid;gap:22px}
+.contato dt{font-size:13px;color:#8E9592;margin-bottom:4px}
+.contato dd{color:#fff;font-size:18px}
+.contato dd a{text-decoration:none}
+.contato iframe{width:100%;height:100%;min-height:560px;border:0;filter:grayscale(1) contrast(1.05)}
+footer{background:var(--noite);color:#8E9592;padding:72px 0 40px;font-size:14px}
+footer .top{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:40px;padding-bottom:56px;border-bottom:1px solid #ffffff14}
+footer .fh{font-weight:600;color:#fff;font-size:14px;margin-bottom:16px;font-weight:600}
+footer ul{list-style:none;display:grid;gap:10px}
+footer a{text-decoration:none}footer a:hover{color:#fff}
+footer .marca{color:#E3E5E3;margin-bottom:18px}
+footer .base{display:flex;justify-content:space-between;gap:20px;padding-top:28px;flex-wrap:wrap}
+
+@media(max-width:1060px){
+  .cab,.manif,.painel,.lote-s .w,.sim,.faq,.contato .w{grid-template-columns:1fr}
+  .cab p{justify-self:start}
+  .numeros .w{grid-template-columns:1fr 1fr}.numeros .w>div:nth-child(3){border-left:0;padding-left:0}
+  .chips{grid-template-columns:repeat(3,1fr)}
+  .ficha-p{grid-template-columns:1fr}
+  .passos{grid-template-columns:1fr 1fr}
+  .resumo{position:static}
+  .contato .txt{padding:88px 32px}
+  footer .top{grid-template-columns:1fr 1fr}
+  .galeria{grid-auto-rows:90px}
+  .manif{gap:48px}
+}
+@media(max-width:680px){
+  body{font-size:16px}.w{padding:0 22px}
+  section{padding:88px 0}
+  .hero-pe{grid-template-columns:1fr;gap:16px}.rolar{display:none}
+  .chips{grid-template-columns:1fr 1fr}
+  .laje{aspect-ratio:4/3}
+  .galeria{grid-template-columns:1fr 1fr;grid-auto-rows:150px}
+  .galeria a{grid-column:span 1!important;grid-row:span 1!important}
+  .galeria a:first-child{grid-column:span 2!important;grid-row:span 2!important}
+  .passos{grid-template-columns:1fr}
+  .form,.resumo .c{padding:26px}
+  .marq-t figure{width:300px}
+  footer .top{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+<a class="pular" href="#conteudo">Pular para o conteúdo</a>
+<div class="aviso-demo">Prévia criada para a Monte Sagro Mármores. Ainda não é o site oficial.</div>
+
+<div id="loader" aria-hidden="true">
+  <div class="marca-load">
+    <svg viewBox="0 0 64 64" width="64" height="64"><rect x="4" y="4" width="56" height="56" rx="2" fill="none" stroke="#A88A5A" stroke-width="1.5"/><text x="32" y="41" text-anchor="middle" font-family="Cinzel,serif" font-size="22" font-weight="600" fill="#E3E5E3">MS</text></svg>
+    <div class="barra-load"></div>
+  </div>
+</div>
+
+<header class="topo">
+  <div class="w">
+    <a class="marca" href="#topo">
+      <svg viewBox="0 0 64 64" aria-hidden="true"><rect x="3" y="3" width="58" height="58" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><path d="M14 46 26 20l8 15 5-8 11 19z" fill="currentColor" opacity=".9"/></svg>
+      <span><b>MONTE SAGRO</b><small>Mármores e granitos</small></span>
+    </a>
+    <nav class="nav-d" aria-label="Principal">
+      <a href="#pedras">Pedras</a><a href="#projetos">Projetos</a><a href="#orcamento">Orçamento</a><a href="#avaliacoes">Avaliações</a><a href="#contato">Contato</a>
+    </nav>
+    <a class="btn nav-d" href="#orcamento">Fazer orçamento</a>
+    <button class="btn-menu" aria-label="Abrir menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+</header>
+<nav class="menu-mob" aria-label="Menu">
+  <a href="#pedras">Pedras</a><a href="#projetos">Projetos</a><a href="#orcamento">Orçamento</a><a href="#avaliacoes">Avaliações</a><a href="#contato">Contato</a>
+  <a class="btn zap" href="https://wa.me/5547984225116" target="_blank" rel="noopener">Chamar no WhatsApp</a>
+</nav>
+
+<main id="conteudo">
+<section class="hero" id="topo" data-hero style="padding:0">
+  <div class="foto"><img data-hero-img data-fb="Cozinha com ilha em mármore" fetchpriority="high" alt="Cozinha com ilha e bancadas em mármore branco" src="https://images.unsplash.com/photo-1682888813795-192fca4a10d9?auto=format&fit=crop&w=2000&q=80" srcset="https://images.unsplash.com/photo-1682888813795-192fca4a10d9?auto=format&fit=crop&w=900&q=75 900w,https://images.unsplash.com/photo-1682888813795-192fca4a10d9?auto=format&fit=crop&w=1600&q=80 1600w,https://images.unsplash.com/photo-1682888813795-192fca4a10d9?auto=format&fit=crop&w=2400&q=80 2400w" sizes="100vw"></div>
+  <div class="w">
+    <h1 data-split>Pedra natural, cortada para a sua casa.</h1>
+    <p class="lead" data-hero-fade>Mármores, granitos e quartzo sob medida em Blumenau. Você fala direto com a família que mede, corta e instala.</p>
+    <div class="acoes" data-hero-fade>
+      <a class="btn" href="#orcamento">Simular meu orçamento <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 10h12M11 5l5 5-5 5"/></svg></a>
+      <a class="btn vidro" href="#pedras">Escolher a pedra</a>
+    </div>
+    <div class="hero-pe" data-hero-fade>
+      <div class="nota"><b>5,0</b><div><div class="estrelas">★★★★★</div>46 avaliações no Google</div></div>
+      <span>Bancadas, lavabos, escadas, soleiras e áreas gourmet</span>
+      <a class="rolar" href="#sobre"><i></i>Role para conhecer</a>
+    </div>
+  </div>
+</section>
+
+<div class="numeros">
+  <div class="w">
+    <div><strong data-count="5.0">5,0</strong><span>nota média no Google</span></div>
+    <div><strong data-count="46">46</strong><span>avaliações de clientes</span></div>
+    <div><strong>Família</strong><span>atendimento direto com os donos</span></div>
+    <div><strong>Na obra</strong><span>medição e instalação no local</span></div>
+  </div>
+</div>
+
+<section id="sobre">
+  <div class="w manif">
+    <div class="quadro" data-reveal>
+      <img data-parallax="8" data-fb="Bancada em mármore escuro" loading="lazy" alt="Bancada de mármore escuro com banquetas" src="https://images.unsplash.com/photo-1720694054419-d433d311b0b2?auto=format&fit=crop&w=1200&q=80">
+      <small>Foto ilustrativa</small>
+    </div>
+    <div>
+      <span class="rotulo" data-reveal>Monte Sagro Mármores</span>
+      <h2 data-split>Cada chapa é única. O cuidado também.</h2>
+      <p data-reveal>Pedra natural não sai de fábrica igual. Muda a cor, o veio, o desenho. Por isso a gente acompanha cada projeto de perto: escolhe a chapa com você, confere as medidas na obra e só corta quando está tudo certo.</p>
+      <p data-reveal>É um trabalho de família, feito com as mãos de quem conhece pedra. E é por isso que os clientes voltam para fazer o próximo ambiente.</p>
+      <div class="assin" data-reveal>
+        <div><b>Do orçamento</b><span>à instalação, com a mesma equipe</span></div>
+        <div><b>Sob medida</b><span>nenhuma peça de prateleira</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="config" id="pedras">
+  <div class="w">
+    <div class="cab">
+      <div><span class="rotulo" data-reveal>Mostruário</span><h2 data-split>Escolha a pedra e veja ela na sua casa</h2></div>
+      <p data-reveal>Granito aguenta panela quente e uso pesado. Mármore é mais nobre e pede mais cuidado. Quartzo tem cor uniforme e quase nenhuma manutenção.</p>
+    </div>
+    <div class="laje" data-reveal><div class="fundo" id="fundoLaje" aria-hidden="true"></div><div class="nome"><b id="nomeLaje">Branco Carrara</b><span id="tipoLaje">Mármore importado</span></div></div>
+    <div class="chips" id="chips" role="group" aria-label="Escolher pedra"></div>
+    <dl class="ficha-p" data-reveal>
+      <div><dt>Resistência a calor e impacto</dt><dd><span id="fRes"></span><span class="medidor"><i id="mRes"></i></span></dd></div>
+      <div><dt>Facilidade de manutenção</dt><dd><span id="fMan"></span><span class="medidor"><i id="mMan"></i></span></dd></div>
+      <div><dt>Onde funciona melhor</dt><dd id="fUso"></dd></div>
+    </dl>
+    <div class="abas" role="tablist" id="abas" aria-label="Ambientes"></div>
+    <div class="painel">
+      <div><div class="cena" id="cena"></div><p class="leg" id="legenda"></p></div>
+      <div id="textoAmb"></div>
+    </div>
+  </div>
+</section>
+
+<section id="projetos">
+  <div class="w">
+    <div class="cab">
+      <div><span class="rotulo" data-reveal>Projetos</span><h2 data-split>Ambientes que a pedra transforma</h2></div>
+      <p data-reveal>Cozinhas, banheiros e escadas. Toque numa foto para ver em tela cheia.</p>
+    </div>
+    <div class="filtros" data-filtros="#galeria" role="group" aria-label="Filtrar projetos">
+      <button data-f="todos" aria-pressed="true">Todos</button><button data-f="cozinha" aria-pressed="false">Cozinhas</button><button data-f="banho" aria-pressed="false">Banheiros</button><button data-f="escada" aria-pressed="false">Escadas</button>
+    </div>
+    <div class="galeria" id="galeria">
+      <a class="g1" href="#" data-lb="proj" data-cat="cozinha" data-legenda="Ilha e bancadas em mármore" data-full="https://images.unsplash.com/photo-1682888813795-192fca4a10d9?auto=format&fit=crop&w=2000&q=85"><img loading="lazy" data-fb="Cozinha em mármore" alt="Ilha de cozinha em mármore branco" src="https://images.unsplash.com/photo-1682888813795-192fca4a10d9?auto=format&fit=crop&w=1100&q=75"><span>Ilha e bancadas em mármore</span></a>
+      <a class="g2" href="#" data-lb="proj" data-cat="cozinha" data-legenda="Bancada em pedra escura" data-full="https://images.unsplash.com/photo-1720694054419-d433d311b0b2?auto=format&fit=crop&w=2000&q=85"><img loading="lazy" data-fb="Bancada escura" alt="Balcão em mármore escuro com banquetas" src="https://images.unsplash.com/photo-1720694054419-d433d311b0b2?auto=format&fit=crop&w=900&q=75"><span>Balcão em pedra escura</span></a>
+      <a class="g3" href="#" data-lb="proj" data-cat="banho" data-legenda="Banheiro com revestimento em mármore" data-full="https://images.unsplash.com/photo-1682888818704-6dc91e9d7532?auto=format&fit=crop&w=2000&q=85"><img loading="lazy" data-fb="Banheiro em mármore" alt="Banheiro com box revestido em mármore e armários verdes" src="https://images.unsplash.com/photo-1682888818704-6dc91e9d7532?auto=format&fit=crop&w=900&q=75"><span>Banheiro em mármore</span></a>
+      <a class="g4" href="#" data-lb="proj" data-cat="cozinha" data-legenda="Cozinha com bancada em mármore" data-full="https://images.unsplash.com/photo-1633119713175-c53c29479984?auto=format&fit=crop&w=2000&q=85"><img loading="lazy" data-fb="Cozinha moderna" alt="Cozinha moderna com bancadas em mármore" src="https://images.unsplash.com/photo-1633119713175-c53c29479984?auto=format&fit=crop&w=800&q=75"><span>Cozinha com bancada em mármore</span></a>
+      <a class="g5" href="#" data-lb="proj" data-cat="cozinha" data-legenda="Bancada clara com prateleiras" data-full="https://images.unsplash.com/photo-1689268115063-847c409cbf19?auto=format&fit=crop&w=2000&q=85"><img loading="lazy" data-fb="Bancada clara" alt="Bancada clara de mármore com prateleiras de madeira" src="https://images.unsplash.com/photo-1689268115063-847c409cbf19?auto=format&fit=crop&w=800&q=75"><span>Bancada clara</span></a>
+      <a class="g6" href="#" data-lb="proj" data-cat="escada" data-legenda="Escada em pedra" data-full="https://images.unsplash.com/photo-1513340249451-1cee921dd41a?auto=format&fit=crop&w=2000&q=85"><img loading="lazy" data-fb="Escada em pedra" alt="Escadaria em pedra" src="https://images.unsplash.com/photo-1513340249451-1cee921dd41a?auto=format&fit=crop&w=800&q=75"><span>Escada em pedra</span></a>
+    </div>
+    <p class="nota-foto">Fotos ilustrativas. No site oficial entram as fotos dos projetos da Monte Sagro.</p>
+  </div>
+</section>
+
+<section class="lote-s">
+  <div class="w">
+    <div>
+      <span class="rotulo" data-reveal>O que mais elogiam</span>
+      <blockquote data-reveal>“Precisei de um granito igual ao que já tinha instalado e veio igualzinho.”</blockquote>
+      <cite data-reveal>Cliente da Monte Sagro no Google</cite>
+    </div>
+    <div data-reveal>
+      <p>A pedra natural muda de cor de um lote para outro. Numa reforma, achar uma chapa que combine com a que já está instalada é trabalho de quem conhece pedra de verdade.</p>
+      <div class="lote"><div id="loteA"></div><div id="loteB"></div></div>
+      <div class="lote-leg"><span>Peça instalada</span><span>Peça nova</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="orcamento">
+  <div class="w">
+    <div class="cab">
+      <div><span class="rotulo" data-reveal>Orçamento</span><h2 data-split>Simule em 1 minuto</h2></div>
+      <p data-reveal>Escolha a peça, a pedra e as medidas. Tudo chega organizado no nosso WhatsApp e a gente responde com o valor.</p>
+    </div>
+    <div class="sim">
+      <form class="form" id="form" onsubmit="return false" data-reveal>
+        <fieldset class="campo"><legend>Qual peça?</legend><div class="op" id="opPeca"></div></fieldset>
+        <div class="campo"><label for="selPedra">Qual pedra?</label><select id="selPedra"></select></div>
+        <div class="campo"><label>Medidas aproximadas</label>
+          <div class="med">
+            <div><input id="comp" type="number" min="0.2" step="0.05" value="2.4" inputmode="decimal" aria-label="Comprimento em metros"><small>Comprimento (m)</small></div>
+            <div><input id="larg" type="number" min="0.2" step="0.05" value="0.6" inputmode="decimal" aria-label="Largura em metros"><small>Largura (m)</small></div>
+          </div>
+        </div>
+        <fieldset class="campo"><legend>Precisa de instalação?</legend>
+          <div class="op"><input type="radio" name="inst" id="i1" value="Sim, com instalação" checked><label for="i1">Sim</label><input type="radio" name="inst" id="i2" value="Só a peça, sem instalação"><label for="i2">Só a peça</label></div>
+        </fieldset>
+        <div class="campo"><label for="obs">Algum detalhe? (opcional)</label><textarea id="obs" rows="3" placeholder="Ex: cuba embutida, borda reta, rodabanca"></textarea></div>
+      </form>
+      <aside class="resumo" data-reveal aria-live="polite">
+        <div class="am" id="fichaAm"></div>
+        <div class="c">
+          <h3>Seu pedido</h3>
+          <dl><dt>Peça</dt><dd id="rPeca"></dd><dt>Pedra</dt><dd id="rPedra"></dd><dt>Medidas</dt><dd id="rMed"></dd><dt>Instalação</dt><dd id="rInst"></dd></dl>
+          <div class="area" id="rArea"></div>
+          <a class="btn zap" id="enviar" target="_blank" rel="noopener" href="#">Enviar pelo WhatsApp</a>
+          <p class="obs">O valor final depende da chapa, dos recortes e do acabamento. Confirmamos tudo na medição.</p>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<section class="aval" id="avaliacoes" style="padding-top:0">
+  <div class="w">
+    <div class="cab">
+      <div><span class="rotulo" data-reveal>Avaliações</span><h2 data-split>Quem já fez, conta</h2></div>
+      <div class="g-sel" data-reveal style="justify-self:end;margin:0"><b>5,0</b><div><div class="estrelas" style="font-size:22px">★★★★★</div>46 avaliações no Google</div></div>
+    </div>
+  </div>
+  <div class="marq">
+    <div class="marq-t" data-marquee style="--dur:70s">
+      <figure><div class="estrelas">★★★★★</div><blockquote>“Trabalho incrível, super caprichosos e atenciosos! Prazos ótimos.”</blockquote><figcaption>Cliente no Google</figcaption></figure>
+      <figure><div class="estrelas">★★★★★</div><blockquote>“Fiz várias áreas da minha casa com granito da Monte Sagro e sempre fui bem atendido, seja por WhatsApp ou em visita na obra.”</blockquote><figcaption>Cliente no Google</figcaption></figure>
+      <figure><div class="estrelas">★★★★★</div><blockquote>“A instalação foi feita com muito cuidado, deixando tudo limpo e organizado. Recomendamos de olhos fechados!”</blockquote><figcaption>Cliente no Google</figcaption></figure>
+    </div>
+    <div class="marq-t rev" data-marquee style="--dur:80s">
+      <figure><div class="estrelas">★★★★★</div><blockquote>“Serviço impecável. Atendimento feito pelos proprietários da empresa, muito atenciosos.”</blockquote><figcaption>Cliente no Google</figcaption></figure>
+      <figure><div class="estrelas">★★★★★</div><blockquote>“O pós-venda e a entrega foram melhores ainda. Vou voltar quando precisar de mais coisas.”</blockquote><figcaption>Cliente no Google</figcaption></figure>
+      <figure><div class="estrelas">★★★★★</div><blockquote>“Precisei de um granito igual ao que já tinha instalado e veio igualzinho.”</blockquote><figcaption>Cliente no Google</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:40px">
+  <div class="w">
+    <div class="cab"><div><span class="rotulo" data-reveal>Como trabalhamos</span><h2 data-split>Do orçamento à última peça</h2></div><p data-reveal>Você fala com a mesma família do começo ao fim. Sem intermediário.</p></div>
+    <ol class="passos">
+      <li data-reveal><strong>Orçamento</strong>Você manda as medidas ou uma foto pelo WhatsApp e recebe o valor.</li>
+      <li data-reveal><strong>Medição na obra</strong>Vamos até o local conferir as medidas e ajudar a escolher a chapa.</li>
+      <li data-reveal><strong>Corte e acabamento</strong>A peça é cortada e acabada na nossa oficina, no prazo combinado.</li>
+      <li data-reveal><strong>Instalação</strong>Instalamos com cuidado e deixamos o ambiente limpo e organizado.</li>
+    </ol>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="w faq">
+    <div><span class="rotulo" data-reveal>Dúvidas</span><h2 data-split>Perguntas frequentes</h2><p data-reveal style="margin-top:20px">Não achou sua resposta? <a href="https://wa.me/5547984225116" target="_blank" rel="noopener">Chame no WhatsApp</a>.</p></div>
+    <div data-reveal>
+      <details class="p"><summary>Qual pedra é melhor para cozinha?</summary><p class="r">Para bancada de cozinha, o granito é a escolha mais resistente: aguenta calor, impacto e uso diário. O quartzo também funciona bem e tem cor uniforme. O mármore é mais delicado e mancha com mais facilidade.</p></details>
+      <details class="p"><summary>Vocês vão até a obra tirar as medidas?</summary><p class="r">Sim. Antes de cortar, conferimos as medidas no local para a peça encaixar sem surpresa.</p></details>
+      <details class="p"><summary>Conseguem fazer uma peça igual à que eu já tenho?</summary><p class="r">Buscamos a chapa mais parecida possível com a pedra já instalada. Pedra natural varia de lote para lote, então mostramos a opção antes de cortar.</p></details>
+      <details class="p"><summary>Como cuido da pedra no dia a dia?</summary><p class="r">Pano úmido e detergente neutro resolvem quase tudo. Evite produtos ácidos ou abrasivos, principalmente no mármore. Na entrega, explicamos os cuidados da pedra que você escolheu.</p></details>
+      <details class="p"><summary>Como peço um orçamento?</summary><p class="r">Use o simulador desta página ou mande no WhatsApp a peça, as medidas e, se puder, uma foto do ambiente.</p></details>
+    </div>
+  </div>
+</section>
+
+<section class="contato" id="contato">
+  <div class="w">
+    <div class="txt">
+      <span class="rotulo" data-reveal>Contato</span>
+      <h2 data-split>Vamos conversar sobre o seu projeto?</h2>
+      <p data-reveal>Orçamento sem compromisso, direto com os donos.</p>
+      <dl data-reveal>
+        <div><dt>WhatsApp</dt><dd><a href="https://wa.me/5547984225116" target="_blank" rel="noopener">(47) 98422-5116</a></dd></div>
+        <div><dt>Endereço</dt><dd>R. José Reuter, Velha Central, Blumenau, SC</dd></div>
+        <div><dt>Horário</dt><dd>Segunda a sexta, das 8h às 12h e das 13h30 às 18h</dd></div>
+      </dl>
+      <a class="btn zap" data-reveal href="https://wa.me/5547984225116?text=Ol%C3%A1!%20Gostaria%20de%20um%20or%C3%A7amento." target="_blank" rel="noopener">Chamar no WhatsApp</a>
+    </div>
+    <iframe title="Mapa da Monte Sagro Mármores em Blumenau" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=Monte+Sagro+M%C3%A1rmores+Blumenau&output=embed"></iframe>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="w">
+    <div class="top">
+      <div><a class="marca" href="#topo"><svg viewBox="0 0 64 64" width="38" height="38" aria-hidden="true"><rect x="3" y="3" width="58" height="58" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><path d="M14 46 26 20l8 15 5-8 11 19z" fill="currentColor" opacity=".9"/></svg><span><b>MONTE SAGRO</b><small>Mármores e granitos</small></span></a><p>Mármores, granitos e quartzo sob medida em Blumenau e região.</p></div>
+      <div><p class="fh">Navegue</p><ul><li><a href="#pedras">Pedras</a></li><li><a href="#projetos">Projetos</a></li><li><a href="#orcamento">Orçamento</a></li><li><a href="#avaliacoes">Avaliações</a></li></ul></div>
+      <div><p class="fh">Contato</p><ul><li><a href="https://wa.me/5547984225116" target="_blank" rel="noopener">(47) 98422-5116</a></li><li>R. José Reuter, Velha Central</li><li>Blumenau, SC</li></ul></div>
+      <div><p class="fh">Horário</p><ul><li>Segunda a sexta</li><li>8h às 12h</li><li>13h30 às 18h</li></ul></div>
+    </div>
+    <div class="base"><span>© <span data-ano></span> Monte Sagro Mármores</span><span>Fotos ilustrativas: Unsplash</span></div>
+  </div>
+</footer>
+
+<a class="fab" href="https://wa.me/5547984225116" target="_blank" rel="noopener" aria-label="Falar no WhatsApp"><svg viewBox="0 0 32 32"><path d="M16 3C8.8 3 3 8.7 3 15.8c0 2.5.7 4.9 2 7L3 29l6.4-2c2 1.1 4.3 1.7 6.6 1.7 7.2 0 13-5.7 13-12.8S23.2 3 16 3zm0 23.4c-2.1 0-4.1-.6-5.9-1.7l-.4-.3-3.8 1.2 1.2-3.7-.3-.4a10.6 10.6 0 0 1-1.7-5.7C5.1 9.9 10 5.2 16 5.2s10.9 4.7 10.9 10.6S22 26.4 16 26.4zm6-7.9c-.3-.2-1.9-.9-2.2-1-.3-.1-.5-.2-.7.2l-1 1.2c-.2.2-.4.2-.7.1-.3-.2-1.4-.5-2.6-1.6-1-.9-1.6-1.9-1.8-2.2-.2-.3 0-.5.1-.7l.5-.6.3-.5v-.5l-1-2.4c-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4-.3.3-1.1 1.1-1.1 2.7s1.2 3.1 1.3 3.3c.2.2 2.3 3.5 5.6 4.9 2.8 1.1 3.3.9 3.9.8.6-.1 1.9-.8 2.2-1.5.3-.7.3-1.4.2-1.5-.1-.2-.3-.3-.6-.4z"/></svg></a>
+
+<script src="assets/js/gsap.min.js"></script>
+<script src="assets/js/ScrollTrigger.min.js"></script>
+<script src="assets/js/lenis.min.js"></script>
+<script>
+/* ---------- pedras geradas em SVG ---------- */
+const PEDRAS = {
+  carrara:{nome:"Branco Carrara",curto:"Carrara",tipo:"Mármore importado",base:"#ECEDEB",
+    camadas:[{t:"fractalNoise",f:"0.004 0.02",o:5,s:11,c:[.86,.87,.86],a:[-2.2,1.45],op:.9},{t:"turbulence",f:"0.0025 0.012",o:3,s:4,c:[.5,.53,.52],a:[-9,2.1],op:.55}],
+    res:40,man:30,uso:"Lavabos, painéis, mesas",hero:{grav:"#7F8784",luz:"rgba(255,255,255,.9)",sombra:"rgba(0,0,0,.45)",txt:"#262C2F",veu:"linear-gradient(90deg,rgba(242,243,242,.55),rgba(242,243,242,0) 65%)"}},
+  travertino:{nome:"Travertino Romano",curto:"Travertino",tipo:"Mármore travertino",base:"#D8C7A8",
+    camadas:[{t:"fractalNoise",f:"0.002 0.07",o:4,s:7,c:[.78,.70,.56],a:[-3,1.9],op:.8},{t:"turbulence",f:"0.001 0.04",o:2,s:9,c:[.62,.53,.40],a:[-7,1.5],op:.45}],
+    res:45,man:40,uso:"Lavabos, pisos, revestimentos",hero:{grav:"#8C7A5C",luz:"rgba(255,248,235,.8)",sombra:"rgba(60,40,10,.45)",txt:"#2E2618",veu:"linear-gradient(90deg,rgba(245,238,226,.55),rgba(245,238,226,0) 65%)"}},
+  saogabriel:{nome:"Preto São Gabriel",curto:"São Gabriel",tipo:"Granito nacional",base:"#1F2225",
+    camadas:[{t:"fractalNoise",f:"0.55",o:2,s:3,c:[.62,.64,.66],a:[14,-8.2],op:.75},{t:"fractalNoise",f:"0.9",o:1,s:8,c:[.85,.86,.88],a:[18,-11.5],op:.6}],
+    res:95,man:90,uso:"Cozinhas, churrasqueiras, escadas",hero:{grav:"#9AA1A5",luz:"rgba(0,0,0,.9)",sombra:"rgba(255,255,255,.25)",txt:"#F2F3F2",veu:"linear-gradient(90deg,rgba(20,23,25,.82),rgba(20,23,25,.35) 60%,rgba(20,23,25,0))"}},
+  ubatuba:{nome:"Verde Ubatuba",curto:"Ubatuba",tipo:"Granito nacional",base:"#1E2E27",
+    camadas:[{t:"fractalNoise",f:"0.35",o:3,s:5,c:[.36,.52,.43],a:[11,-6.4],op:.8},{t:"fractalNoise",f:"0.8",o:1,s:12,c:[.08,.1,.09],a:[12,-6.5],op:.7}],
+    res:95,man:90,uso:"Cozinhas, bancadas, áreas gourmet",hero:{grav:"#93A99D",luz:"rgba(0,0,0,.9)",sombra:"rgba(255,255,255,.22)",txt:"#F2F5F3",veu:"linear-gradient(90deg,rgba(16,28,22,.82),rgba(16,28,22,.35) 60%,rgba(16,28,22,0))"}},
+  quartzo:{nome:"Quartzo Branco",curto:"Quartzo",tipo:"Pedra industrializada",base:"#F3F3F1",
+    camadas:[{t:"fractalNoise",f:"0.9",o:1,s:2,c:[.78,.79,.78],a:[16,-10.4],op:.55},{t:"fractalNoise",f:"0.45",o:2,s:6,c:[.88,.88,.87],a:[8,-4.6],op:.4}],
+    res:85,man:95,uso:"Cozinhas, banheiros, ilhas",hero:{grav:"#8F9693",luz:"rgba(255,255,255,1)",sombra:"rgba(0,0,0,.4)",txt:"#262C2F",veu:"linear-gradient(90deg,rgba(242,243,242,.4),rgba(242,243,242,0) 65%)"}},
+};
+let uid=0, atual="carrara";
+function camadasSVG(p,w,h){
+  return p.camadas.map(c=>{const id="f"+(uid++);return `<filter id="${id}" x="0" y="0" width="100%" height="100%"><feTurbulence type="${c.t}" baseFrequency="${c.f}" numOctaves="${c.o}" seed="${c.s}"/><feColorMatrix values="0 0 0 0 ${c.c[0]}  0 0 0 0 ${c.c[1]}  0 0 0 0 ${c.c[2]}  ${c.a[0]} 0 0 0 ${c.a[1]}"/></filter><rect width="${w}" height="${h}" filter="url(#${id})" opacity="${c.op}"/>`}).join("");
+}
+function pedraSVG(k,w=400,h=400,ratio="xMidYMid slice",seedShift=0){
+  const p=JSON.parse(JSON.stringify(PEDRAS[k])); p.camadas.forEach(c=>c.s+=seedShift);
+  return `<svg viewBox="0 0 ${w} ${h}" preserveAspectRatio="${ratio}" aria-hidden="true"><rect width="${w}" height="${h}" fill="${p.base}"/>${camadasSVG(p,w,h)}</svg>`;
+}
+/* pedra recortada num formato, para usar dentro das cenas */
+function pedraEm(k,shape,box){
+  const p=PEDRAS[k], id="c"+(uid++);
+  return `<clipPath id="${id}">${shape}</clipPath><g clip-path="url(#${id})"><rect x="${box[0]}" y="${box[1]}" width="${box[2]}" height="${box[3]}" fill="${p.base}"/><g transform="translate(${box[0]} ${box[1]})">${camadasSVG(p,box[2],box[3])}</g></g>`;
+}
+
+
+/* ---------- ambientes ---------- */
+const AMB={
+  cozinha:{nome:"Cozinha",titulo:"Bancada e ilha de cozinha",txt:"A peça que mais trabalha na casa. Precisa aguentar calor, faca e água todos os dias.",pecas:[["Bancada com cuba","sob medida"],["Ilha ou península","com ou sem banquetas"],["Rodabanca","proteção da parede"],["Recorte de cooktop","feito na oficina"]],
+    cena:k=>`<svg viewBox="0 0 600 380"><rect width="600" height="380" fill="#E7E9E7"/><rect x="0" y="300" width="600" height="80" fill="#D3D6D4"/>
+      <rect x="40" y="40" width="520" height="110" fill="#fff" stroke="#262C2F" stroke-width="1.5"/><path d="M170 40v110M300 40v110M430 40v110" stroke="#262C2F" stroke-width="1.5"/>
+      ${pedraEm(k,'<rect x="30" y="178" width="540" height="22" rx="2"/><rect x="40" y="150" width="520" height="28"/>',[30,150,540,50])}
+      <rect x="40" y="200" width="520" height="100" fill="#fff" stroke="#262C2F" stroke-width="1.5"/><path d="M170 200v100M300 200v100M430 200v100" stroke="#262C2F" stroke-width="1.5"/>
+      <rect x="330" y="172" width="80" height="8" rx="3" fill="#9AA19F"/><path d="M370 172v-28h18" stroke="#9AA19F" stroke-width="5" fill="none" stroke-linecap="round"/>
+      <rect x="90" y="172" width="90" height="6" rx="2" fill="#262C2F"/></svg>`,leg:"Bancada e rodabanca na pedra escolhida"},
+  lavabo:{nome:"Lavabo",titulo:"Lavabo com cuba esculpida",txt:"É o ambiente que a visita vê. Uma pedra bonita aqui muda a casa inteira.",pecas:[["Tampo ou cuba esculpida","na própria pedra"],["Saia frontal","acabamento reto ou chanfrado"],["Revestimento de parede","opcional"],["Nichos","embutidos"]],
+    cena:k=>`<svg viewBox="0 0 600 380"><rect width="600" height="380" fill="#E7E9E7"/>
+      ${pedraEm(k,'<rect x="140" y="20" width="320" height="200"/>',[140,20,320,200])}<rect x="140" y="20" width="320" height="200" fill="#fff" opacity=".18"/>
+      <ellipse cx="300" cy="120" rx="70" ry="85" fill="#F8F9F8" stroke="#262C2F" stroke-width="1.5"/>
+      ${pedraEm(k,'<rect x="120" y="220" width="360" height="60"/>',[120,220,360,60])}
+      <path d="M220 236h160" stroke="#000" stroke-opacity=".25" stroke-width="8" stroke-linecap="round"/><path d="M300 222v-30h20" stroke="#262C2F" stroke-width="5" fill="none" stroke-linecap="round"/>
+      <rect x="0" y="320" width="600" height="60" fill="#D3D6D4"/></svg>`,leg:"Cuba esculpida e painel na pedra escolhida"},
+  escada:{nome:"Escada",titulo:"Escadas e soleiras",txt:"Peça que recebe passo o dia inteiro. Precisa de pedra firme e acabamento antiderrapante quando é área externa.",pecas:[["Degraus e espelhos","sob medida"],["Soleiras","portas e divisas de piso"],["Rodapés","acompanhando a escada"],["Acabamento antiderrapante","para área externa"]],
+    cena:k=>{let s="";for(let i=0;i<6;i++){const x=60+i*80,y=320-i*48;s+=pedraEm(k,`<rect x="${x}" y="${y}" width="${600-x}" height="14"/>`,[x,y,600-x,14])+`<rect x="${x}" y="${y+14}" width="${600-x}" height="34" fill="#fff" stroke="#262C2F" stroke-width="1.2"/>`;}
+      return `<svg viewBox="0 0 600 380"><rect width="600" height="380" fill="#E7E9E7"/>${s}<path d="M80 300 L520 40" stroke="#262C2F" stroke-width="3"/></svg>`},leg:"Degraus na pedra escolhida"},
+  gourmet:{nome:"Área gourmet",titulo:"Churrasqueira e área gourmet",txt:"Calor, gordura e festa. Aqui o granito é quase obrigatório pela resistência.",pecas:[["Bancada da churrasqueira","resistente a calor"],["Revestimento da churrasqueira","frente e laterais"],["Bancada de apoio","com cuba"],["Mesa ou balcão","para receber"]],
+    cena:k=>`<svg viewBox="0 0 600 380"><rect width="600" height="380" fill="#E7E9E7"/>
+      ${pedraEm(k,'<path d="M200 30h200v40l-30 70H230l-30-70z"/>',[200,30,200,110])}
+      <rect x="180" y="140" width="240" height="110" fill="#3A3F43"/><rect x="200" y="160" width="200" height="70" fill="#1A1F22"/><path d="M215 195c20-20 30 10 50-8s30 12 50-6 30 10 70-4" stroke="#C8803F" stroke-width="4" fill="none"/>
+      ${pedraEm(k,'<rect x="30" y="250" width="540" height="20"/>',[30,250,540,20])}
+      <rect x="40" y="270" width="520" height="80" fill="#fff" stroke="#262C2F" stroke-width="1.5"/><path d="M180 270v80M420 270v80" stroke="#262C2F" stroke-width="1.5"/></svg>`,leg:"Churrasqueira e bancada na pedra escolhida"},
+};
+
+const ROTULO={carrara:"Branco Carrara",travertino:"Travertino",saogabriel:"São Gabriel",ubatuba:"Ubatuba",quartzo:"Quartzo"};
+const chips=document.getElementById("chips"),sel=document.getElementById("selPedra");
+Object.entries(PEDRAS).forEach(([k,p])=>{
+  chips.insertAdjacentHTML("beforeend",`<button class="chip" data-k="${k}" aria-pressed="false"><span class="am">${pedraSVG(k,320,180)}</span><span class="t"><b>${p.nome}</b><small>${p.tipo}</small></span></button>`);
+  sel.insertAdjacentHTML("beforeend",`<option value="${k}">${p.nome}</option>`);
+});
+chips.addEventListener("click",e=>{const b=e.target.closest("[data-k]");if(b)escolher(b.dataset.k)});
+sel.addEventListener("change",()=>escolher(sel.value));
+
+let ambAtual="cozinha";
+const abas=document.getElementById("abas");
+Object.entries(AMB).forEach(([k,a])=>abas.insertAdjacentHTML("beforeend",`<button role="tab" aria-selected="${k===ambAtual}" data-a="${k}">${a.nome}</button>`));
+abas.addEventListener("click",e=>{const b=e.target.closest("button");if(!b)return;ambAtual=b.dataset.a;abas.querySelectorAll("button").forEach(x=>x.setAttribute("aria-selected",x===b));desenhaAmb()});
+function desenhaAmb(){
+  const a=AMB[ambAtual];
+  document.getElementById("cena").innerHTML=a.cena(atual);
+  document.getElementById("legenda").textContent=a.leg+": "+PEDRAS[atual].nome+".";
+  document.getElementById("textoAmb").innerHTML=`<h3>${a.titulo}</h3><p>${a.txt}</p><ul>${a.pecas.map(p=>`<li><span>${p[0]}</span><span>${p[1]}</span></li>`).join("")}</ul><a class="btn" href="#orcamento" data-amb="${ambAtual}">Orçar ${a.nome.toLowerCase()}</a>`;
+  document.querySelector("[data-amb]").addEventListener("click",()=>{const r=document.querySelector(`#opPeca input[data-amb="${ambAtual}"]`);if(r){r.checked=true;atualiza()}});
+}
+
+const PECAS=[["Bancada de cozinha","cozinha"],["Ilha","cozinha"],["Lavabo ou banheiro","lavabo"],["Escada","escada"],["Soleiras","escada"],["Churrasqueira","gourmet"]];
+const opPeca=document.getElementById("opPeca");
+PECAS.forEach(([p,a],i)=>opPeca.insertAdjacentHTML("beforeend",`<input type="radio" name="peca" id="p${i}" value="${p}" data-amb="${a}" ${i===0?"checked":""}><label for="p${i}">${p}</label>`));
+const fmt=n=>n.toLocaleString("pt-BR",{minimumFractionDigits:2,maximumFractionDigits:2});
+function atualiza(){
+  const peca=document.querySelector("input[name=peca]:checked").value,inst=document.querySelector("input[name=inst]:checked").value;
+  const c=parseFloat(document.getElementById("comp").value)||0,l=parseFloat(document.getElementById("larg").value)||0,obs=document.getElementById("obs").value.trim(),p=PEDRAS[atual];
+  rPeca.textContent=peca;rPedra.textContent=p.nome;rMed.textContent=`${fmt(c)} m x ${fmt(l)} m`;rInst.textContent=inst;
+  rArea.innerHTML=`${fmt(c*l)} <small>m² de pedra</small>`;
+  const msg=`Olá! Fiz uma simulação no site e quero um orçamento:\n\nPeça: ${peca}\nPedra: ${p.nome}\nMedidas: ${fmt(c)} m x ${fmt(l)} m (${fmt(c*l)} m²)\nInstalação: ${inst}${obs?"\nDetalhes: "+obs:""}`;
+  enviar.href="https://wa.me/5547984225116?text="+encodeURIComponent(msg);
+}
+document.getElementById("form").addEventListener("input",atualiza);
+
+const NIVEL=v=>v>=90?"Muito alta":v>=70?"Alta":v>=45?"Média":"Pede cuidado";
+function escolher(k){
+  atual=k;const p=PEDRAS[k];
+  document.querySelectorAll("[data-k]").forEach(b=>b.setAttribute("aria-pressed",b.dataset.k===k));
+  sel.value=k;
+  fundoLaje.innerHTML=pedraSVG(k,(p.base<"#5")?900:1800,(p.base<"#5")?340:690);
+  nomeLaje.textContent=p.nome;tipoLaje.textContent=p.tipo;
+  const r=document.documentElement.style;r.setProperty("--grav",p.hero.grav);r.setProperty("--luz",p.hero.luz);r.setProperty("--sombra",p.hero.sombra);r.setProperty("--txt-hero",p.hero.txt);
+  fRes.textContent=NIVEL(p.res);fMan.textContent=NIVEL(p.man);fUso.textContent=p.uso;
+  mRes.style.setProperty("--v",p.res+"%");mMan.style.setProperty("--v",p.man+"%");
+  fichaAm.innerHTML=pedraSVG(k,800,200);
+  loteA.innerHTML=pedraSVG(k,300,300,"xMidYMid slice",0);loteB.innerHTML=pedraSVG(k,300,300,"xMidYMid slice",3);
+  desenhaAmb();atualiza();
+}
+escolher("carrara");
+</script>
+<script src="assets/base.js"></script>
+</body>
+</html>
