@@ -239,36 +239,6 @@ footer a{text-decoration:none}footer a:hover{color:#fff}
 footer .marca{color:#E3E5E3;margin-bottom:18px}
 footer .base{display:flex;justify-content:space-between;gap:20px;padding-top:28px;flex-wrap:wrap}
 
-
-/* história em rolagem: do bloco à bancada */
-.hist{background:var(--noite);color:#C9CECC;padding:0;position:relative}
-.hist .palco{height:100vh;max-width:var(--w);margin:0 auto;padding:110px 32px 40px;display:grid;grid-template-columns:.78fr 1.22fr;gap:40px;align-items:center}
-.hist .rotulo{color:var(--latao2)}
-.hist h2{color:#fff;font-size:clamp(34px,3.6vw,52px);margin-bottom:34px}
-.etps{list-style:none;display:grid;gap:4px}
-.etps li{padding:16px 0 16px 22px;border-left:2px solid #2C3337;opacity:.32;transition:opacity .4s,border-color .4s}
-.etps li.on{opacity:1;border-left-color:var(--latao2)}
-.etps b{display:block;font-family:var(--serif);font-weight:500;font-size:22px;color:#fff;margin-bottom:4px}
-.etps span{font-size:15.5px;line-height:1.5}
-.cont{display:flex;align-items:center;gap:14px;margin-top:30px;font-size:13px;color:#8E9592}
-.cont i{flex:1;height:2px;background:#2C3337;position:relative;overflow:hidden}
-.cont i::after{content:"";position:absolute;inset:0;background:var(--latao2);transform-origin:left;transform:scaleX(var(--pr,0))}
-.cena3d{position:relative;height:min(74vh,680px);perspective:1700px;perspective-origin:50% 35%;display:grid;place-items:center;overflow:hidden;border-radius:12px;background:radial-gradient(ellipse at 50% 70%,#22292D,#13171A 70%)}
-.cena3d .chao{position:absolute;left:0;right:0;bottom:0;height:34%;background:linear-gradient(0deg,#0E1113,transparent)}
-.escala{transform:scale(var(--esc,1))}
-.rig{position:relative;width:0;height:0;transform-style:preserve-3d}
-.cx{position:absolute;transform-style:preserve-3d;left:0;top:0}
-.cx .fc{position:absolute;left:0;top:0;overflow:hidden;background-size:cover;background-position:center;box-shadow:inset 0 0 0 1px rgba(255,255,255,.06)}
-.cx .fc.ld{filter:brightness(.72)}
-.cx .fc.tp{filter:brightness(1.08)}
-.brilho{position:absolute;inset:0;background:linear-gradient(105deg,transparent 35%,rgba(255,255,255,.55) 50%,transparent 65%);transform:translateX(var(--bx,-130%));pointer-events:none;mix-blend-mode:screen}
-.movel .fc{background:#F4F4F1}
-.movel .fc.fr{background:#F4F4F1;background-image:linear-gradient(90deg,transparent calc(33.3% - 1px),#C9CDCB calc(33.3% - 1px),#C9CDCB 33.3%,transparent 33.3%,transparent calc(66.6% - 1px),#C9CDCB calc(66.6% - 1px),#C9CDCB 66.6%,transparent 66.6%),linear-gradient(#1A1F22,#1A1F22);background-size:100% 100%,26px 3px;background-repeat:no-repeat,repeat-x;background-position:0 0,40px 22px}
-.movel .fc.ld{filter:brightness(.8)}
-.leg3d{position:absolute;left:20px;bottom:16px;font-size:13px;color:#8E9592;z-index:2}
-.passo-n{position:absolute;right:22px;top:18px;font-family:var(--serif);font-size:15px;color:var(--latao2);z-index:2}
-@media(max-width:1060px){.hist .palco{grid-template-columns:1fr;padding-top:96px;gap:18px;align-content:start}.hist h2{margin-bottom:14px;font-size:30px}.etps li{display:none;padding:6px 0 6px 16px}.etps li.on{display:block}.cena3d{height:52vh}.cont{margin-top:10px}}
-
 @media(max-width:1060px){
   .cab,.manif,.painel,.lote-s .w,.sim,.faq,.contato .w{grid-template-columns:1fr}
   .cab p{justify-self:start}
@@ -353,29 +323,6 @@ footer .base{display:flex;justify-content:space-between;gap:20px;padding-top:28p
     <div><strong>Na obra</strong><span>medição e instalação no local</span></div>
   </div>
 </div>
-
-
-<section class="hist" id="historia" aria-label="Da pedra bruta à bancada">
-  <div class="palco">
-    <div>
-      <span class="rotulo">Do bloco à sua casa</span>
-      <h2>Como uma pedra vira a sua bancada</h2>
-      <ol class="etps" id="etps">
-        <li class="on"><b>O bloco</b><span>A pedra natural sai da pedreira em grandes blocos, com milhões de anos de desenho por dentro.</span></li>
-        <li><b>As chapas</b><span>O bloco é serrado em chapas. Cada uma revela um veio diferente.</span></li>
-        <li><b>A escolha</b><span>Você vê as chapas com a gente e escolhe a que mais combina com o seu projeto.</span></li>
-        <li><b>Sua bancada</b><span>A chapa é cortada na medida, polida e instalada na sua casa.</span></li>
-      </ol>
-      <div class="cont"><span id="pnum">01</span><i id="pbar"></i><span>04</span></div>
-    </div>
-    <div class="cena3d" aria-hidden="true">
-      <span class="passo-n" id="pnome">O bloco</span>
-      <div class="chao"></div>
-      <div class="escala"><div class="rig" id="rig"></div></div>
-      <span class="leg3d">Role para ver. A pedra muda conforme a escolha no mostruário.</span>
-    </div>
-  </div>
-</section>
 
 <section id="sobre">
   <div class="w manif">
@@ -677,70 +624,8 @@ function escolher(k){
   mRes.style.setProperty("--v",p.res+"%");mMan.style.setProperty("--v",p.man+"%");
   fichaAm.innerHTML=pedraSVG(k,800,200);
   loteA.innerHTML=pedraSVG(k,300,300,"xMidYMid slice",0);loteB.innerHTML=pedraSVG(k,300,300,"xMidYMid slice",3);
-  desenhaAmb();atualiza();texturaBloco(k);
+  desenhaAmb();atualiza();
 }
-
-/* ---------- história em rolagem ---------- */
-const CW=440,CH=280,CD=26,NCH=5;
-const rig=document.getElementById("rig");
-function caixa(w,h,d,cls){
-  const c=document.createElement("div");c.className="cx "+(cls||"");
-  const f=(k,W,H,t)=>{const e=document.createElement("div");e.className="fc "+k;e.style.width=W+"px";e.style.height=H+"px";e.style.transform=t;c.appendChild(e);return e};
-  f("fr",w,h,`translate(${-w/2}px,${-h/2}px) translateZ(${d/2}px)`);
-  f("bk",w,h,`translate(${-w/2}px,${-h/2}px) rotateY(180deg) translateZ(${d/2}px)`);
-  f("ld",d,h,`translate(${-d/2}px,${-h/2}px) rotateY(90deg) translateZ(${w/2}px)`);
-  f("ld",d,h,`translate(${-d/2}px,${-h/2}px) rotateY(-90deg) translateZ(${w/2}px)`);
-  f("tp",w,d,`translate(${-w/2}px,${-d/2}px) rotateX(90deg) translateZ(${h/2}px)`);
-  f("ld",w,d,`translate(${-w/2}px,${-d/2}px) rotateX(-90deg) translateZ(${h/2}px)`);
-  rig.appendChild(c);return c;
-}
-const chapas=[...Array(NCH)].map((_,i)=>caixa(CW,CH,CD,"chapa"));
-const brilho=document.createElement("div");brilho.className="brilho";chapas[2].querySelector(".fr").appendChild(brilho);
-const movel=caixa(400,190,250,"movel");
-function texturaBloco(k){
-  const ns=t=>t.replace("<svg ",'<svg xmlns="http://www.w3.org/2000/svg" ');
-  const a="url(\"data:image/svg+xml,"+encodeURIComponent(ns(pedraSVG(k,CW,CH)))+"\")";
-  const b="url(\"data:image/svg+xml,"+encodeURIComponent(ns(pedraSVG(k,CW,CH,"xMidYMid slice",5)))+"\")";
-  chapas.forEach((c,i)=>c.querySelectorAll(".fc").forEach(f=>f.style.backgroundImage=i%2?b:a));
-}
-const ETP=document.querySelectorAll("#etps li"),NOMES=["O bloco","As chapas","A escolha","Sua bancada"];
-function marca(p){
-  const i=Math.min(3,Math.floor(p*4*0.999));
-  ETP.forEach((li,j)=>li.classList.toggle("on",j===i));
-  pnum.textContent="0"+(i+1);pnome.textContent=NOMES[i];pbar.style.setProperty("--pr",p);
-}
-function escala(){document.querySelector(".escala").style.setProperty("--esc",Math.min(1,document.querySelector(".cena3d").clientWidth/760))}
-escala();addEventListener("resize",escala);
-const reduzMov=matchMedia("(prefers-reduced-motion: reduce)").matches;
-function posFinal(){
-  gsap.set(rig,{rotationX:-24,rotationY:-32});
-  chapas.forEach((c,i)=>gsap.set(c,i===2?{x:0,y:-95,z:0,rotationX:90}:{autoAlpha:0}));
-  gsap.set(movel,{y:0,autoAlpha:1});marca(1);
-}
-if(typeof gsap!=="undefined"){
-  gsap.registerPlugin(ScrollTrigger);
-  gsap.set(rig,{rotationX:-20,rotationY:-38});
-  chapas.forEach((c,i)=>gsap.set(c,{z:(i-2)*CD,x:0,y:0}));
-  gsap.set(movel,{y:760,autoAlpha:1});
-  if(reduzMov){posFinal()}else{
-  const tl=gsap.timeline({defaults:{ease:"power2.inOut"},scrollTrigger:{trigger:"#historia",start:"top top",end:"+=3400",pin:true,scrub:1,onUpdate:st=>marca(st.progress)}});
-  tl.to(rig,{rotationY:-24,rotationX:-16,duration:1})
-    .to(chapas.map((c,i)=>c),{z:i=>(i-2)*95,duration:1.2},"<+.2")
-    .to(rig,{rotationY:-58,duration:1.2},"<")
-    .addLabel("leque")
-    .to(chapas,{x:i=>(i-2)*92,z:i=>Math.abs(i-2)*-90,rotationY:i=>(i-2)*-16,duration:1.3},"leque")
-    .to(rig,{rotationY:-6,rotationX:-6,duration:1.3},"leque")
-    .to(brilho,{"--bx":"130%",duration:.9,ease:"none"},"leque+=1")
-    .addLabel("bancada")
-    .to(chapas.filter((_,i)=>i!==2),{y:-520,scale:.6,duration:1.1,stagger:.05,ease:"power3.in"},"bancada")
-    .set(chapas.filter((_,i)=>i!==2),{autoAlpha:0})
-    .to(chapas[2],{x:0,z:0,rotationY:0,y:-95,rotationX:90,duration:1.3},"bancada+=.3")
-    .to(rig,{rotationX:-24,rotationY:-32,duration:1.3},"bancada+=.3")
-    .to(movel,{y:0,duration:1.1,ease:"power3.out"},"bancada+=.7")
-    .to({},{duration:.4});
-  }
-}
-
 escolher("carrara");
 </script>
 <script src="assets/base.js"></script>
