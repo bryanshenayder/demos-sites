@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="robots" content="noindex, nofollow">
 <title>Atelier dos Estofados | Reforma de sofás em Balneário Camboriú</title>
-<meta name="description" content="Reforma de sofás, capas sob medida, cadeiras e poltronas em Balneário Camboriú. Buscamos e entregamos na sua casa, no dia combinado.">
+<meta name="description" content="Reforma de sofás e capas sob medida em Balneário Camboriú. Buscamos e entregamos na sua casa, no dia combinado. 4,8 no Google.">
 <meta name="theme-color" content="#1E4E5F">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <meta property="og:type" content="website"><meta property="og:locale" content="pt_BR">
@@ -14,9 +14,9 @@
 <meta property="og:image" content="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=1200&h=630&q=80">
 <link rel="preload" href="assets/fonts/bricolage-grotesque-latin-standard-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preconnect" href="https://images.unsplash.com"><link rel="preconnect" href="https://images.pexels.com">
-<link rel="stylesheet" href="assets/base.css">
+<link rel="stylesheet" href="assets/base.css?v=461c3ddf">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"LocalBusiness","name":"Atelier dos Estofados","description":"Reforma de sofás, capas sob medida, cadeiras e poltronas, com busca e entrega.","telephone":"+55-47-98448-5012","address":{"@type":"PostalAddress","streetAddress":"R. 951, 283, sala comercial","addressLocality":"Balneário Camboriú","addressRegion":"SC","addressCountry":"BR"},"areaServed":"Balneário Camboriú e região","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens":"10:00","closes":"20:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"10:00","closes":"14:00"}]}
+{"@context":"https://schema.org","@type":"LocalBusiness","name":"Atelier dos Estofados","description":"Reforma de sofás e capas sob medida, com busca e entrega.","telephone":"+55-47-98448-5012","address":{"@type":"PostalAddress","streetAddress":"R. 951, 283, sala comercial","addressLocality":"Balneário Camboriú","addressRegion":"SC","addressCountry":"BR"},"areaServed":"Balneário Camboriú e região","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens":"10:00","closes":"20:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"10:00","closes":"14:00"}]}
 </script>
 <style>
 @font-face{font-family:Bricolage;src:url(assets/fonts/bricolage-grotesque-latin-standard-normal.woff2) format("woff2");font-weight:200 800;font-stretch:75% 100%;font-display:swap}
@@ -24,14 +24,14 @@
   --petroleo:#1E4E5F;--petroleo2:#173E4C;--petroleo3:#123341;--mostarda:#C99A2E;--mostarda2:#E2B84E;--rosa:#B5656B;--salvia:#7E9A86;
   --linho:#EEF0EE;--papel:#F7F8F7;--tinta:#1C2226;--suave:#5B6468;--linha:#D7DCDA;--tecido:#1E4E5F;
   --foco:#C99A2E;--loader-bg:#1E4E5F;--loader-fg:#fff;--aviso-h:30px;--fb1:#D9DFDD;--fb2:#B7C3C0;
-  --w:1260px;--raio:22px;
+  --w:1260px;--raio:22px;--mapa-bg:#B98A22;--mapa-fg:#1C2226;--sel-bg:#1E4E5F;--sel-fg:#fff;
 }
 body{font-family:Bricolage,system-ui,sans-serif;font-size:17.5px;line-height:1.55;color:var(--tinta);background:var(--linho);font-optical-sizing:auto}
 .w{max-width:var(--w);margin:0 auto;padding:0 32px}
 h1,h2,h3{font-weight:800;letter-spacing:-.035em;line-height:.98}
 .aviso-demo{background:var(--tinta);color:#C9D0CE}
 
-.btn{display:inline-flex;align-items:center;gap:12px;background:var(--tinta);color:#fff;text-decoration:none;padding:18px 30px;border-radius:999px;font-weight:600;font-size:16.5px;transition:background .25s,transform .25s}
+.btn{display:inline-flex;align-items:center;gap:12px;background:var(--tinta);color:#fff;text-decoration:none;padding:18px 30px;border-radius:999px;font-weight:600;font-size:16.5px;transition:background-color .2s ease,color .2s ease,transform .16s var(--ease-out)}
 .btn:hover{background:var(--petroleo)}
 .btn svg{width:18px;height:18px;transition:transform .25s}.btn:hover svg{transform:translateX(3px)}
 .btn.claro{background:#fff;color:var(--tinta)}.btn.claro:hover{background:var(--mostarda2)}
@@ -40,7 +40,7 @@ h1,h2,h3{font-weight:800;letter-spacing:-.035em;line-height:.98}
 
 /* topo */
 .topo .w{display:flex;align-items:center;justify-content:space-between;height:86px;gap:24px;transition:height .3s}
-.topo.rolou{background:rgba(238,240,238,.9);backdrop-filter:blur(12px) saturate(1.3);box-shadow:0 1px 0 var(--linha)}
+.topo.rolou{background:var(--linho)}
 .topo.rolou .w{height:70px}
 .marca{display:flex;align-items:center;gap:12px;text-decoration:none;font-weight:800;font-size:20px;letter-spacing:-.02em}
 .marca i{width:34px;height:34px;border-radius:11px;background:var(--tecido);transition:background .5s;position:relative;display:block}
@@ -57,12 +57,11 @@ h1,h2,h3{font-weight:800;letter-spacing:-.035em;line-height:.98}
 .hero{padding:150px 0 0;position:relative}
 .hero .w{display:grid;grid-template-columns:1.05fr 1fr;gap:56px;align-items:end}
 .hero h1{font-size:clamp(50px,6.4vw,98px);letter-spacing:-.03em}
-.hero h1 em{font-style:normal;color:var(--tecido);transition:color .5s}
 .hero .lead{font-size:clamp(18px,1.6vw,21px);max-width:470px;margin:30px 0 36px;color:#3A4348}
 .acoes{display:flex;gap:12px;flex-wrap:wrap}
 .selo{display:flex;align-items:center;gap:14px;margin-top:44px;color:var(--suave);font-size:15px}
 .selo b{font-size:38px;color:var(--tinta);letter-spacing:-.04em;line-height:1}
-.estrelas{color:var(--mostarda);letter-spacing:2px}
+.estrelas{color:var(--mostarda)}
 .hero .foto{position:relative;aspect-ratio:4/5;border-radius:var(--raio) var(--raio) 0 0;overflow:hidden;margin-bottom:-1px}
 .hero .foto img,.hero .foto .img-fb{width:100%;height:100%;object-fit:cover}
 .hero .cartao-flut{position:absolute;left:-44px;bottom:42px;z-index:2;background:#fff;border-radius:18px;padding:18px 20px;box-shadow:0 30px 60px -24px rgba(28,34,38,.45);display:flex;gap:14px;align-items:center;max-width:300px}
@@ -72,7 +71,7 @@ h1,h2,h3{font-weight:800;letter-spacing:-.035em;line-height:.98}
 .hero .cartao-flut svg{width:24px;height:24px}
 .faixa-hero{background:var(--petroleo);color:#fff}
 .faixa-hero .w{display:grid;grid-template-columns:repeat(4,1fr)}
-.faixa-hero .w>div{padding:34px 26px;border-left:1px solid #ffffff1f}
+.faixa-hero .w>div{padding:34px 26px}
 .faixa-hero .w>div:first-child{border-left:0;padding-left:0}
 .faixa-hero strong{display:block;font-size:40px;font-weight:800;letter-spacing:-.04em;line-height:1}
 .faixa-hero span{display:block;margin-top:8px;font-size:14.5px;color:#ffffffa8}
@@ -81,12 +80,10 @@ section{padding:136px 0}
 .cab{display:grid;grid-template-columns:1.1fr 1fr;gap:48px;align-items:end;margin-bottom:60px}
 .cab h2{font-size:clamp(40px,5vw,72px)}
 .cab p{max-width:460px;justify-self:end;font-size:18.5px;color:#3A4348}
-.rot{display:inline-flex;align-items:center;gap:10px;font-size:15px;font-weight:600;color:var(--petroleo);margin-bottom:20px}
-.rot::before{content:"";width:22px;height:2px;border-top:2px dashed currentColor}
 
 /* antes e depois */
-.cmp{aspect-ratio:16/8.5;border-radius:var(--raio);background:#E4E1DA;box-shadow:0 40px 80px -40px rgba(28,34,38,.5)}
-.cmp .rotc{position:absolute;bottom:20px;z-index:2;background:rgba(28,34,38,.72);color:#fff;font-size:14px;font-weight:600;padding:7px 14px;border-radius:999px;pointer-events:none;backdrop-filter:blur(4px)}
+.cmp{aspect-ratio:16/8.5;border-radius:var(--raio);background:#E4E1DA}
+.cmp .rotc{position:absolute;bottom:20px;z-index:2;background:rgba(28,34,38,.86);color:#fff;font-size:14px;font-weight:600;padding:7px 14px;border-radius:999px;pointer-events:none}
 .cmp .rotc.a{right:20px}.cmp .rotc.d{left:20px}
 .cmp-pe{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-top:18px;font-size:14.5px;color:var(--suave)}
 
@@ -96,43 +93,43 @@ section{padding:136px 0}
 .etapas .ft{aspect-ratio:4/3;overflow:hidden;position:relative}
 .etapas .ft img,.etapas .ft .img-fb{width:100%;height:100%;object-fit:cover}
 .etapas .tx{padding:28px 28px 32px;position:relative}
-.etapas .tx::before{content:counter(e);position:absolute;top:-28px;left:28px;width:56px;height:56px;border-radius:50%;background:var(--tecido);transition:background .5s;color:#fff;font-weight:800;font-size:22px;display:grid;place-items:center;box-shadow:0 0 0 6px #fff}
-.etapas strong{display:block;font-size:26px;letter-spacing:-.025em;margin:20px 0 6px}
+.etapas strong{display:block;font-size:26px;letter-spacing:-.025em;margin:0 0 6px}
 .etapas p{color:#3A4348}
 
 /* serviços */
 .serv{background:var(--petroleo);color:#fff;border-radius:40px;margin:0 16px}
-.serv .cab h2{color:#fff}.serv .cab p{color:#ffffffc0}.serv .rot{color:var(--mostarda2)}
+.serv .cab h2{color:#fff}.serv .cab p{color:#ffffffc0}
 .lista{display:grid;grid-template-columns:1fr 1fr;gap:0 64px}
 .lista>div{display:grid;grid-template-columns:64px 1fr auto;gap:22px;align-items:center;padding:30px 0;border-bottom:1px solid #ffffff26}
 .lista svg{width:58px;height:58px}
 .lista strong{display:block;font-size:26px;letter-spacing:-.025em;font-weight:700}
 .lista p{color:#ffffffb3;font-size:16px}
-.lista a{width:46px;height:46px;border-radius:50%;border:1px solid #ffffff4d;display:grid;place-items:center;text-decoration:none;transition:background .2s}
-.lista a:hover{background:#ffffff1f}
+.lista a{width:46px;height:46px;border-radius:50%;background:#ffffff1a;color:#fff;display:grid;place-items:center;text-decoration:none;transition:background-color .2s ease,color .2s ease,transform .16s var(--ease-out)}
+.lista a:hover{background:var(--mostarda2);color:var(--tinta)}
+.lista a:active{transform:scale(.94)}
 
 /* provador + orçamento */
 .orc{display:grid;grid-template-columns:1.1fr 1fr;gap:36px;align-items:start}
 .form{background:#fff;border-radius:var(--raio);padding:40px}
 .passo{margin-bottom:30px}
 .passo legend,.passo label.t{display:flex;align-items:baseline;gap:10px;font-weight:700;font-size:18px;margin-bottom:14px;letter-spacing:-.01em}
-.passo legend i{font-style:normal;display:inline-grid;place-items:center;width:28px;height:28px;border-radius:50%;background:var(--linho);font-size:14px}
 .passo legend span{color:var(--suave);font-weight:400;font-size:14px}
 fieldset{border:0}
 .op{display:flex;flex-wrap:wrap;gap:8px}
 .op input{position:absolute;opacity:0;pointer-events:none}
-.op label{padding:11px 18px;border:1.5px solid var(--linha);border-radius:999px;cursor:pointer;font-size:15.5px;transition:all .2s}
+.op label{padding:11px 18px;border:1.5px solid var(--linha);border-radius:999px;cursor:pointer;font-size:15.5px;transition:background-color .2s ease,border-color .2s ease,color .2s ease}
 .op label:hover{border-color:var(--tinta)}
 .op input:checked+label{background:var(--tinta);border-color:var(--tinta);color:#fff}
 .op input:focus-visible+label{outline:3px solid var(--mostarda);outline-offset:2px}
 .amostras{display:flex;gap:10px;flex-wrap:wrap}
-.am{width:54px;height:54px;border-radius:14px;border:3px solid transparent;position:relative;background:var(--c);transition:transform .2s}
-.am:hover{transform:translateY(-2px)}
+.am{width:54px;height:54px;border-radius:14px;border:3px solid transparent;position:relative;background:var(--c);transition:transform .16s var(--ease-out),border-color .2s ease}
+@media(hover:hover) and (pointer:fine){.am:hover{transform:translateY(-2px)}}
+.am:active{transform:scale(.95)}
 .am::after{content:"";position:absolute;inset:0;border-radius:11px;background:repeating-linear-gradient(0deg,#ffffff1c 0 2px,transparent 2px 4px),repeating-linear-gradient(90deg,#00000016 0 2px,transparent 2px 4px)}
 .am[aria-pressed="true"]{border-color:var(--tinta)}
 .passo input[type=text]{width:100%;padding:15px 18px;border:1.5px solid var(--linha);border-radius:14px}
 .resumo{position:sticky;top:96px;background:var(--tinta);color:#fff;border-radius:var(--raio);padding:32px;overflow:hidden}
-.resumo .mini{background:linear-gradient(180deg,#ffffff12,#ffffff05);border-radius:18px;padding:24px;margin-bottom:24px}
+.resumo .mini{background:#ffffff0d;border-radius:18px;padding:24px;margin-bottom:24px}
 .resumo .mini svg{width:100%;height:auto}
 .resumo .tec{font-size:14px;color:#ffffff99;margin:-10px 0 20px}
 .resumo .tec b{color:#fff}
@@ -145,8 +142,8 @@ fieldset{border:0}
 /* galeria */
 .gal{display:grid;grid-auto-flow:dense;grid-template-columns:repeat(4,1fr);grid-auto-rows:260px;gap:16px}
 .gal a{border-radius:18px;overflow:hidden;position:relative;display:block;background:#dfe3e1}
-.gal a img,.gal a .img-fb{width:100%;height:100%;object-fit:cover;transition:transform 1.2s cubic-bezier(.2,.7,.2,1)}
-.gal a:hover img{transform:scale(1.05)}
+.gal a img,.gal a .img-fb{width:100%;height:100%;object-fit:cover;transition:transform .7s var(--ease-out)}
+@media(hover:hover) and (pointer:fine){.gal a:hover img{transform:scale(1.04)}}
 .gal .x2{grid-column:span 2;grid-row:span 2}.gal .t2{grid-row:span 2}
 .nota-foto{font-size:14px;color:var(--suave);margin-top:18px}
 
@@ -156,9 +153,7 @@ fieldset{border:0}
 .g-sel b{font-size:80px;letter-spacing:-.05em;line-height:1}
 .marq{display:grid;gap:16px}
 .marq-t figure{width:360px;flex:none;background:var(--linho);border-radius:20px;padding:24px 26px;display:flex;flex-direction:column;gap:12px}
-.marq-t .quem{display:flex;align-items:center;gap:12px}
-.marq-t .av{width:40px;height:40px;border-radius:50%;display:grid;place-items:center;font-weight:800;color:#fff}
-.marq-t .quem b{display:block;font-size:15px}.marq-t .quem small{color:var(--suave);font-size:13px}
+.marq-t figcaption{margin-top:auto;font-size:14px;color:var(--suave)}
 
 /* faq */
 .faq{display:grid;grid-template-columns:1fr 1.5fr;gap:88px}
@@ -175,7 +170,7 @@ details.p .r{color:#3A4348}
 .contato dd{font-size:18px;font-weight:600}
 .contato iframe{width:100%;height:100%;min-height:520px;border:0}
 footer{padding:72px 0 40px;font-size:14.5px;color:var(--suave)}
-footer .top{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:40px;padding-bottom:48px;border-bottom:1px solid var(--linha)}
+footer .top{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:40px;padding-bottom:36px}
 footer .fh{font-weight:600;color:var(--tinta);font-size:15px;margin-bottom:14px}
 footer ul{list-style:none;display:grid;gap:9px}
 footer a{text-decoration:none}footer a:hover{color:var(--tinta)}
@@ -187,7 +182,7 @@ footer .base{display:flex;justify-content:space-between;gap:20px;padding-top:26p
   .cab p,.g-sel{justify-self:start}
   .hero .foto{aspect-ratio:4/3;border-radius:var(--raio)}
   .hero .cartao-flut{left:16px}
-  .faixa-hero .w{grid-template-columns:1fr 1fr}.faixa-hero .w>div:nth-child(3){border-left:0;padding-left:0}
+  .faixa-hero .w{grid-template-columns:1fr 1fr}.faixa-hero .w>div:nth-child(3){padding-left:0}
   .etapas{grid-template-columns:1fr}
   .resumo{position:static}
   .gal{grid-template-columns:1fr 1fr;grid-auto-rows:200px}
@@ -206,6 +201,7 @@ footer .base{display:flex;justify-content:space-between;gap:20px;padding-top:26p
   .marq-t figure{width:290px}
   .contato{border-radius:28px}
   footer .top{grid-template-columns:1fr}
+  .faixa-hero strong{font-size:32px}.faixa-hero .w>div{padding:26px 14px;min-width:0}
 }
 </style>
 </head>
@@ -234,7 +230,7 @@ footer .base{display:flex;justify-content:space-between;gap:20px;padding-top:26p
         <a class="btn" href="#orcamento">Montar meu orçamento <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 10h12M11 5l5 5-5 5"/></svg></a>
         <a class="btn claro" href="#antes-depois">Ver antes e depois</a>
       </div>
-      <div class="selo" data-hero-fade><b>4,8</b><div><div class="estrelas">★★★★★</div>138 avaliações no Google</div></div>
+      <div class="selo" data-hero-fade><b>4,8</b><div><span class="estrelas" role="img" aria-label="5 de 5 estrelas"></span>138 avaliações no Google</div></div>
     </div>
     <div class="foto-w" data-hero-fade style="position:relative">
      <div class="foto">
@@ -255,7 +251,7 @@ footer .base{display:flex;justify-content:space-between;gap:20px;padding-top:26p
 
 <section id="antes-depois">
   <div class="w">
-    <div class="cab"><div><span class="rot" data-reveal>Antes e depois</span><h2 data-split>Arraste e veja a diferença</h2></div><p data-reveal>Espuma afundada, tecido gasto e costura aberta saem. Entra estrutura firme e o tecido que você escolher lá no orçamento.</p></div>
+    <div class="cab"><div><h2 data-split>Arraste e veja a diferença</h2></div><p data-reveal>Espuma afundada, tecido gasto e costura aberta saem. Entra estrutura firme e o tecido que você escolher lá no orçamento.</p></div>
     <div class="cmp" data-compare data-reveal role="slider" tabindex="0" aria-label="Comparar antes e depois da reforma" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50">
       <div class="cam antes" id="cAntes"></div><div class="cam depois" id="cDepois"></div>
       <span class="rotc a">Antes</span><span class="rotc d">Depois</span>
@@ -268,7 +264,7 @@ footer .base{display:flex;justify-content:space-between;gap:20px;padding-top:26p
 
 <section style="padding-top:0">
   <div class="w">
-    <div class="cab"><div><span class="rot" data-reveal>Como funciona</span><h2 data-split>Você não precisa carregar o sofá</h2></div><p data-reveal>O estofado sai e volta da sua casa sem você levantar um dedo.</p></div>
+    <div class="cab"><div><h2 data-split>Você não precisa carregar o sofá</h2></div><p data-reveal>O estofado sai e volta da sua casa sem você levantar um dedo.</p></div>
     <ol class="etapas">
       <li data-reveal><div class="ft"><img loading="lazy" data-fb="Coleta" alt="Sala com sofá de couro caramelo" src="https://images.unsplash.com/photo-1616047006789-b7af5afb8c20?auto=format&fit=crop&w=900&q=75"></div><div class="tx"><strong>Buscamos</strong><p>Marcamos um horário e retiramos o estofado na sua casa.</p></div></li>
       <li data-reveal><div class="ft"><img loading="lazy" data-fb="Reforma" alt="Mãos costurando tecido cinza" src="https://images.pexels.com/photos/11482124/pexels-photo-11482124.jpeg?auto=compress&cs=tinysrgb&w=900"></div><div class="tx"><strong>Reformamos</strong><p>Troca de tecido, espuma ou estrutura, com acabamento caprichado.</p></div></li>
@@ -279,25 +275,25 @@ footer .base{display:flex;justify-content:space-between;gap:20px;padding-top:26p
 
 <section class="serv" id="servicos">
   <div class="w">
-    <div class="cab"><div><span class="rot" data-reveal>Serviços</span><h2 data-split>O que a gente faz</h2></div><p data-reveal>Do sofá da sala à cadeira da cozinha. Se tem estofado, a gente reforma.</p></div>
+    <div class="cab"><div><h2 data-split>O que a gente faz</h2></div><p data-reveal>Sofás e capas sob medida são o forte. Tem outra peça? Mande uma foto e consulte.</p></div>
     <div class="lista">
-      <div data-reveal><svg viewBox="0 0 56 56" fill="none" stroke="#E2B84E" stroke-width="2"><rect x="6" y="22" width="44" height="18" rx="6"/><rect x="12" y="12" width="32" height="14" rx="5"/><path d="M12 40v6M44 40v6"/></svg><div><strong>Reforma de sofás</strong><p>Tecido novo, espuma firme e estrutura revisada. Retrátil, fixo ou de canto.</p></div><a href="#orcamento" aria-label="Orçar reforma de sofá" data-tipo="0">→</a></div>
-      <div data-reveal><svg viewBox="0 0 56 56" fill="none" stroke="#E2B84E" stroke-width="2"><path d="M8 24c0-6 6-10 20-10s20 4 20 10v14H8z"/><path d="M14 38l-2 8M42 38l2 8M8 30h40" stroke-dasharray="3 3"/></svg><div><strong>Capas sob medida</strong><p>Feitas na medida exata do seu sofá, com entrega rápida.</p></div><a href="#orcamento" aria-label="Orçar capa sob medida" data-serv="2">→</a></div>
-      <div data-reveal><svg viewBox="0 0 56 56" fill="none" stroke="#E2B84E" stroke-width="2"><rect x="16" y="8" width="24" height="22" rx="4"/><rect x="12" y="30" width="32" height="8" rx="3"/><path d="M16 38v12M40 38v12"/></svg><div><strong>Cadeiras e poltronas</strong><p>Assentos e encostos refeitos para durar mais uns bons anos.</p></div><a href="#orcamento" aria-label="Orçar cadeiras" data-tipo="4">→</a></div>
-      <div data-reveal><svg viewBox="0 0 56 56" fill="none" stroke="#E2B84E" stroke-width="2"><rect x="8" y="10" width="40" height="26" rx="6"/><circle cx="20" cy="23" r="1.5" fill="#E2B84E"/><circle cx="28" cy="23" r="1.5" fill="#E2B84E"/><circle cx="36" cy="23" r="1.5" fill="#E2B84E"/><path d="M8 36v10M48 36v10"/></svg><div><strong>Cabeceiras e puffs</strong><p>Peças menores com o mesmo cuidado no acabamento.</p></div><a href="#orcamento" aria-label="Orçar cabeceira" data-tipo="5">→</a></div>
+      <div data-reveal><svg viewBox="0 0 56 56" fill="none" stroke="#E2B84E" stroke-width="2"><rect x="6" y="22" width="44" height="18" rx="6"/><rect x="12" y="12" width="32" height="14" rx="5"/><path d="M12 40v6M44 40v6"/></svg><div><strong>Reforma de sofás</strong><p>Tecido novo, espuma firme e estrutura revisada. Retrátil, fixo ou de canto.</p></div><a href="#orcamento" aria-label="Orçar reforma de sofá" data-tipo="0"><svg viewBox="0 0 20 20" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 10h12M11 5l5 5-5 5"/></svg></a></div>
+      <div data-reveal><svg viewBox="0 0 56 56" fill="none" stroke="#E2B84E" stroke-width="2"><path d="M8 24c0-6 6-10 20-10s20 4 20 10v14H8z"/><path d="M14 38l-2 8M42 38l2 8M8 30h40" stroke-dasharray="3 3"/></svg><div><strong>Capas sob medida</strong><p>Feitas na medida exata do seu sofá, com entrega rápida.</p></div><a href="#orcamento" aria-label="Orçar capa sob medida" data-serv="2"><svg viewBox="0 0 20 20" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 10h12M11 5l5 5-5 5"/></svg></a></div>
+      <div data-reveal><svg viewBox="0 0 56 56" fill="none" stroke="#E2B84E" stroke-width="2"><rect x="16" y="8" width="24" height="22" rx="4"/><rect x="12" y="30" width="32" height="8" rx="3"/><path d="M16 38v12M40 38v12"/></svg><div><strong>Cadeiras e poltronas</strong><p>Mande uma foto da peça pelo WhatsApp e consulte a reforma.</p></div><a href="#orcamento" aria-label="Orçar cadeiras" data-tipo="4"><svg viewBox="0 0 20 20" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 10h12M11 5l5 5-5 5"/></svg></a></div>
+      <div data-reveal><svg viewBox="0 0 56 56" fill="none" stroke="#E2B84E" stroke-width="2"><rect x="8" y="10" width="40" height="26" rx="6"/><circle cx="20" cy="23" r="1.5" fill="#E2B84E"/><circle cx="28" cy="23" r="1.5" fill="#E2B84E"/><circle cx="36" cy="23" r="1.5" fill="#E2B84E"/><path d="M8 36v10M48 36v10"/></svg><div><strong>Cabeceiras e puffs</strong><p>Peças menores também. Consulte com uma foto.</p></div><a href="#orcamento" aria-label="Orçar cabeceira" data-tipo="5"><svg viewBox="0 0 20 20" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 10h12M11 5l5 5-5 5"/></svg></a></div>
     </div>
   </div>
 </section>
 
 <section id="orcamento">
   <div class="w">
-    <div class="cab"><div><span class="rot" data-reveal>Orçamento</span><h2 data-split>Monte o seu e escolha o tecido</h2></div><p data-reveal>Quatro perguntas rápidas. A mensagem chega pronta no nosso WhatsApp e você só anexa uma foto do sofá.</p></div>
+    <div class="cab"><div><h2 data-split>Monte o seu e escolha o tecido</h2></div><p data-reveal>Quatro perguntas rápidas. A mensagem chega pronta no nosso WhatsApp e você só anexa uma foto do sofá.</p></div>
     <div class="orc">
       <form class="form" id="form" onsubmit="return false" data-reveal>
-        <fieldset class="passo"><legend><i>1</i>O que vamos reformar?</legend><div class="op" id="opTipo"></div></fieldset>
-        <fieldset class="passo" id="passoLug"><legend><i>2</i>Quantos lugares?</legend><div class="op" id="opLug"></div></fieldset>
-        <fieldset class="passo"><legend><i>3</i>O que precisa? <span>pode marcar mais de um</span></legend><div class="op" id="opServ"></div></fieldset>
-        <fieldset class="passo"><legend><i>4</i>Qual tecido você imagina?</legend><div class="amostras" id="amostras" role="group" aria-label="Escolher tecido"></div></fieldset>
+        <fieldset class="passo"><legend>O que vamos reformar?</legend><div class="op" id="opTipo"></div></fieldset>
+        <fieldset class="passo" id="passoLug"><legend>Quantos lugares?</legend><div class="op" id="opLug"></div></fieldset>
+        <fieldset class="passo"><legend>O que precisa? <span>pode marcar mais de um</span></legend><div class="op" id="opServ"></div></fieldset>
+        <fieldset class="passo"><legend>Qual tecido você imagina?</legend><div class="amostras" id="amostras" role="group" aria-label="Escolher tecido"></div></fieldset>
         <div class="passo" style="margin:0"><label class="t" for="bairro">Seu bairro <span style="color:var(--suave);font-weight:400;font-size:14px">opcional</span></label><input type="text" id="bairro" placeholder="Ex: Centro, Barra Sul, Nações"></div>
       </form>
       <aside class="resumo" data-reveal aria-live="polite">
@@ -306,7 +302,7 @@ footer .base{display:flex;justify-content:space-between;gap:20px;padding-top:26p
         <h3>Seu pedido</h3>
         <dl><dt>Peça</dt><dd id="rTipo"></dd><dt>Lugares</dt><dd id="rLug"></dd><dt>Serviço</dt><dd id="rServ"></dd><dt>Bairro</dt><dd id="rBai">a informar</dd></dl>
         <a class="btn zap" id="enviar" href="#" target="_blank" rel="noopener">Enviar pelo WhatsApp</a>
-        <p class="obs">Depois de enviar, mande uma foto do sofá na conversa. Com a foto, o valor sai mais certeiro.</p>
+        <p class="obs">Depois de enviar, mande uma foto do sofá na conversa. Com a foto, o valor sai mais certeiro.</p><p class="lgpd">Ao tocar no botão, o WhatsApp abre com a mensagem pronta e você decide se envia. Este site não guarda seus dados. <a href="privacidade.html">Privacidade</a></p>
       </aside>
     </div>
   </div>
@@ -314,12 +310,12 @@ footer .base{display:flex;justify-content:space-between;gap:20px;padding-top:26p
 
 <section style="padding-top:0">
   <div class="w">
-    <div class="cab"><div><span class="rot" data-reveal>Galeria</span><h2 data-split>Estofado bem feito dá gosto de ver</h2></div><p data-reveal>Toque numa foto para ver em tela cheia.</p></div>
+    <div class="cab"><div><h2 data-split>Estofado bem feito dá gosto de ver</h2></div><p data-reveal>Toque numa foto para ver em tela cheia.</p></div>
     <div class="gal">
       <a class="x2" href="#" data-lb="gal" data-legenda="Sofá em tecido verde" data-full="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=2000&q=85"><img loading="lazy" data-fb="Sofá verde" alt="Sofá em tecido verde" src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=1100&q=75"></a>
       <a href="#" data-lb="gal" data-legenda="Costura do acabamento" data-full="https://images.pexels.com/photos/11482148/pexels-photo-11482148.jpeg?auto=compress&cs=tinysrgb&w=1800"><img loading="lazy" data-fb="Costura" alt="Mãos costurando tecido" src="https://images.pexels.com/photos/11482148/pexels-photo-11482148.jpeg?auto=compress&cs=tinysrgb&w=700"></a>
       <a class="t2" href="#" data-lb="gal" data-legenda="Sofá de couro" data-full="https://images.unsplash.com/photo-1528827816431-d3f46a4427f7?auto=format&fit=crop&w=1800&q=85"><img loading="lazy" data-fb="Sofá de couro" alt="Sofá de couro em sala minimalista" src="https://images.unsplash.com/photo-1528827816431-d3f46a4427f7?auto=format&fit=crop&w=700&q=75"></a>
-      <a href="#" data-lb="gal" data-legenda="Máquina de costura na oficina" data-full="https://images.pexels.com/photos/12906320/pexels-photo-12906320.jpeg?auto=compress&cs=tinysrgb&w=1800"><img loading="lazy" data-fb="Oficina" alt="Mãos costurando na máquina" src="https://images.pexels.com/photos/12906320/pexels-photo-12906320.jpeg?auto=compress&cs=tinysrgb&w=700"></a>
+      <a href="#" data-lb="gal" data-legenda="Máquina de costura" data-full="https://images.pexels.com/photos/12906320/pexels-photo-12906320.jpeg?auto=compress&cs=tinysrgb&w=1800"><img loading="lazy" data-fb="Oficina" alt="Mãos costurando na máquina" src="https://images.pexels.com/photos/12906320/pexels-photo-12906320.jpeg?auto=compress&cs=tinysrgb&w=700"></a>
       <a href="#" data-lb="gal" data-legenda="Sectional em couro caramelo" data-full="https://images.unsplash.com/photo-1616047006789-b7af5afb8c20?auto=format&fit=crop&w=1800&q=85"><img loading="lazy" data-fb="Sofá de canto" alt="Sofá de canto em couro caramelo" src="https://images.unsplash.com/photo-1616047006789-b7af5afb8c20?auto=format&fit=crop&w=700&q=75"></a>
       <a href="#" data-lb="gal" data-legenda="Preparando a máquina" data-full="https://images.pexels.com/photos/12672105/pexels-photo-12672105.jpeg?auto=compress&cs=tinysrgb&w=1800"><img loading="lazy" data-fb="Máquina" alt="Mãos passando a linha na máquina de costura" src="https://images.pexels.com/photos/12672105/pexels-photo-12672105.jpeg?auto=compress&cs=tinysrgb&w=700"></a>
     </div>
@@ -328,18 +324,18 @@ footer .base{display:flex;justify-content:space-between;gap:20px;padding-top:26p
 </section>
 
 <section class="aval" id="avaliacoes">
-  <div class="w"><div class="cab"><div><span class="rot" data-reveal>Avaliações</span><h2 data-split>O pessoal de Balneário recomenda</h2></div><div class="g-sel" data-reveal><b>4,8</b><div><div class="estrelas" style="font-size:22px">★★★★★</div><span style="color:var(--suave)">138 avaliações no Google</span></div></div></div></div>
+  <div class="w"><div class="cab"><div><h2 data-split>O pessoal de Balneário recomenda</h2></div><div class="g-sel" data-reveal><b>4,8</b><div><span class="estrelas g" role="img" aria-label="5 de 5 estrelas"></span><span style="color:var(--suave)">138 avaliações no Google</span></div></div></div></div>
   <div class="marq" id="marq"></div>
 </section>
 
 <section>
   <div class="w faq">
-    <div><span class="rot" data-reveal>Dúvidas</span><h2 data-split>Perguntas frequentes</h2><p data-reveal style="margin-top:20px;color:#3A4348">Não achou? <a href="https://wa.me/5547984485012" target="_blank" rel="noopener">Chama no WhatsApp</a> que a gente responde.</p></div>
+    <div><h2 data-split>Perguntas frequentes</h2><p data-reveal style="margin-top:20px;color:#3A4348">Não achou? <a href="https://wa.me/5547984485012" target="_blank" rel="noopener">Chama no WhatsApp</a> que a gente responde.</p></div>
     <div data-reveal>
       <details class="p"><summary>Vocês buscam e entregam o sofá?</summary><p class="r">Sim. Marcamos um horário, retiramos na sua casa e devolvemos pronto no dia combinado.</p></details>
       <details class="p"><summary>Quanto tempo demora?</summary><p class="r">Depende do serviço. Capas sob medida saem rápido e reformas completas levam mais. O prazo é combinado no orçamento e a gente costuma entregar antes.</p></details>
-      <details class="p"><summary>Vale a pena reformar ou é melhor comprar um novo?</summary><p class="r">Se a estrutura de madeira está boa, reformar costuma sair mais em conta que um sofá novo da mesma qualidade, e você ainda escolhe o tecido.</p></details>
-      <details class="p"><summary>Posso escolher o tecido?</summary><p class="r">Pode. No orçamento você conta o que imagina e a gente apresenta as opções de tecido e cor para o seu estofado.</p></details>
+      <details class="p"><summary>Vale a pena reformar ou é melhor comprar um novo?</summary><p class="r">Se a estrutura está boa, reformar pode sair mais em conta que um sofá novo da mesma qualidade. Mande uma foto e compare com o orçamento.</p></details>
+      <details class="p"><summary>Posso escolher o tecido?</summary><p class="r">Pode. No orçamento você conta o que imagina e combina o tecido e a cor direto com o atelier.</p></details>
       <details class="p"><summary>Como faço o orçamento?</summary><p class="r">Use o montador desta página ou mande no WhatsApp uma foto do sofá, as medidas aproximadas e o que você quer mudar.</p></details>
     </div>
   </div>
@@ -349,7 +345,6 @@ footer .base{display:flex;justify-content:space-between;gap:20px;padding-top:26p
   <div class="w">
     <div class="contato">
       <div class="txt">
-        <span class="rot" data-reveal style="color:var(--tinta)">Contato</span>
         <h2 data-split>Manda uma foto do seu sofá</h2>
         <p data-reveal>Com a foto e as medidas, já passamos uma ideia de valor pelo WhatsApp.</p>
         <dl data-reveal>
@@ -359,7 +354,7 @@ footer .base{display:flex;justify-content:space-between;gap:20px;padding-top:26p
         </dl>
         <a class="btn" data-reveal href="https://wa.me/5547984485012?text=Ol%C3%A1!%20Quero%20um%20or%C3%A7amento%20de%20reforma." target="_blank" rel="noopener">Chamar no WhatsApp</a>
       </div>
-      <iframe title="Mapa do Atelier dos Estofados" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=Atelier+dos+Estofados+Balne%C3%A1rio+Cambori%C3%BA&output=embed"></iframe>
+      <div class="mapa" data-mapa="https://www.google.com/maps?q=Atelier+dos+Estofados+Balne%C3%A1rio+Cambori%C3%BA&output=embed" data-titulo="Mapa do Atelier dos Estofados"><svg viewBox="0 0 24 24" width="34" height="34" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.6"/></svg><button type="button" class="btn mapa-btn">Mostrar o mapa</button><a href="https://www.google.com/maps/search/?api=1&amp;query=Atelier+dos+Estofados+Balne%C3%A1rio+Cambori%C3%BA" target="_blank" rel="noopener">Abrir no Google Maps</a><small>O mapa é do Google e só carrega quando você toca no botão.</small></div>
     </div>
   </div>
 </section>
@@ -373,7 +368,7 @@ footer .base{display:flex;justify-content:space-between;gap:20px;padding-top:26p
       <div><p class="fh">Contato</p><ul><li><a href="https://wa.me/5547984485012" target="_blank" rel="noopener">(47) 98448-5012</a></li><li>R. 951, 283, Centro</li><li>Balneário Camboriú, SC</li></ul></div>
       <div><p class="fh">Horário</p><ul><li>Seg a sex, 10h às 20h</li><li>Sábado, 10h às 14h</li></ul></div>
     </div>
-    <div class="base"><span>© <span data-ano></span> Atelier dos Estofados</span><span>Fotos ilustrativas: Unsplash e Pexels</span></div>
+    <div class="base"><span>© <span data-ano></span> Atelier dos Estofados</span><span><a href="privacidade.html">Privacidade e termos</a> · Fotos ilustrativas: Unsplash e Pexels</span></div>
   </div>
 </footer>
 <a class="fab" href="https://wa.me/5547984485012" target="_blank" rel="noopener" aria-label="Falar no WhatsApp"><svg viewBox="0 0 32 32"><path d="M16 3C8.8 3 3 8.7 3 15.8c0 2.5.7 4.9 2 7L3 29l6.4-2c2 1.1 4.3 1.7 6.6 1.7 7.2 0 13-5.7 13-12.8S23.2 3 16 3zm0 23.4c-2.1 0-4.1-.6-5.9-1.7l-.4-.3-3.8 1.2 1.2-3.7-.3-.4a10.6 10.6 0 0 1-1.7-5.7C5.1 9.9 10 5.2 16 5.2s10.9 4.7 10.9 10.6S22 26.4 16 26.4zm6-7.9c-.3-.2-1.9-.9-2.2-1-.3-.1-.5-.2-.7.2l-1 1.2c-.2.2-.4.2-.7.1-.3-.2-1.4-.5-2.6-1.6-1-.9-1.6-1.9-1.8-2.2-.2-.3 0-.5.1-.7l.5-.6.3-.5v-.5l-1-2.4c-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4-.3.3-1.1 1.1-1.1 2.7s1.2 3.1 1.3 3.3c.2.2 2.3 3.5 5.6 4.9 2.8 1.1 3.3.9 3.9.8.6-.1 1.9-.8 2.2-1.5.3-.7.3-1.4.2-1.5-.1-.2-.3-.3-.6-.4z"/></svg></a>
@@ -448,11 +443,11 @@ function pinta(){
   document.querySelectorAll(".am").forEach(b=>b.setAttribute("aria-pressed",b.dataset.c===tec[0]));
   atualiza();
 }
-const AV=[["A capa do sofá ficou pronta em três dias, com ótima qualidade. Impressionante a velocidade no atendimento.","#1E4E5F"],["Amei o resultado, ficou mais bonito do que eu esperava! Parabéns pelo trabalho.","#B5656B"],["Pode confiar. Marca hora para retirar, é pontual e entrega sempre antes do prazo.","#C99A2E"],["Marcaram a data, buscaram o sofá, arrumaram e entregaram no dia combinado. Ficou impecável.","#7E9A86"],["Equipe atenciosa e educada, desde o atendimento no WhatsApp até a coleta dos móveis.","#3B2F2A"]];
-const card=([t,c])=>`<figure><div class="quem"><span class="av" style="background:${c}" aria-hidden="true">★</span><div><b>Cliente no Google</b><small>Avaliação real</small></div></div><blockquote>“${t}”</blockquote></figure>`;
+const AV=[["Impressionante a velocidade no atendimento. O Zeca me entregou a capa do sofá em três dias após o pedido, com ótima qualidade.","#1E4E5F"],["Amei o resultado ficou mais bonito de que esperava! Parabéns pelo trabalho!","#B5656B"],["Pode confiar, já fiz diversos serviços, marca hora para retirar é pontual entrega sempre antes do prazo gente boa honesto muito profissional","#C99A2E"],["Tive uma excelente experiência, marcaram a data de pegar o sofá buscaram, arrumaram e entregaram na data que combinamos, o sofá ficou impecável, super indico, são muito pontuais.","#7E9A86"],["Sua equipe tb fazem toda a diferença, desde o atendimento via Whats como a coleta dos móveis, equipe atenciosa e educada.","#3B2F2A"]];
+const card=([t,c])=>`<figure><span class="estrelas" role="img" aria-label="5 de 5 estrelas"></span><blockquote>“${t}”</blockquote><figcaption>Cliente no Google</figcaption></figure>`;
 document.getElementById("marq").innerHTML=`<div class="marq-t" data-marquee style="--dur:60s">${[AV[0],AV[1],AV[2],AV[0],AV[1],AV[2]].map(card).join("")}</div><div class="marq-t rev" data-marquee style="--dur:70s">${[AV[3],AV[4],AV[2],AV[3],AV[4],AV[2]].map(card).join("")}</div>`;
 pinta();
 </script>
-<script src="assets/base.js"></script>
+<script src="assets/base.js?v=461c3ddf"></script>
 </body>
 </html>

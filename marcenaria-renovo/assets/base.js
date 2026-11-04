@@ -68,8 +68,8 @@
     if (sessionStorage.getItem("visto") || semMov) { loader.remove(); document.documentElement.classList.add("carregado"); }
     else {
       sessionStorage.setItem("visto", 1);
-      window.addEventListener("load", () => setTimeout(fimLoader, 650));
-      setTimeout(fimLoader, 2200);
+      window.addEventListener("load", () => setTimeout(fimLoader, 300));
+      setTimeout(fimLoader, 1800);
     }
   }
 
@@ -101,7 +101,7 @@
     });
     ScrollTrigger.batch("[data-reveal]", {
       start: "top 88%",
-      onEnter: (els) => gsap.fromTo(els, { y: 36, opacity: 0 }, { y: 0, opacity: 1, duration: 1, ease: "power3.out", stagger: 0.08, overwrite: true }),
+      onEnter: (els) => gsap.fromTo(els, { y: 24, opacity: 0 }, { y: 0, opacity: 1, duration: 0.9, ease: "expo.out", stagger: 0.07, overwrite: true }),
     });
     gsap.set("[data-reveal]", { opacity: 0 });
     $$("[data-parallax]").forEach((el) => {
@@ -172,13 +172,13 @@
         const mostra = f === "todos" || it.dataset.cat.split(" ").includes(f);
         it.hidden = !mostra;
       });
-      if (temGsap && !semMov) gsap.fromTo($$("[data-cat]:not([hidden])", alvo), { opacity: 0, y: 16 }, { opacity: 1, y: 0, duration: 0.5, stagger: 0.04 });
+      if (temGsap && !semMov) gsap.fromTo($$("[data-cat]:not([hidden])", alvo), { opacity: 0, y: 16 }, { opacity: 1, y: 0, duration: 0.45, ease: "expo.out", stagger: 0.04 });
       if (typeof ScrollTrigger !== "undefined") ScrollTrigger.refresh();
     });
   });
   const lb = document.createElement("div");
   lb.className = "lb"; lb.setAttribute("role", "dialog"); lb.setAttribute("aria-modal", "true"); lb.setAttribute("aria-label", "Foto ampliada");
-  lb.innerHTML = '<button class="lb-x" aria-label="Fechar">×</button><button class="lb-a" aria-label="Anterior">‹</button><figure><img alt=""><figcaption></figcaption></figure><button class="lb-p" aria-label="Próxima">›</button>';
+  lb.innerHTML = '<button class="lb-x" aria-label="Fechar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg></button><button class="lb-a" aria-label="Anterior"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg></button><figure><img alt=""><figcaption></figcaption></figure><button class="lb-p" aria-label="Próxima"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg></button>';
   document.body.appendChild(lb);
   let grupo = [], idx = 0, origem = null;
   const mostra = () => { const it = grupo[idx]; const img = $("img", it); $("img", lb).src = it.dataset.full || (img && img.src) || ""; $("img", lb).alt = img ? img.alt : ""; $("figcaption", lb).textContent = it.dataset.legenda || (img ? img.alt : ""); };
@@ -196,6 +196,27 @@
   document.addEventListener("keydown", (e) => {
     if (!lb.classList.contains("on")) return;
     if (e.key === "Escape") fecha(); if (e.key === "ArrowRight") $(".lb-p", lb).click(); if (e.key === "ArrowLeft") $(".lb-a", lb).click();
+  });
+
+  /* ---------- mapa só carrega no clique (sem cookies do Google antes disso) ---------- */
+  $$("[data-mapa]").forEach((m) => {
+    const b = $(".mapa-btn", m); if (!b) return;
+    b.addEventListener("click", () => {
+      const f = document.createElement("iframe");
+      f.src = m.dataset.mapa; f.title = m.dataset.titulo || "Mapa"; f.loading = "lazy";
+      f.referrerPolicy = "no-referrer-when-downgrade";
+      m.appendChild(f); m.classList.add("on"); f.focus();
+    });
+  });
+
+  /* ---------- teclado: Esc fecha o menu, Tab fica preso na foto ampliada ---------- */
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && document.body.classList.contains("menu-aberto") && btnMenu) { btnMenu.click(); btnMenu.focus(); }
+    if (e.key === "Tab" && lb.classList.contains("on")) {
+      const bs = $$("button", lb), i = bs.indexOf(document.activeElement);
+      e.preventDefault();
+      bs[(i + (e.shiftKey ? -1 : 1) + bs.length) % bs.length].focus();
+    }
   });
 
   /* ---------- ano no rodapé ---------- */

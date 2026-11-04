@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="robots" content="noindex, nofollow">
 <title>Marcenaria Renovo | Móveis planejados em Jundiaí</title>
-<meta name="description" content="Cozinhas, dormitórios, closets e ambientes completos sob medida em Jundiaí. Projeto, fabricação e montagem com entrega antes do prazo.">
+<meta name="description" content="Móveis planejados sob medida em Jundiaí. Do projeto à montagem. 5,0 no Google, com clientes contando entrega antes do prazo.">
 <meta name="theme-color" content="#2B2E33">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <meta property="og:type" content="website"><meta property="og:locale" content="pt_BR">
@@ -14,17 +14,17 @@
 <meta property="og:image" content="https://images.unsplash.com/photo-1649068533606-0e7ef6786214?auto=format&fit=crop&w=1200&h=630&q=80">
 <link rel="preload" href="assets/fonts/archivo-latin-standard-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preconnect" href="https://images.unsplash.com">
-<link rel="stylesheet" href="assets/base.css">
+<link rel="stylesheet" href="assets/base.css?v=461c3ddf">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"FurnitureStore","name":"Marcenaria Renovo","description":"Móveis planejados sob medida: cozinhas, dormitórios, closets e ambientes comerciais.","telephone":"+55-11-97464-3357","address":{"@type":"PostalAddress","streetAddress":"R. Florindo Zambon, 1581","addressLocality":"Jundiaí","addressRegion":"SP","addressCountry":"BR"},"areaServed":"Jundiaí e região","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens":"08:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"08:00","closes":"13:00"}]}
+{"@context":"https://schema.org","@type":"FurnitureStore","name":"Marcenaria Renovo","description":"Móveis planejados sob medida, do projeto à montagem.","telephone":"+55-11-97464-3357","address":{"@type":"PostalAddress","streetAddress":"R. Florindo Zambon, 1581","addressLocality":"Jundiaí","addressRegion":"SP","addressCountry":"BR"},"areaServed":"Jundiaí e região","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens":"08:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"08:00","closes":"13:00"}]}
 </script>
 <style>
 @font-face{font-family:Archivo;src:url(assets/fonts/archivo-latin-standard-normal.woff2) format("woff2");font-weight:100 900;font-stretch:62% 125%;font-display:swap}
 :root{
-  --papel:#F7F7F4;--papel2:#EFEFEA;--grafite:#2B2E33;--carvao:#1E2024;--lapis:#6A6F76;--linha:#DADBD6;
+  --papel:#F7F7F4;--papel2:#EFEFEA;--grafite:#2B2E33;--carvao:#1E2024;--lapis:#5E636A;--linha:#DADBD6;
   --freijo:#B07A4B;--freijo2:#C99467;--salvia:#6E8B74;--acab:#B07A4B;
   --foco:#B07A4B;--loader-bg:#F7F7F4;--loader-fg:#2B2E33;--aviso-h:30px;--fb1:#E4DED4;--fb2:#C9BBA8;
-  --w:1280px;
+  --w:1280px;--mapa-bg:#EFEFEA;--mapa-fg:#2B2E33;--sel-bg:#B07A4B;--sel-fg:#fff;
 }
 body{font-family:Archivo,system-ui,sans-serif;font-size:17px;line-height:1.6;color:var(--grafite);background:var(--papel);font-stretch:100%}
 .w{max-width:var(--w);margin:0 auto;padding:0 32px}
@@ -32,7 +32,7 @@ h1,h2,h3{font-weight:800;font-stretch:72%;line-height:.95;letter-spacing:-.005em
 .aviso-demo{background:var(--carvao);color:#C7C9CC}
 .mono{font-stretch:100%;font-variant-numeric:tabular-nums}
 
-.btn{display:inline-flex;align-items:center;gap:12px;background:var(--carvao);color:#fff;text-decoration:none;padding:17px 28px;border-radius:4px;font-weight:600;font-size:16px;transition:background .25s}
+.btn{display:inline-flex;align-items:center;gap:12px;background:var(--carvao);color:#fff;text-decoration:none;padding:17px 28px;border-radius:4px;font-weight:600;font-size:16px;transition:background-color .2s ease,color .2s ease,transform .16s var(--ease-out)}
 .btn:hover{background:#000}
 .btn svg{width:18px;height:18px;transition:transform .25s}.btn:hover svg{transform:translateX(3px)}
 .btn.madeira{background:#8F5E35;color:#fff}.btn.madeira:hover{background:#7A4F2C}
@@ -41,7 +41,7 @@ h1,h2,h3{font-weight:800;font-stretch:72%;line-height:.95;letter-spacing:-.005em
 
 /* topo */
 .topo .w{display:flex;align-items:center;justify-content:space-between;height:84px;gap:24px;transition:height .3s}
-.topo.rolou{background:rgba(247,247,244,.92);backdrop-filter:blur(12px);box-shadow:0 1px 0 var(--linha)}
+.topo.rolou{background:var(--papel)}
 .topo.rolou .w{height:68px}
 .marca{display:flex;align-items:center;gap:12px;text-decoration:none}
 .marca svg{width:36px;height:36px}
@@ -56,13 +56,13 @@ h1,h2,h3{font-weight:800;font-stretch:72%;line-height:.95;letter-spacing:-.005em
 
 /* hero */
 .hero{padding:150px 0 90px}
-.hero .w{display:grid;grid-template-columns:1fr 1.12fr;gap:60px;align-items:center}
-.hero h1{font-size:clamp(54px,6.8vw,106px)}
+.hero .w{display:grid;grid-template-columns:1.1fr 1fr;gap:56px;align-items:center}
+.hero h1{font-size:clamp(48px,5.6vw,82px)}
 .hero .lead{font-size:clamp(18px,1.5vw,21px);max-width:440px;margin:30px 0 36px;color:#4A4E54}
 .acoes{display:flex;gap:12px;flex-wrap:wrap}
 .selo{display:flex;align-items:center;gap:14px;margin-top:44px;font-size:15px;color:var(--lapis)}
 .selo b{font-size:40px;font-weight:800;font-stretch:72%;color:var(--carvao);line-height:1}
-.estrelas{color:var(--freijo);letter-spacing:2px}
+.estrelas{color:var(--freijo)}
 .prancha{position:relative;aspect-ratio:5/4;border-radius:4px;overflow:hidden;background:var(--carvao)}
 .prancha img,.prancha .img-fb{width:100%;height:100%;object-fit:cover}
 .prancha svg.cota{position:absolute;inset:0;width:100%;height:100%;z-index:2;pointer-events:none}
@@ -71,11 +71,12 @@ h1,h2,h3{font-weight:800;font-stretch:72%;line-height:.95;letter-spacing:-.005em
 .traco{stroke-dasharray:2000;stroke-dashoffset:2000;animation:desenha 2.6s .6s cubic-bezier(.4,.1,.2,1) forwards}
 .rot-c{opacity:0;animation:aparece .6s 2.4s forwards}
 @keyframes desenha{to{stroke-dashoffset:0}}@keyframes aparece{to{opacity:1}}
+@media(prefers-reduced-motion:reduce){.traco{stroke-dashoffset:0}.rot-c{opacity:1}}
 
 /* números */
-.numeros{border-top:1px solid var(--linha);border-bottom:1px solid var(--linha)}
+.numeros{background:var(--papel2)}
 .numeros .w{display:grid;grid-template-columns:repeat(4,1fr)}
-.numeros .w>div{padding:36px 26px;border-left:1px solid var(--linha)}
+.numeros .w>div{padding:36px 26px}
 .numeros .w>div:first-child{border-left:0;padding-left:0}
 .numeros strong{display:block;font-size:52px;font-weight:800;font-stretch:72%;line-height:1;color:var(--carvao)}
 .numeros span{display:block;margin-top:8px;font-size:14.5px;color:var(--lapis)}
@@ -84,8 +85,6 @@ section{padding:136px 0}
 .cab{display:grid;grid-template-columns:1.15fr 1fr;gap:48px;align-items:end;margin-bottom:60px}
 .cab h2{font-size:clamp(44px,6vw,88px)}
 .cab p{max-width:460px;justify-self:end;font-size:18px;color:#4A4E54}
-.rot{display:flex;align-items:center;gap:12px;font-size:14px;font-weight:600;color:#8A5A31;margin-bottom:20px}
-.rot::before{content:"";width:28px;height:1px;background:currentColor}
 
 /* frase */
 .frase{background:var(--carvao);color:#fff}
@@ -100,11 +99,10 @@ section{padding:136px 0}
 .form{background:#fff;border:1px solid var(--linha);border-radius:4px;padding:36px}
 .passo{margin-bottom:30px}
 .passo legend,.passo>label{display:flex;gap:12px;align-items:baseline;font-weight:700;font-size:18px;margin-bottom:14px}
-.passo legend i,.passo>label i{font-style:normal;font-size:13px;color:#8A5A31;font-weight:700}
 fieldset{border:0}
 .formatos{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
 .formatos input,.op input{position:absolute;opacity:0;pointer-events:none}
-.formatos label{border:1.5px solid var(--linha);border-radius:4px;padding:14px 10px 12px;text-align:center;cursor:pointer;font-size:14px;font-weight:600;transition:all .2s}
+.formatos label{border:1.5px solid var(--linha);border-radius:4px;padding:14px 10px 12px;text-align:center;cursor:pointer;font-size:14px;font-weight:600;transition:background-color .2s ease,border-color .2s ease,transform .16s var(--ease-out)}
 .formatos label svg{width:100%;height:44px;margin-bottom:8px}
 .formatos label svg path{fill:none;stroke:var(--lapis);stroke-width:5;stroke-linecap:square}
 .formatos input:checked+label{border-color:var(--carvao);background:var(--papel2)}
@@ -115,11 +113,12 @@ fieldset{border:0}
 .medidas input{width:100%;padding:13px 14px;border:1.5px solid var(--linha);border-radius:4px;margin-top:4px;font-variant-numeric:tabular-nums}
 .medidas .off{opacity:.35;pointer-events:none}
 .acabs{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
-.acab{border:1.5px solid var(--linha);border-radius:4px;padding:8px;text-align:left;font-size:13px;font-weight:600}
+.acab{border:1.5px solid var(--linha);border-radius:4px;padding:8px;text-align:left;font-size:13px;font-weight:600;transition:border-color .2s ease,background-color .2s ease,transform .16s var(--ease-out)}
+.acab:active,.formatos label:active{transform:scale(.97)}
 .acab i{display:block;height:46px;border-radius:2px;margin-bottom:8px;background:var(--c)}
 .acab[aria-pressed="true"]{border-color:var(--carvao);background:var(--papel2)}
 .op{display:flex;flex-wrap:wrap;gap:8px}
-.op label{padding:10px 16px;border:1.5px solid var(--linha);border-radius:999px;cursor:pointer;font-size:15px;transition:all .2s}
+.op label{padding:10px 16px;border:1.5px solid var(--linha);border-radius:999px;cursor:pointer;font-size:15px;transition:background-color .2s ease,border-color .2s ease,color .2s ease}
 .op input:checked+label{background:var(--carvao);border-color:var(--carvao);color:#fff}
 .planta{position:sticky;top:96px;background:var(--carvao);color:#fff;border-radius:4px;overflow:hidden}
 .planta .tela{position:relative;background:#24272B;background-image:linear-gradient(#ffffff0d 1px,transparent 1px),linear-gradient(90deg,#ffffff0d 1px,transparent 1px);background-size:24px 24px;padding:24px}
@@ -141,20 +140,19 @@ fieldset{border:0}
 .linha-t{position:relative;display:grid;grid-template-columns:repeat(4,1fr);gap:0;counter-reset:e;list-style:none}
 .linha-t::before{content:"";position:absolute;top:0;left:0;right:0;height:2px;background:var(--linha)}
 .linha-t .prog{position:absolute;top:0;left:0;height:2px;width:100%;background:var(--freijo);transform-origin:left;transform:scaleX(0);z-index:1}
-.linha-t li{counter-increment:e;padding:30px 26px 0 0}
-.linha-t li+li{padding-left:26px;border-left:1px solid var(--linha)}
-.linha-t li::before{content:"Etapa " counter(e);display:block;font-size:13px;font-weight:700;color:#8A5A31;margin-bottom:12px}
+.linha-t li{padding:34px 26px 0 0}
+.linha-t li+li{padding-left:26px}
 .linha-t strong{display:block;font-size:30px;font-weight:800;font-stretch:72%;line-height:1;margin-bottom:10px;color:var(--carvao)}
 .linha-t p{color:#4A4E54}
 
 /* galeria */
 .filtros{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:28px}
-.filtros button{padding:10px 18px;border-radius:999px;border:1.5px solid var(--linha);font-size:15px;font-weight:500}
+.filtros button{padding:10px 18px;border-radius:999px;border:1.5px solid var(--linha);font-size:15px;font-weight:500;transition:background-color .2s ease,border-color .2s ease,color .2s ease,transform .16s var(--ease-out)}
 .filtros button[aria-pressed="true"]{background:var(--carvao);border-color:var(--carvao);color:#fff}
 .gal{display:grid;grid-template-columns:repeat(6,1fr);grid-auto-rows:200px;gap:14px;grid-auto-flow:dense}
 .gal a{position:relative;overflow:hidden;border-radius:4px;display:block;background:var(--papel2)}
-.gal a img,.gal a .img-fb{width:100%;height:100%;object-fit:cover;transition:transform 1.2s cubic-bezier(.2,.7,.2,1)}
-.gal a:hover img{transform:scale(1.05)}
+.gal a img,.gal a .img-fb{width:100%;height:100%;object-fit:cover;transition:transform .7s var(--ease-out)}
+@media(hover:hover) and (pointer:fine){.gal a:hover img{transform:scale(1.04)}}
 .gal a span{position:absolute;left:0;right:0;bottom:0;padding:14px 16px;color:#fff;font-size:14px;background:linear-gradient(0deg,rgba(30,32,36,.7),transparent);opacity:0;transition:opacity .3s}
 .gal a:hover span,.gal a:focus-visible span{opacity:1}
 .ga{grid-column:span 4;grid-row:span 2}.gb{grid-column:span 2;grid-row:span 2}.gc{grid-column:span 2}.gd{grid-column:span 2}.ge{grid-column:span 2}
@@ -181,19 +179,19 @@ details.p .r{color:#4A4E54}
 .contato dd{font-size:18px}
 .contato iframe{width:100%;height:100%;min-height:540px;border:0;filter:grayscale(.8)}
 footer{background:var(--carvao);color:#9A9EA4;padding:72px 0 40px;margin-top:136px;font-size:14.5px}
-footer .top{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:40px;padding-bottom:48px;border-bottom:1px solid #ffffff14}
+footer .top{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:40px;padding-bottom:36px}
 footer .fh{font-weight:600;color:#fff;font-size:15px;margin-bottom:14px}
 footer ul{list-style:none;display:grid;gap:9px}
 footer a{text-decoration:none}footer a:hover{color:#fff}
-footer .marca{color:#fff;margin-bottom:16px}
+footer .marca{color:#fff;margin-bottom:16px}footer .marca small{color:#A9ADB3}
 footer .base{display:flex;justify-content:space-between;gap:20px;padding-top:26px;flex-wrap:wrap}
 
 @media(max-width:1060px){
   .hero .w,.cab,.mont,.faq,.contato{grid-template-columns:1fr}
   .cab p,.g-sel{justify-self:start}
-  .numeros .w{grid-template-columns:1fr 1fr}.numeros .w>div:nth-child(3){border-left:0;padding-left:0}
+  .numeros .w{grid-template-columns:1fr 1fr}.numeros .w>div:nth-child(3){padding-left:0}
   .planta{position:static}
-  .linha-t{grid-template-columns:1fr 1fr;row-gap:36px}.linha-t li:nth-child(3){border-left:0;padding-left:0}
+  .linha-t{grid-template-columns:1fr 1fr;row-gap:36px}.linha-t li:nth-child(3){padding-left:0}
   .frase li{grid-template-columns:1fr;gap:8px}
   .gal{grid-template-columns:1fr 1fr}.ga{grid-column:span 2}.gb,.gc,.gd,.ge{grid-column:span 1;grid-row:span 1}
   footer .top{grid-template-columns:1fr 1fr}
@@ -206,9 +204,10 @@ footer .base{display:flex;justify-content:space-between;gap:20px;padding-top:26p
   .form{padding:24px}
   .formatos,.acabs{grid-template-columns:1fr 1fr}
   .medidas{grid-template-columns:1fr 1fr 1fr}
-  .linha-t{grid-template-columns:1fr}.linha-t li{border-left:0!important;padding-left:0!important}
+  .linha-t{grid-template-columns:1fr}.linha-t li{padding-left:0!important}
   .marq-t figure{width:300px}
   footer .top{grid-template-columns:1fr}
+  .numeros strong{font-size:38px}.numeros .w>div{padding:28px 14px;min-width:0}
 }
 </style>
 </head>
@@ -232,12 +231,12 @@ footer .base{display:flex;justify-content:space-between;gap:20px;padding-top:26p
   <div class="w">
     <div>
       <h1 data-split>Móveis planejados, entregues antes do prazo.</h1>
-      <p class="lead" data-hero-fade>Cozinhas, dormitórios e ambientes completos em Jundiaí. Do projeto à montagem, com a mesma equipe.</p>
+      <p class="lead" data-hero-fade>Cozinhas e ambientes planejados em Jundiaí, do projeto à montagem.</p>
       <div class="acoes" data-hero-fade>
         <a class="btn madeira" href="#montador">Montar minha cozinha <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 10h12M11 5l5 5-5 5"/></svg></a>
         <a class="btn linha" href="#projetos">Ver projetos</a>
       </div>
-      <div class="selo" data-hero-fade><b>5,0</b><div><div class="estrelas">★★★★★</div>99 avaliações no Google</div></div>
+      <div class="selo" data-hero-fade><b>5,0</b><div><span class="estrelas" role="img" aria-label="5 de 5 estrelas"></span>99 avaliações no Google</div></div>
     </div>
     <figure class="prancha" data-hero-fade>
       <img data-hero-img data-fb="Cozinha planejada em madeira" fetchpriority="high" alt="Cozinha planejada com armários de madeira" src="https://images.unsplash.com/photo-1649068533606-0e7ef6786214?auto=format&fit=crop&w=1500&q=80" srcset="https://images.unsplash.com/photo-1649068533606-0e7ef6786214?auto=format&fit=crop&w=800&q=75 800w,https://images.unsplash.com/photo-1649068533606-0e7ef6786214?auto=format&fit=crop&w=1500&q=80 1500w" sizes="(max-width:1060px) 100vw, 55vw">
@@ -258,38 +257,38 @@ footer .base{display:flex;justify-content:space-between;gap:20px;padding-top:26p
     <div><strong data-count="5.0">5,0</strong><span>nota média no Google</span></div>
     <div><strong data-count="99">99</strong><span>avaliações de clientes</span></div>
     <div><strong>4 etapas</strong><span>do desenho à montagem</span></div>
-    <div><strong>Equipe própria</strong><span>de montadores</span></div>
+    <div><strong>Montagem</strong><span>elogiada nas avaliações</span></div>
   </div>
 </div>
 
 <section class="frase">
   <div class="w">
-    <div class="cab"><div><span class="rot" data-reveal style="color:var(--freijo2)">O que mais elogiam</span><h2 data-split>Três clientes, a mesma frase</h2></div><p data-reveal style="color:#ffffffb0">Prazo é a maior dor de quem faz planejado. Aqui é o que os clientes mais comentam no Google.</p></div>
+    <div class="cab"><div><h2 data-split>Três clientes, a mesma frase</h2></div><p data-reveal style="color:#ffffffb0">Prazo é a maior dor de quem faz planejado. Aqui é o que os clientes mais comentam no Google.</p></div>
     <ul>
-      <li data-reveal><span>“Trabalho excelente! Preço justo e <mark>entrega antes do prazo</mark>.”</span><small>Cliente no Google</small></li>
+      <li data-reveal><span>“Trabalho excelente! Preço justo e <mark>entrega antes do prazo</mark>”</span><small>Cliente no Google</small></li>
       <li data-reveal><span>“Excelente serviço! <mark>Entrega e montagem antes do prazo</mark>, com excelentes montadores.”</span><small>Cliente no Google</small></li>
-      <li data-reveal><span>“A instalação foi bem rápida, <mark>bem antes do prazo mínimo de entrega</mark>.”</span><small>Cliente no Google</small></li>
+      <li data-reveal><span>“A instalação dos moveis foi bem rápida <mark>bem antes do prazo mínimo de entrega</mark>”</span><small>Cliente no Google</small></li>
     </ul>
   </div>
 </section>
 
 <section id="montador">
   <div class="w">
-    <div class="cab"><div><span class="rot" data-reveal>Monte sua cozinha</span><h2 data-split>Desenhe a sua em 1 minuto</h2></div><p data-reveal>Escolha o formato, as medidas e o acabamento. A planta se desenha na hora e o pedido chega pronto no nosso WhatsApp.</p></div>
+    <div class="cab"><div><h2 data-split>Desenhe a sua em 1 minuto</h2></div><p data-reveal>Escolha o formato, as medidas e o acabamento. A planta se desenha na hora e o pedido chega pronto no nosso WhatsApp.</p></div>
     <div class="mont">
       <form class="form" id="form" onsubmit="return false" data-reveal>
-        <fieldset class="passo"><legend><i>01</i>Formato da cozinha</legend>
+        <fieldset class="passo"><legend>Formato da cozinha</legend>
           <div class="formatos" id="formatos"></div>
         </fieldset>
-        <div class="passo"><label><i>02</i>Medidas das paredes</label>
+        <div class="passo"><label>Medidas das paredes</label>
           <div class="medidas">
             <label id="lA">Parede A (m)<input id="mA" type="number" min="1" max="8" step="0.1" value="3.2" inputmode="decimal"></label>
             <label id="lB">Parede B (m)<input id="mB" type="number" min="1" max="8" step="0.1" value="2.4" inputmode="decimal"></label>
             <label id="lC">Parede C (m)<input id="mC" type="number" min="1" max="8" step="0.1" value="2.4" inputmode="decimal"></label>
           </div>
         </div>
-        <fieldset class="passo"><legend><i>03</i>Acabamento</legend><div class="acabs" id="acabs" role="group" aria-label="Escolher acabamento"></div></fieldset>
-        <fieldset class="passo" style="margin:0"><legend><i>04</i>Extras</legend><div class="op" id="extras"></div></fieldset>
+        <fieldset class="passo"><legend>Acabamento</legend><div class="acabs" id="acabs" role="group" aria-label="Escolher acabamento"></div></fieldset>
+        <fieldset class="passo" style="margin:0"><legend>Extras</legend><div class="op" id="extras"></div></fieldset>
       </form>
       <aside class="planta" data-reveal aria-live="polite">
         <div class="vista" role="group" aria-label="Vista"><button type="button" aria-pressed="true" data-v="planta">Planta</button><button type="button" aria-pressed="false" data-v="frente">Vista frontal</button></div>
@@ -298,7 +297,7 @@ footer .base{display:flex;justify-content:space-between;gap:20px;padding-top:26p
           <div class="met"><div><b id="rMl">0</b><span>metros lineares de armário</span></div><div><b id="rMod">0</b><span>módulos aproximados</span></div></div>
           <dl><dt>Formato</dt><dd id="rFormato"></dd><dt>Acabamento</dt><dd id="rAcab"></dd><dt>Extras</dt><dd id="rExtras"></dd></dl>
           <a class="btn zap" id="enviar" target="_blank" rel="noopener" href="#">Enviar para orçamento</a>
-          <p class="obs">Estimativa para começar a conversa. Medimos o ambiente e desenhamos o projeto antes de fabricar.</p>
+          <p class="obs">Estimativa para começar a conversa. O projeto final é feito com as medidas do seu ambiente.</p><p class="lgpd">Ao tocar no botão, o WhatsApp abre com a mensagem pronta e você decide se envia. Este site não guarda seus dados. <a href="privacidade.html">Privacidade</a></p>
         </div>
       </aside>
     </div>
@@ -307,56 +306,56 @@ footer .base{display:flex;justify-content:space-between;gap:20px;padding-top:26p
 
 <section id="processo" style="padding-top:0">
   <div class="w">
-    <div class="cab"><div><span class="rot" data-reveal>Processo</span><h2 data-split>Do desenho até o último puxador</h2></div><p data-reveal>Você acompanha cada etapa. Nada é fabricado antes de você aprovar.</p></div>
+    <div class="cab"><div><h2 data-split>Do desenho até o último puxador</h2></div><p data-reveal>Você acompanha cada etapa, do projeto à montagem.</p></div>
     <ol class="linha-t" id="linhaT">
       <span class="prog" id="prog" aria-hidden="true"></span>
       <li data-reveal><strong>Projeto</strong><p>Medimos o ambiente e desenhamos junto com você.</p></li>
       <li data-reveal><strong>Aprovação</strong><p>Você vê o projeto e ajusta materiais e cores antes de fabricar.</p></li>
       <li data-reveal><strong>Fabricação</strong><p>Os móveis são produzidos na nossa marcenaria.</p></li>
-      <li data-reveal><strong>Montagem</strong><p>Montadores próprios instalam e entregam tudo limpo e organizado.</p></li>
+      <li data-reveal><strong>Montagem</strong><p>Os montadores instalam e entregam tudo limpo e organizado.</p></li>
     </ol>
   </div>
 </section>
 
 <section id="projetos" style="padding-top:0">
   <div class="w">
-    <div class="cab"><div><span class="rot" data-reveal>Projetos</span><h2 data-split>Ambientes que fazemos</h2></div><p data-reveal>Cozinhas, dormitórios, closets, salas e espaços comerciais. Toque numa foto para ampliar.</p></div>
-    <div class="filtros" data-filtros="#gal" role="group" aria-label="Filtrar projetos"><button data-f="todos" aria-pressed="true">Todos</button><button data-f="cozinha" aria-pressed="false">Cozinhas</button><button data-f="closet" aria-pressed="false">Closets</button><button data-f="oficina" aria-pressed="false">Oficina</button></div>
+    <div class="cab"><div><h2 data-split>Ambientes que fazemos</h2></div><p data-reveal>Cozinhas, closets e outros ambientes. Toque numa foto para ampliar.</p></div>
+    <div class="filtros" data-filtros="#gal" role="group" aria-label="Filtrar projetos"><button data-f="todos" aria-pressed="true">Todos</button><button data-f="cozinha" aria-pressed="false">Cozinhas</button><button data-f="closet" aria-pressed="false">Closets</button><button data-f="oficina" aria-pressed="false">Ferramentas</button></div>
     <div class="gal" id="gal">
       <a class="ga" href="#" data-lb="p" data-cat="cozinha" data-legenda="Cozinha em madeira" data-full="https://images.unsplash.com/photo-1649068533606-0e7ef6786214?auto=format&fit=crop&w=2000&q=85"><img loading="lazy" data-fb="Cozinha em madeira" alt="Cozinha planejada com armários em madeira" src="https://images.unsplash.com/photo-1649068533606-0e7ef6786214?auto=format&fit=crop&w=1200&q=75"><span>Cozinha em madeira</span></a>
       <a class="gb" href="#" data-lb="p" data-cat="closet" data-legenda="Closet em madeira com iluminação" data-full="https://images.unsplash.com/photo-1718939045285-b67f9e9f9f8b?auto=format&fit=crop&w=1800&q=85"><img loading="lazy" data-fb="Closet" alt="Closet de madeira com iluminação suave" src="https://images.unsplash.com/photo-1718939045285-b67f9e9f9f8b?auto=format&fit=crop&w=700&q=75"><span>Closet com iluminação</span></a>
       <a class="gc" href="#" data-lb="p" data-cat="cozinha" data-legenda="Gabinete de pia" data-full="https://images.unsplash.com/photo-1589268395705-ecd1dca58cb9?auto=format&fit=crop&w=1800&q=85"><img loading="lazy" data-fb="Gabinete" alt="Gabinete de madeira com pia" src="https://images.unsplash.com/photo-1589268395705-ecd1dca58cb9?auto=format&fit=crop&w=700&q=75"><span>Gabinete de pia</span></a>
       <a class="gd" href="#" data-lb="p" data-cat="cozinha" data-legenda="Cozinha clara com madeira" data-full="https://images.unsplash.com/photo-1588796460718-f457ad1e1a1f?auto=format&fit=crop&w=1800&q=85"><img loading="lazy" data-fb="Cozinha clara" alt="Cozinha com armários brancos e detalhes em madeira" src="https://images.unsplash.com/photo-1588796460718-f457ad1e1a1f?auto=format&fit=crop&w=700&q=75"><span>Cozinha clara com madeira</span></a>
-      <a class="ge" href="#" data-lb="p" data-cat="oficina" data-legenda="Ferramentas da marcenaria" data-full="https://images.unsplash.com/photo-1761544775659-aaa6fa2e5b3d?auto=format&fit=crop&w=1800&q=85"><img loading="lazy" data-fb="Oficina" alt="Ferramentas de marcenaria organizadas na parede" src="https://images.unsplash.com/photo-1761544775659-aaa6fa2e5b3d?auto=format&fit=crop&w=700&q=75"><span>Nossa oficina</span></a>
+      <a class="ge" href="#" data-lb="p" data-cat="oficina" data-legenda="Ferramentas de marcenaria" data-full="https://images.unsplash.com/photo-1761544775659-aaa6fa2e5b3d?auto=format&fit=crop&w=1800&q=85"><img loading="lazy" data-fb="Oficina" alt="Ferramentas de marcenaria organizadas na parede" src="https://images.unsplash.com/photo-1761544775659-aaa6fa2e5b3d?auto=format&fit=crop&w=700&q=75"><span>Ferramentas de marcenaria</span></a>
     </div>
     <p class="nota-foto">Fotos ilustrativas (Unsplash). No site oficial entram os projetos entregues pela Renovo.</p>
   </div>
 </section>
 
 <section class="aval" id="avaliacoes">
-  <div class="w"><div class="cab"><div><span class="rot" data-reveal>Avaliações</span><h2 data-split>Quem fez, indica</h2></div><div class="g-sel" data-reveal><b>5,0</b><div><div class="estrelas" style="font-size:22px">★★★★★</div><span style="color:var(--lapis)">99 avaliações no Google</span></div></div></div></div>
+  <div class="w"><div class="cab"><div><h2 data-split>Quem fez, indica</h2></div><div class="g-sel" data-reveal><b>5,0</b><div><span class="estrelas g" role="img" aria-label="5 de 5 estrelas"></span><span style="color:var(--lapis)">99 avaliações no Google</span></div></div></div></div>
   <div class="marq">
     <div class="marq-t" data-marquee style="--dur:70s">
-      <figure><div class="estrelas">★★★★★</div><blockquote>“Trabalho excelente! Preço justo e entrega antes do prazo.”</blockquote><figcaption>Cliente no Google</figcaption></figure>
-      <figure><div class="estrelas">★★★★★</div><blockquote>“A instalação dos móveis foi bem rápida, bem antes do prazo mínimo de entrega. Tudo entregue limpo e organizado.”</blockquote><figcaption>Cliente no Google</figcaption></figure>
-      <figure><div class="estrelas">★★★★★</div><blockquote>“Excelente serviço! Entrega e montagem antes do prazo, com excelentes montadores. Super indico!”</blockquote><figcaption>Cliente no Google</figcaption></figure>
+      <figure><span class="estrelas" role="img" aria-label="5 de 5 estrelas"></span><blockquote>“Trabalho excelente! Preço justo e entrega antes do prazo”</blockquote><figcaption>Cliente no Google</figcaption></figure>
+      <figure><span class="estrelas" role="img" aria-label="5 de 5 estrelas"></span><blockquote>“A instalação dos moveis foi bem rápida bem antes do prazo mínimo de entrega, gostei muito do trabalho com os moveis bem instalados e entregue td limpo e organizado.”</blockquote><figcaption>Cliente no Google</figcaption></figure>
+      <figure><span class="estrelas" role="img" aria-label="5 de 5 estrelas"></span><blockquote>“Excelente serviço! Entrega e montagem antes do prazo, com excelentes montadores. Super indico!”</blockquote><figcaption>Cliente no Google</figcaption></figure>
     </div>
     <div class="marq-t rev" data-marquee style="--dur:80s">
-      <figure><div class="estrelas">★★★★★</div><blockquote>“O resultado ficou simplesmente impecável e superou minhas expectativas. Acabamento perfeito.”</blockquote><figcaption>Cliente no Google</figcaption></figure>
-      <figure><div class="estrelas">★★★★★</div><blockquote>“Estou muito satisfeita com o resultado das minhas escolhas, com o atendimento prestado do início ao final.”</blockquote><figcaption>Cliente no Google</figcaption></figure>
-      <figure><div class="estrelas">★★★★★</div><blockquote>“A qualidade dos materiais, o acabamento perfeito e o cuidado com cada detalhe. Cumpriram todos os prazos combinados.”</blockquote><figcaption>Cliente no Google</figcaption></figure>
+      <figure><span class="estrelas" role="img" aria-label="5 de 5 estrelas"></span><blockquote>“O resultado ficou simplesmente impecável e superou minhas expectativas.”</blockquote><figcaption>Cliente no Google</figcaption></figure>
+      <figure><span class="estrelas" role="img" aria-label="5 de 5 estrelas"></span><blockquote>“Estou muito satisfeita com o resultado das minhas escolhas, com o atendimento prestado do início ao final.”</blockquote><figcaption>Cliente no Google</figcaption></figure>
+      <figure><span class="estrelas" role="img" aria-label="5 de 5 estrelas"></span><blockquote>“A qualidade dos materiais, o acabamento perfeito e o cuidado com cada detalhe demonstram o quanto a empresa se preocupa em entregar um serviço de excelência.”</blockquote><figcaption>Cliente no Google</figcaption></figure>
     </div>
   </div>
 </section>
 
 <section>
   <div class="w faq">
-    <div><span class="rot" data-reveal>Dúvidas</span><h2 data-split>Perguntas frequentes</h2><p data-reveal style="margin-top:20px;color:#4A4E54">Não achou? <a href="https://wa.me/5511974643357" target="_blank" rel="noopener">Chame no WhatsApp</a>.</p></div>
+    <div><h2 data-split>Perguntas frequentes</h2><p data-reveal style="margin-top:20px;color:#4A4E54">Não achou? <a href="https://wa.me/5511974643357" target="_blank" rel="noopener">Chame no WhatsApp</a>.</p></div>
     <div data-reveal>
-      <details class="p"><summary>Vocês fazem o projeto?</summary><p class="r">Sim. Medimos o ambiente e desenhamos o projeto junto com você. Só fabricamos depois da sua aprovação.</p></details>
+      <details class="p"><summary>Vocês fazem o projeto?</summary><p class="r">Sim. O projeto é montado junto com você antes da fabricação.</p></details>
       <details class="p"><summary>Quanto tempo leva para ficar pronto?</summary><p class="r">O prazo depende do tamanho do projeto e é combinado no orçamento. Nossos clientes costumam receber antes da data combinada.</p></details>
-      <details class="p"><summary>Posso escolher cores e acabamentos?</summary><p class="r">Pode. Na aprovação do projeto você escolhe padrões, cores e puxadores antes de entrar em produção.</p></details>
-      <details class="p"><summary>Atendem projetos comerciais?</summary><p class="r">Sim. Além de casas e apartamentos, fazemos móveis para lojas, estúdios e copas de empresas.</p></details>
+      <details class="p"><summary>Posso escolher cores e acabamentos?</summary><p class="r">Pode. Cores, padrões e puxadores são escolhidos com você no projeto.</p></details>
+      <details class="p"><summary>Atendem projetos comerciais?</summary><p class="r">Consulte pelo WhatsApp com a planta ou as medidas do espaço.</p></details>
       <details class="p"><summary>Como começo?</summary><p class="r">Use o montador desta página ou mande no WhatsApp a planta ou as medidas do ambiente.</p></details>
     </div>
   </div>
@@ -366,7 +365,6 @@ footer .base{display:flex;justify-content:space-between;gap:20px;padding-top:26p
   <div class="w">
     <div class="contato">
       <div class="txt">
-        <span class="rot" data-reveal>Contato</span>
         <h2 data-split>Vamos desenhar o seu?</h2>
         <p data-reveal>Mande a planta ou as medidas do ambiente pelo WhatsApp.</p>
         <dl data-reveal>
@@ -376,7 +374,7 @@ footer .base{display:flex;justify-content:space-between;gap:20px;padding-top:26p
         </dl>
         <a class="btn zap" data-reveal href="https://wa.me/5511974643357?text=Ol%C3%A1!%20Quero%20um%20or%C3%A7amento%20de%20m%C3%B3veis%20planejados." target="_blank" rel="noopener">Chamar no WhatsApp</a>
       </div>
-      <iframe title="Mapa da Marcenaria Renovo" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=R.+Florindo+Zambon,+1581,+Jundia%C3%AD+SP&output=embed"></iframe>
+      <div class="mapa" data-mapa="https://www.google.com/maps?q=R.+Florindo+Zambon,+1581,+Jundia%C3%AD+SP&output=embed" data-titulo="Mapa da Marcenaria Renovo"><svg viewBox="0 0 24 24" width="34" height="34" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.6"/></svg><button type="button" class="btn mapa-btn">Mostrar o mapa</button><a href="https://www.google.com/maps/search/?api=1&amp;query=R.+Florindo+Zambon,+1581,+Jundia%C3%AD+SP" target="_blank" rel="noopener">Abrir no Google Maps</a><small>O mapa é do Google e só carrega quando você toca no botão.</small></div>
     </div>
   </div>
 </section>
@@ -390,7 +388,7 @@ footer .base{display:flex;justify-content:space-between;gap:20px;padding-top:26p
       <div><p class="fh">Contato</p><ul><li><a href="https://wa.me/5511974643357" target="_blank" rel="noopener">(11) 97464-3357</a></li><li>R. Florindo Zambon, 1581</li><li>Cidade Nova, Jundiaí, SP</li></ul></div>
       <div><p class="fh">Horário</p><ul><li>Seg a sex, 8h às 18h</li><li>Sábado, 8h às 13h</li></ul></div>
     </div>
-    <div class="base"><span>© <span data-ano></span> Marcenaria Renovo</span><span>Fotos ilustrativas: Unsplash</span></div>
+    <div class="base"><span>© <span data-ano></span> Marcenaria Renovo</span><span><a href="privacidade.html">Privacidade e termos</a> · Fotos ilustrativas: Unsplash</span></div>
   </div>
 </footer>
 <a class="fab" href="https://wa.me/5511974643357" target="_blank" rel="noopener" aria-label="Falar no WhatsApp"><svg viewBox="0 0 32 32"><path d="M16 3C8.8 3 3 8.7 3 15.8c0 2.5.7 4.9 2 7L3 29l6.4-2c2 1.1 4.3 1.7 6.6 1.7 7.2 0 13-5.7 13-12.8S23.2 3 16 3zm0 23.4c-2.1 0-4.1-.6-5.9-1.7l-.4-.3-3.8 1.2 1.2-3.7-.3-.4a10.6 10.6 0 0 1-1.7-5.7C5.1 9.9 10 5.2 16 5.2s10.9 4.7 10.9 10.6S22 26.4 16 26.4zm6-7.9c-.3-.2-1.9-.9-2.2-1-.3-.1-.5-.2-.7.2l-1 1.2c-.2.2-.4.2-.7.1-.3-.2-1.4-.5-2.6-1.6-1-.9-1.6-1.9-1.8-2.2-.2-.3 0-.5.1-.7l.5-.6.3-.5v-.5l-1-2.4c-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4-.3.3-1.1 1.1-1.1 2.7s1.2 3.1 1.3 3.3c.2.2 2.3 3.5 5.6 4.9 2.8 1.1 3.3.9 3.9.8.6-.1 1.9-.8 2.2-1.5.3-.7.3-1.4.2-1.5-.1-.2-.3-.3-.6-.4z"/></svg></a>
@@ -472,6 +470,6 @@ if(typeof gsap!=="undefined"&&!matchMedia("(prefers-reduced-motion: reduce)").ma
   gsap.to("#prog",{scaleX:1,ease:"none",scrollTrigger:{trigger:"#linhaT",start:"top 80%",end:"bottom 55%",scrub:true}});
 }
 </script>
-<script src="assets/base.js"></script>
+<script src="assets/base.js?v=461c3ddf"></script>
 </body>
 </html>
