@@ -180,7 +180,7 @@ footer .base{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
 }`;
 }
 
-export function pagina(dados, { assets = "/assets/", ver = "", previa = true } = {}) {
+export function pagina(dados, { assets = "/assets/", ver = "", previa = true, raiz = "" } = {}) {
   const e = normaliza(dados), T = TEMAS[e.tema], A = assets, v = ver ? "?v=" + ver : "";
   const zap = e.wa ? `https://wa.me/${e.wa}` : "#contato";
   const zapMsg = e.wa ? `${zap}?text=${encodeURIComponent(`Olá! Vi o site e quero um orçamento.`)}` : "#contato";
@@ -289,7 +289,7 @@ ${e.fotos.length > 1 ? `<section id="trabalhos" style="padding-top:0">
         <pre id="msg"></pre>
         <a class="btn zap" id="enviar" href="${zap}" target="_blank" rel="noopener">Enviar pelo WhatsApp</a>
         <p class="obs">O valor final é combinado com a empresa. Mande uma foto na conversa se puder.</p>
-        <p class="lgpd">Ao tocar no botão, o WhatsApp abre com a mensagem pronta e você decide se envia. Este site não guarda seus dados. <a href="privacidade.html">Privacidade</a></p>
+        <p class="lgpd">Ao tocar no botão, o WhatsApp abre com a mensagem pronta e você decide se envia. Este site não guarda seus dados. <a href="${raiz}privacidade">Privacidade</a></p>
       </aside>
     </div>
   </div>
@@ -324,7 +324,7 @@ ${e.faq.length ? `<section${e.depoimentos.length ? ' style="padding-top:0"' : ""
 </section>
 </main>
 
-<footer><div class="w"><div class="base"><span>© <span data-ano></span> ${esc(e.nome)}</span><span><a href="privacidade.html">Privacidade e termos</a>${e.fotos.length ? " · " + esc(e.creditoFotos || "Fotos ilustrativas") : ""}</span></div></div></footer>
+<footer><div class="w"><div class="base"><span>© <span data-ano></span> ${esc(e.nome)}</span><span><a href="${raiz}privacidade">Privacidade e termos</a>${e.fotos.length ? " · " + esc(e.creditoFotos || "Fotos ilustrativas") : ""}</span></div></div></footer>
 ${e.wa ? `<a class="fab" href="${zap}" target="_blank" rel="noopener" aria-label="Falar no WhatsApp">${ICO.zap}</a>` : ""}
 
 <script src="${A}js/gsap.min.js"></script><script src="${A}js/ScrollTrigger.min.js"></script><script src="${A}js/lenis.min.js"></script>

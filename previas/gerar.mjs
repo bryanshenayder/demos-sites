@@ -17,7 +17,7 @@ for (const arq of readdirSync("clientes").filter((f) => f.endsWith(".json"))) {
   try { dados = JSON.parse(readFileSync(`clientes/${arq}`, "utf8")); }
   catch (err) { console.error(`ERRO em ${arq}: ${err.message}`); process.exitCode = 1; continue; }
   mkdirSync(`${OUT}/${slug}`, { recursive: true });
-  writeFileSync(`${OUT}/${slug}/index.html`, pagina(dados, { assets: "/assets/", ver, previa: !dados.oficial }));
+  writeFileSync(`${OUT}/${slug}/index.html`, pagina(dados, { assets: "/assets/", ver, previa: !dados.oficial, raiz: `/${slug}/` }));
   writeFileSync(`${OUT}/${slug}/privacidade.html`, privacidade(dados));
   slugs.push(slug);
 }
