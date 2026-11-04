@@ -1,0 +1,22 @@
+{
+  "nome": "Vidraçaria Podium Brasil",
+  "ramo": "Vidraçaria",
+  "cidade": "Joinville",
+  "uf": "SC",
+  "whatsapp": "(47) 99124-1393",
+  "endereco": "R. Auxília Dagnoni, 28, Vila Nova",
+  "horario": ["Seg a sex, 8h às 19h", "Sábado, 8h às 12h"],
+  "nota": "4.9",
+  "avaliacoes": "145",
+  "tema": "tecnico",
+  "cor": "#1F5F7A",
+  "titulo": "Vidraçaria em Joinville, com nota 4,9.",
+  "orcamento": { "opcoes": ["Box", "Espelho", "Janela ou porta", "Outro"] },
+  "depoimentos": [
+    "Atendimento excelente sempre atenciosos. Com o preço acessível, e a entrega do serviço com agilidade e de muita qualidade.",
+    "Fizemos a nossa casa inteira com eles sem nenhum stress pelo contrário, sempre atendendo os prazos estabelecidos e com o nível de qualidade acima do esperado.",
+    "Os funcionários são educados, mostram ter conhecimento no serviço executado com qualidade, ética e a no prazo combinado. Trabalho digno de recomendação.",
+    "Excelente trabalho, super indico. Algumas vezes ja solicitei o serviço da empresa, sempre prestativa e de ótimo serviço."
+  ],
+  "creditoFotos": "Fotos ilustrativas"
+}
