@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cidade Apagada — Curso de criação de vídeos</title>
+<link rel="icon" href="img/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Silkscreen:wght@400;700&family=VT323&display=swap" rel="stylesheet">
+<style>
+@font-face{font-family:'Silkscreen';src:url(fonts/Silkscreen.ttf) format('truetype');font-weight:400;font-display:swap}
+@font-face{font-family:'Silkscreen';src:url(fonts/SilkscreenBold.ttf) format('truetype');font-weight:700;font-display:swap}
+:root{
+  --bg:#05080d; --ink:#0a1018; --panel:#0b131c; --panel2:#101b27; --line:#1d2c3b;
+  --teal:#46d2c8; --teal-d:#1f7a73; --or:#ff9628; --or-d:#a85a12; --yel:#ffd65a;
+  --wh:#eef3f6; --tx:#c5d0d9; --mut:#76889a; --red:#e0483a;
+  --px:4px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--tx);font-family:'VT323','Courier New',monospace;font-size:22px;line-height:1.25;overflow-x:hidden}
+img{image-rendering:pixelated;image-rendering:crisp-edges}
+a{color:inherit}
+.pix,h1,h2,h3{font-family:'Silkscreen','Courier New',monospace;font-weight:700;line-height:1.1;letter-spacing:.5px}
+::selection{background:var(--or);color:#000}
+
+/* ======== MUNDO AO FUNDO ======== */
+#world{position:fixed;inset:0;overflow:hidden;z-index:0;background:#04070b}
+#cam{position:absolute;left:0;top:0;width:636px;height:1176px;transform-origin:0 0;will-change:transform}
+#cam img{position:absolute;inset:0;width:636px;height:1176px}
+.glow{position:absolute;border-radius:50%;pointer-events:none;mix-blend-mode:screen}
+#fireGlow{width:120px;height:110px;margin:-55px 0 0 -60px;background:radial-gradient(closest-side,rgba(255,150,40,.55),rgba(255,110,30,.18) 60%,transparent);animation:flick 1.1s steps(3) infinite}
+#lampGlow{width:60px;height:60px;margin:-30px 0 0 -30px;background:radial-gradient(closest-side,rgba(255,240,170,.35),transparent)}
+#win{position:absolute;width:8px;height:10px;background:#ffd27a;box-shadow:0 0 6px 2px rgba(255,180,80,.8);animation:blink 7s steps(1) infinite}
+@keyframes flick{0%{opacity:.85;transform:scale(1)}33%{opacity:1;transform:scale(1.06)}66%{opacity:.78;transform:scale(.97)}}
+@keyframes blink{0%,70%{opacity:1}72%{opacity:0}74%{opacity:1}76%{opacity:0}78%{opacity:1}80%{opacity:0}82%,100%{opacity:1}}
+#shade{position:fixed;inset:0;z-index:1;pointer-events:none;
+  background:
+   repeating-linear-gradient(to bottom,rgba(0,0,0,.22) 0 2px,transparent 2px 4px),
+   radial-gradient(ellipse at 50% 45%,rgba(3,6,10,.10),rgba(3,6,10,.70) 80%),
+   rgba(3,6,10,.18)}
+#hud{position:fixed;left:16px;bottom:14px;z-index:5;font-family:'Silkscreen',monospace;font-size:11px;color:var(--teal);opacity:.8;pointer-events:none;text-shadow:2px 2px 0 #000}
+#rec{position:fixed;right:16px;bottom:14px;z-index:5;font-family:'Silkscreen',monospace;font-size:11px;color:var(--red);pointer-events:none;text-shadow:2px 2px 0 #000}
+#rec i{display:inline-block;width:8px;height:8px;background:var(--red);margin-right:6px;animation:recb 1s steps(1) infinite}
+@keyframes recb{50%{opacity:0}}
+
+main{position:relative;z-index:2}
+
+/* ======== UI PIXEL ======== */
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+section{padding:110px 0}
+.tag{font-family:'Silkscreen',monospace;font-size:13px;color:var(--teal);letter-spacing:2px;display:inline-flex;align-items:center;gap:10px;text-shadow:2px 2px 0 #000}
+.tag::before{content:'';width:10px;height:10px;background:var(--teal)}
+h2{font-size:clamp(26px,4.4vw,44px);color:var(--wh);margin:14px 0 16px;text-shadow:4px 4px 0 #000}
+h2 em,h1 em{font-style:normal;color:var(--or)}
+.lead{font-size:24px;color:var(--tx);max-width:640px;text-shadow:2px 2px 0 #000}
+
+/* painel com cantos "cortados" em pixel */
+.panel{position:relative;background:var(--panel);margin:var(--px);
+  box-shadow:0 calc(-1*var(--px)) 0 0 var(--line),0 var(--px) 0 0 var(--line),calc(-1*var(--px)) 0 0 0 var(--line),var(--px) 0 0 0 var(--line),
+   0 0 0 var(--px) #000, var(--px) var(--px) 0 var(--px) rgba(0,0,0,.7)}
+.panel.teal{box-shadow:0 -4px 0 0 var(--teal),0 4px 0 0 var(--teal),-4px 0 0 0 var(--teal),4px 0 0 0 var(--teal),8px 8px 0 4px rgba(0,0,0,.7)}
+.panel.or{box-shadow:0 -4px 0 0 var(--or),0 4px 0 0 var(--or),-4px 0 0 0 var(--or),4px 0 0 0 var(--or),8px 8px 0 4px rgba(0,0,0,.7)}
+
+.btn{--c:var(--or);--d:var(--or-d);position:relative;display:inline-flex;align-items:center;gap:12px;font-family:'Silkscreen',monospace;font-weight:700;font-size:16px;color:#05080d;background:var(--c);
+  padding:16px 24px;margin:4px;border:0;cursor:pointer;text-decoration:none;text-transform:uppercase;
+  box-shadow:0 -4px 0 0 #000,0 4px 0 0 #000,-4px 0 0 0 #000,4px 0 0 0 #000,inset 0 -6px 0 0 var(--d),inset 0 4px 0 0 rgba(255,255,255,.35)}
+.btn:hover{filter:brightness(1.08);transform:translateY(-2px)}
+.btn:active{transform:translateY(2px);box-shadow:0 -4px 0 0 #000,0 4px 0 0 #000,-4px 0 0 0 #000,4px 0 0 0 #000,inset 0 4px 0 0 var(--d)}
+.btn.teal{--c:var(--teal);--d:var(--teal-d)}
+.btn.ghost{--c:#0b131c;--d:#05080d;color:var(--teal)}
+.btn:focus-visible,.pin:focus-visible,summary:focus-visible{outline:4px dashed var(--yel);outline-offset:6px}
+.arrow{width:0;height:0;border-style:solid;border-width:6px 0 6px 8px;border-color:transparent transparent transparent currentColor}
+
+/* ======== NAV ======== */
+nav{position:fixed;top:0;left:0;right:0;z-index:10;background:rgba(5,8,13,.92);border-bottom:4px solid #000;box-shadow:0 4px 0 0 var(--line)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;height:64px;max-width:1240px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;font-family:'Silkscreen',monospace;font-weight:700;font-size:15px;color:var(--wh)}
+.brand img{width:32px;height:32px}
+.live{font-family:'Silkscreen',monospace;font-size:12px;color:var(--mut);display:flex;gap:18px;align-items:center}
+.live b{color:var(--red);display:flex;align-items:center;gap:6px}
+.live b::before{content:'';width:8px;height:8px;background:var(--red);animation:recb 1s steps(1) infinite}
+.links{display:flex;gap:20px;font-family:'Silkscreen',monospace;font-size:12px}
+.links a{text-decoration:none;color:var(--tx)}
+.links a:hover{color:var(--teal)}
+nav .btn{font-size:12px;padding:10px 14px}
+
+/* ======== HERO ======== */
+.hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;padding:120px 0 210px;position:relative}
+.hero h1{font-size:clamp(30px,5.4vw,68px);color:var(--wh);text-shadow:6px 6px 0 #000;margin:22px 0 22px}
+.hero h1 span{display:block}
+.hero h1 em{color:var(--or);position:relative}
+.hero .lead{font-size:26px;max-width:620px}
+.cta-row{display:flex;flex-wrap:wrap;gap:14px;margin-top:34px}
+.coords{margin-top:22px;font-family:'Silkscreen',monospace;font-size:11px;color:var(--mut);text-shadow:2px 2px 0 #000}
+
+/* rua com sobreviventes andando */
+.street{position:absolute;left:0;right:0;bottom:0;height:150px;overflow:hidden;pointer-events:none}
+.street .road{position:absolute;left:0;right:0;bottom:0;height:46px;background:#141a22;border-top:4px solid #000;box-shadow:inset 0 4px 0 #222c38}
+.street .road::after{content:'';position:absolute;left:0;right:0;top:20px;height:4px;background:repeating-linear-gradient(90deg,#d8b84a 0 24px,transparent 24px 48px)}
+.walker{position:absolute;bottom:34px;width:72px;height:84px;background-size:288px 84px;background-repeat:no-repeat;
+  animation:step .5s steps(4) infinite, walk var(--dur) linear infinite;animation-delay:0s,var(--del)}
+.walker.back{transform:scaleX(-1);animation-name:step,walkback}
+@keyframes step{to{background-position:-288px 0}}
+@keyframes walk{from{left:-90px}to{left:calc(100% + 20px)}}
+@keyframes walkback{from{left:calc(100% + 20px)}to{left:-90px}}
+.fire{position:absolute;bottom:38px;left:calc(50% - 40px);width:80px;height:88px;background:url(img/fogo.png) 0 0/480px 88px;animation:fire .6s steps(6) infinite}
+.fire::after{content:'';position:absolute;left:-60px;top:-30px;width:200px;height:150px;background:radial-gradient(closest-side,rgba(255,150,40,.35),transparent);animation:flick 1s steps(3) infinite;mix-blend-mode:screen}
+@keyframes fire{to{background-position:-480px 0}}
+
+/* ======== SINAL (CASE) ======== */
+.signal{display:grid;grid-template-columns:1.1fr 1fr;gap:34px;align-items:center}
+.stats{padding:26px}
+.stat{display:grid;grid-template-columns:1fr auto;align-items:end;gap:6px 14px;padding:14px 0;border-bottom:4px dotted var(--line)}
+.stat:last-of-type{border:0}
+.stat .k{font-family:'Silkscreen',monospace;font-size:13px;color:var(--teal)}
+.stat .v{font-family:'Silkscreen',monospace;font-weight:700;font-size:40px;color:var(--or);text-shadow:4px 4px 0 #000}
+.bar{grid-column:1/-1;height:16px;background:#060a10;box-shadow:0 0 0 4px #000}
+.bar span{display:block;height:100%;width:0;background:repeating-linear-gradient(90deg,var(--or) 0 12px,#d97a16 12px 16px);transition:width 1.6s steps(16)}
+.stats small{display:block;margin-top:14px;font-size:18px;color:var(--mut)}
+
+/* ======== VSL ======== */
+.tv{max-width:900px;margin:34px auto 0;padding:22px 22px 54px;background:#1a222c;position:relative;
+  box-shadow:0 -6px 0 0 #000,0 6px 0 0 #000,-6px 0 0 0 #000,6px 0 0 0 #000,inset 0 6px 0 0 #2b3744,inset 0 -6px 0 0 #10161d,12px 12px 0 4px rgba(0,0,0,.6)}
+.screen{position:relative;aspect-ratio:16/9;background:#000;overflow:hidden;box-shadow:0 0 0 6px #000}
+.screen img{width:100%;height:100%;object-fit:cover;filter:saturate(1.1)}
+.screen::after{content:'';position:absolute;inset:0;background:repeating-linear-gradient(to bottom,rgba(0,0,0,.25) 0 2px,transparent 2px 4px),radial-gradient(ellipse,transparent 55%,rgba(0,0,0,.6));pointer-events:none}
+.play{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);z-index:2;width:104px;height:104px;padding:0;justify-content:center}
+.play .arrow{border-width:20px 0 20px 30px;margin-left:8px;color:#05080d}
+.screen .cap{position:absolute;left:16px;top:14px;z-index:2;font-family:'Silkscreen',monospace;font-size:12px;color:var(--wh);background:rgba(0,0,0,.6);padding:6px 10px}
+.screen .cap.r{left:auto;right:16px;color:var(--red)}
+.tv .knobs{position:absolute;left:22px;right:22px;bottom:14px;display:flex;justify-content:space-between;align-items:center;font-family:'Silkscreen',monospace;font-size:11px;color:var(--mut)}
+.tv .knobs i{display:inline-block;width:18px;height:18px;background:#0c1117;box-shadow:0 0 0 4px #000,inset 4px 4px 0 #2b3744;margin-left:12px}
+
+/* ======== MAPA DO CURSO ======== */
+.course{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:34px;align-items:start;margin-top:34px}
+.mapbox{position:relative;padding:10px}
+.mapbox img{display:block;width:100%;height:auto}
+.mapbox .legend{position:absolute;left:20px;top:20px;font-family:'Silkscreen',monospace;font-size:11px;background:rgba(0,0,0,.7);color:var(--teal);padding:6px 8px}
+.pin{position:absolute;transform:translate(-50%,-100%);background:none;border:0;cursor:pointer;padding:0;z-index:2}
+.pin span{display:block;font-family:'Silkscreen',monospace;font-weight:700;font-size:14px;color:#05080d;background:var(--teal);padding:6px 7px;
+  box-shadow:0 -3px 0 0 #000,0 3px 0 0 #000,-3px 0 0 0 #000,3px 0 0 0 #000}
+.pin::after{content:'';display:block;width:0;height:0;margin:3px auto 0;border-style:solid;border-width:10px 7px 0 7px;border-color:#000 transparent transparent}
+.pin:hover span{background:var(--wh)}
+.pin.on span{background:var(--or)}
+.pin.on{animation:bob .8s steps(2) infinite;z-index:3}
+@keyframes bob{50%{transform:translate(-50%,calc(-100% - 6px))}}
+.modinfo{padding:28px;min-height:420px}
+.modinfo .where{font-family:'Silkscreen',monospace;font-size:12px;color:var(--mut)}
+.modinfo .num{font-family:'Silkscreen',monospace;font-weight:700;font-size:64px;color:var(--or);text-shadow:4px 4px 0 #000;line-height:1;margin:12px 0 6px}
+.modinfo h3{font-size:26px;color:var(--wh);margin-bottom:14px}
+.modinfo ul{list-style:none;margin-top:16px}
+.modinfo li{padding:6px 0 6px 26px;position:relative}
+.modinfo li::before{content:'';position:absolute;left:0;top:13px;width:10px;height:10px;background:var(--teal)}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
+.chips button{font-family:'Silkscreen',monospace;font-size:11px;background:#060a10;color:var(--tx);border:0;padding:8px 10px;cursor:pointer;box-shadow:0 0 0 3px var(--line)}
+.chips button.on{background:var(--or);color:#05080d;box-shadow:0 0 0 3px #000}
+
+/* ======== COMO A CIDADE CRESCE ======== */
+.loop{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;margin-top:34px}
+.step{padding:22px 20px;text-align:center}
+.step .sp{width:72px;height:84px;margin:0 auto 14px;background-size:288px 84px;animation:step .6s steps(4) infinite}
+.step .n{font-family:'Silkscreen',monospace;font-size:12px;color:var(--teal)}
+.step h3{font-size:18px;color:var(--wh);margin:8px 0}
+.step p{font-size:20px}
+.cast{display:flex;flex-wrap:wrap;justify-content:center;gap:10px 18px;margin-top:40px}
+.cast div{text-align:center;width:104px}
+.cast .sp{width:48px;height:56px;margin:0 auto 6px;background-size:192px 56px}
+.cast small{font-family:'Silkscreen',monospace;font-size:9px;color:var(--mut);display:block;line-height:1.3}
+
+/* ======== INVENTÁRIO ======== */
+.inv{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:34px}
+.slot{display:flex;gap:18px;align-items:flex-start;padding:20px}
+.slot .ic{flex:0 0 84px;height:84px;background:#060a10;display:flex;align-items:center;justify-content:center;box-shadow:inset 0 0 0 4px var(--line)}
+.slot .ic img{width:60px;height:60px}
+.slot h3{font-size:16px;color:var(--or);margin:4px 0 8px}
+.slot p{font-size:20px}
+
+/* ======== PARA QUEM ======== */
+.signs{display:grid;grid-template-columns:1fr 1fr;gap:34px;margin-top:34px}
+.sign{background:#6b4526;padding:26px 26px 30px;position:relative;
+  box-shadow:0 -4px 0 0 #000,0 4px 0 0 #000,-4px 0 0 0 #000,4px 0 0 0 #000,inset 0 -8px 0 0 #4d301a,inset 0 4px 0 0 #8a5d36,10px 10px 0 2px rgba(0,0,0,.6);
+  background-image:repeating-linear-gradient(to bottom,transparent 0 34px,#5a3a20 34px 38px)}
+.sign h3{font-size:18px;color:#ffe9c4;margin-bottom:14px;text-shadow:3px 3px 0 #2a180a}
+.sign ul{list-style:none}
+.sign li{color:#ffe9c4;font-size:22px;padding:5px 0 5px 28px;position:relative;text-shadow:2px 2px 0 #2a180a}
+.sign li::before{content:'+';position:absolute;left:4px;color:#9dff7a;font-family:'Silkscreen',monospace;font-weight:700}
+.sign.no li::before{content:'x';color:#ff7a6a}
+.sign .nail{position:absolute;top:10px;width:8px;height:8px;background:#c9c2b4;box-shadow:0 0 0 2px #000}
+
+/* ======== OFERTA ======== */
+.offer{display:grid;grid-template-columns:1fr 1fr;gap:34px;align-items:center;margin-top:34px}
+.crate{padding:30px;text-align:left}
+.crate .lbl{font-family:'Silkscreen',monospace;font-size:12px;color:#05080d;background:var(--yel);display:inline-block;padding:4px 8px;margin-bottom:16px}
+.crate ul{list-style:none;margin:10px 0 22px}
+.crate li{padding:7px 0 7px 30px;position:relative;font-size:22px}
+.crate li::before{content:'';position:absolute;left:0;top:12px;width:14px;height:14px;background:var(--teal);box-shadow:0 0 0 3px #000}
+.price{font-family:'Silkscreen',monospace;font-weight:700;font-size:56px;color:var(--or);text-shadow:4px 4px 0 #000;margin:4px 0 4px}
+.price small{font-size:18px;color:var(--mut);text-shadow:none}
+.terms{font-size:18px;color:var(--mut);margin-top:12px}
+.box-art{position:relative;height:340px}
+.box-art .cr{position:absolute;left:50%;top:50%;width:240px;height:200px;transform:translate(-50%,-40%);background:#7a5230;
+  box-shadow:0 -6px 0 0 #000,0 6px 0 0 #000,-6px 0 0 0 #000,6px 0 0 0 #000,inset 0 0 0 14px #5d3d22,12px 12px 0 4px rgba(0,0,0,.6);
+  background-image:linear-gradient(45deg,transparent 46%,#5d3d22 46% 54%,transparent 54%),linear-gradient(-45deg,transparent 46%,#5d3d22 46% 54%,transparent 54%)}
+.box-art .cr::after{content:'SUPRIMENTOS';position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);font-family:'Silkscreen',monospace;font-weight:700;font-size:16px;color:#ffe9c4;background:#3d2714;padding:6px 10px}
+.box-art .sp{position:absolute;width:72px;height:84px;background-size:288px 84px;bottom:20px}
+.box-art .lid{position:absolute;left:50%;top:18%;transform:translateX(-50%);font-family:'Silkscreen',monospace;font-size:12px;color:var(--yel);animation:bob2 1s steps(2) infinite}
+@keyframes bob2{50%{transform:translate(-50%,-6px)}}
+
+/* ======== FAQ ======== */
+.faq{margin-top:34px;padding:10px 26px}
+.faq details{border-bottom:4px dotted var(--line);padding:18px 0}
+.faq details:last-child{border:0}
+.faq summary{list-style:none;cursor:pointer;font-family:'Silkscreen',monospace;font-weight:700;font-size:16px;color:var(--wh);display:flex;gap:14px;align-items:center}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::before{content:'>';color:var(--teal)}
+.faq details[open] summary::before{content:'v';color:var(--or)}
+.faq p{margin:12px 0 0 28px;font-size:22px}
+.faq p::before{content:'RÁDIO: ';font-family:'Silkscreen',monospace;font-size:11px;color:var(--teal)}
+
+/* ======== FINAL ======== */
+.final{text-align:center;padding:160px 0 140px}
+.final .winbig{width:56px;height:70px;margin:0 auto 30px;background:#ffd27a;box-shadow:0 0 0 6px #000,0 0 40px 10px rgba(255,170,60,.5);animation:blink 4s steps(1) infinite}
+.final h2{font-size:clamp(28px,5vw,54px)}
+.final .lead{margin:0 auto}
+footer{position:relative;z-index:2;background:#030508;border-top:4px solid #000;box-shadow:0 -4px 0 var(--line);padding:30px 0;font-size:18px;color:var(--mut)}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
+
+/* ======== MODAL ======== */
+.modal{position:fixed;inset:0;z-index:30;background:rgba(2,4,7,.86);display:none;align-items:center;justify-content:center;padding:20px}
+.modal.open{display:flex}
+.modal form{width:100%;max-width:460px;padding:28px}
+.modal h3{font-size:20px;color:var(--wh);margin:10px 0 18px}
+.modal label{display:block;font-family:'Silkscreen',monospace;font-size:11px;color:var(--teal);margin-top:12px}
+.modal input{width:100%;margin-top:6px;padding:12px;font-family:'VT323',monospace;font-size:22px;color:var(--wh);background:#05080d;border:0;box-shadow:inset 0 0 0 4px var(--line);outline:0}
+.modal input:focus{box-shadow:inset 0 0 0 4px var(--teal)}
+.modal .row{display:flex;justify-content:space-between;align-items:center;margin-top:22px;gap:10px}
+.modal .x{background:none;border:0;color:var(--mut);font-family:'Silkscreen',monospace;font-size:11px;cursor:pointer}
+.modal .msg{margin-top:14px;font-size:20px;color:var(--yel);min-height:24px}
+
+/* ======== REVEAL ======== */
+.rv{opacity:0;transform:translateY(24px);transition:opacity .5s steps(5),transform .5s steps(5)}
+.rv.in{opacity:1;transform:none}
+
+@media (max-width:900px){
+  .links,.live span{display:none}
+  .signal,.course,.offer,.signs{grid-template-columns:1fr}
+  .loop{grid-template-columns:1fr 1fr}
+  .inv{grid-template-columns:1fr}
+  .modinfo{min-height:0}
+  section{padding:80px 0}
+}
+@media (max-width:520px){
+  body{font-size:20px}
+  .loop{grid-template-columns:1fr}
+  nav .btn{padding:8px 10px;font-size:10px}
+  .brand span{display:none}
+  .stat .v{font-size:30px}
+  #hud{display:none}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  .rv{opacity:1;transform:none}
+}
+</style>
+</head>
+<body>
+
+<!-- o mundo: mapa real da série, câmera segue o scroll -->
+<div id="world" aria-hidden="true">
+  <div id="cam">
+    <img src="img/mapa.png" alt="" width="636" height="1176">
+    <div class="glow" id="fireGlow" style="left:318px;top:688px"></div>
+    <div class="glow" id="lampGlow" style="left:337px;top:644px"></div>
+    <div id="win" style="left:455px;top:104px"></div>
+  </div>
+</div>
+<div id="shade" aria-hidden="true"></div>
+<div id="hud" aria-hidden="true">CAM X:000 Y:000 · ZOOM x2</div>
+<div id="rec" aria-hidden="true"><i></i>REC</div>
+
+<nav>
+  <div class="wrap">
+    <a class="brand" href="#topo"><img src="img/logo.png" alt=""><span>CIDADE APAGADA</span></a>
+    <div class="live"><b>AO VIVO</b><span id="dias">DIA 1.095 SEM LUZ</span></div>
+    <div class="links"><a href="#video">Vídeo</a><a href="#mapa">Mapa do curso</a><a href="#mochila">Mochila</a><a href="#oferta">Entrar</a><a href="#radio">Dúvidas</a></div>
+    <button class="btn" data-open>Entrar na cidade</button>
+  </div>
+</nav>
+
+<main>
+
+<!-- HERO -->
+<header class="hero" id="topo" data-cam="459,150">
+  <div class="wrap">
+    <span class="tag">TRANSMISSÃO DA CIDADE · CANAL 01</span>
+    <h1><span>A cidade</span><span><em>apagou.</em></span><span>O próximo viral</span><span>pode ser seu.</span></h1>
+    <p class="lead">O curso que ensina, passo a passo, a criar uma série em pixel art onde cada seguidor vira um personagem, a história é decidida nos comentários e o público volta todo dia para ver o que acontece.</p>
+    <div class="cta-row">
+      <button class="btn" data-open>Quero entrar <span class="arrow"></span></button>
+      <a class="btn ghost" href="#video">Ver a transmissão</a>
+    </div>
+    <p class="coords">SINAL: @CIDADEAPAGADA · A JANELA DO PRÉDIO MAIS ALTO ACENDEU</p>
+  </div>
+  <div class="street" id="street">
+    <div class="road"></div>
+    <div class="fire"></div>
+  </div>
+</header>
+
+<!-- SINAL / CASE -->
+<section id="sinal" data-cam="320,330">
+  <div class="wrap signal">
+    <div class="rv">
+      <span class="tag">SINAL CAPTADO</span>
+      <h2>Dois episódios.<br>Uma cidade <em>inteira</em><br>querendo entrar.</h2>
+      <p class="lead">O @cidadeapagada é o laboratório do curso. Tudo o que você vai aprender foi feito ali: o mapa, os personagens, a narração, a votação. Você vê o método funcionando antes de comprar.</p>
+    </div>
+    <div class="panel teal stats rv">
+      <div class="stat"><span class="k">SOBREVIVENTES (SEGUIDORES)</span><span class="v" data-count="887">0</span><div class="bar"><span data-w="89"></span></div></div>
+      <div class="stat"><span class="k">CURTIDAS NO EP. 1</span><span class="v" data-count="845">0</span><div class="bar"><span data-w="85"></span></div></div>
+      <div class="stat"><span class="k">COMENTÁRIOS NO EP. 1</span><span class="v" data-count="574">0</span><div class="bar"><span data-w="58"></span></div></div>
+      <small>Números públicos do perfil em 06/11/2026, com 2 episódios no ar. Resultado de um canal, não uma promessa.</small>
+    </div>
+  </div>
+</section>
+
+<!-- VSL -->
+<section id="video" data-cam="343,470">
+  <div class="wrap" style="text-align:center">
+    <span class="tag rv">CANAL 02 · VÍDEO</span>
+    <h2 class="rv">Assiste antes de <em>decidir</em>.</h2>
+    <div class="tv rv">
+      <div class="screen">
+        <!-- TROCAR: substitua o <img> e o botão pelo embed da sua VSL -->
+        <img src="img/vsl_poster.png" alt="Praça da fogueira à noite, com os sobreviventes em volta do fogo">
+        <span class="cap">VSL · CIDADE APAGADA</span><span class="cap r">● AO VIVO</span>
+        <button class="btn play" aria-label="Assistir o vídeo" id="playBtn"><span class="arrow"></span></button>
+      </div>
+      <div class="knobs"><span>CH 02 · SINAL FRACO</span><span><i></i><i></i></span></div>
+    </div>
+  </div>
+</section>
+
+<!-- MAPA DO CURSO -->
+<section id="mapa" data-cam="182,400">
+  <div class="wrap">
+    <span class="tag rv">MAPA DO CURSO</span>
+    <h2 class="rv">7 lugares. 7 módulos.<br>Explore a <em>cidade</em>.</h2>
+    <p class="lead rv">Cada módulo é um ponto do mapa da série. Clique nos marcadores.</p>
+    <div class="course">
+      <div class="panel mapbox rv" id="mapbox">
+        <img src="img/mapa_curso.png" alt="Mapa da cidade apagada visto de cima" width="636" height="700">
+        <span class="legend">MAPA · ZONA CENTRAL</span>
+      </div>
+      <div class="panel or modinfo rv" id="modinfo" aria-live="polite"></div>
+    </div>
+  </div>
+</section>
+
+<!-- COMO A CIDADE CRESCE -->
+<section id="sobreviventes" data-cam="318,680">
+  <div class="wrap">
+    <span class="tag rv">O FORMATO</span>
+    <h2 class="rv">O público não assiste.<br>O público <em>mora</em> na cidade.</h2>
+    <div class="loop">
+      <div class="panel step rv"><div class="sp" style="background-image:url(img/sp_rodrgs.png)"></div><div class="n">PASSO 1</div><h3>COMENTA</h3><p>O seguidor comenta o nome e o que quer ser.</p></div>
+      <div class="panel step rv"><div class="sp" style="background-image:url(img/sp_botte.png)"></div><div class="n">PASSO 2</div><h3>VIRA PERSONAGEM</h3><p>Ele ganha um sprite, uma função e uma cena.</p></div>
+      <div class="panel step rv"><div class="sp" style="background-image:url(img/sp_flavio.png)"></div><div class="n">PASSO 3</div><h3>VOTA</h3><p>A enquete decide o próximo passo da cidade.</p></div>
+      <div class="panel step rv"><div class="sp" style="background-image:url(img/sp_davi.png)"></div><div class="n">PASSO 4</div><h3>VOLTA</h3><p>Ele volta no próximo episódio para ver o resultado.</p></div>
+    </div>
+    <div class="cast rv" id="cast"></div>
+  </div>
+</section>
+
+<!-- INVENTÁRIO -->
+<section id="mochila" data-cam="430,590">
+  <div class="wrap">
+    <span class="tag rv">O QUE VAI NA MOCHILA</span>
+    <h2 class="rv">Tudo para o seu<br>primeiro <em>episódio</em>.</h2>
+    <div class="inv">
+      <div class="panel slot rv"><div class="ic"><img src="img/ic_codigo.png" alt=""></div><div><h3>Motor da cidade</h3><p>O código que gera o mapa, os sprites e a câmera. Você troca o tema e roda.</p></div></div>
+      <div class="panel slot rv"><div class="ic"><img src="img/ic_radio.png" alt=""></div><div><h3>Narração sincronizada</h3><p>Como gerar ou gravar a voz e encaixar cada frase na cena certa.</p></div></div>
+      <div class="panel slot rv"><div class="ic"><img src="img/ic_roteiro.png" alt=""></div><div><h3>Roteiros-modelo</h3><p>A estrutura de gancho, história e votação de cada episódio.</p></div></div>
+      <div class="panel slot rv"><div class="ic"><img src="img/ic_urna.png" alt=""></div><div><h3>Kit de votação</h3><p>Stories de enquete, CTAs de comentário e como mostrar o resultado.</p></div></div>
+      <div class="panel slot rv"><div class="ic"><img src="img/ic_lanterna.png" alt=""></div><div><h3>Checklist de postagem</h3><p>Bio, capa, legenda e calendário, para não postar no escuro.</p></div></div>
+      <div class="panel slot rv"><div class="ic"><img src="img/ic_chave.png" alt=""></div><div><h3>Acesso e atualizações</h3><p>As aulas novas entram conforme a série evolui.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- PARA QUEM -->
+<section id="quem" data-cam="300,860">
+  <div class="wrap">
+    <span class="tag rv">AVISO NA ENTRADA</span>
+    <h2 class="rv">Antes de atravessar<br>a <em>barricada</em>.</h2>
+    <div class="signs">
+      <div class="sign rv"><i class="nail" style="left:12px"></i><i class="nail" style="right:12px"></i>
+        <h3>ENTRA NA CIDADE SE...</h3>
+        <ul><li>quer um canal sem mostrar o rosto</li><li>quer um formato que faz o público comentar</li><li>topa seguir um processo e postar com frequência</li><li>não sabe desenhar nem programar, mas quer aprender a usar o código pronto</li></ul>
+      </div>
+      <div class="sign no rv"><i class="nail" style="left:12px"></i><i class="nail" style="right:12px"></i>
+        <h3>FICA DE FORA SE...</h3>
+        <ul><li>quer viral garantido sem produzir nada</li><li>procura promessa de renda</li><li>quer copiar o canal de outra pessoa em vez de criar o seu</li></ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- OFERTA -->
+<section id="oferta" data-cam="320,1020">
+  <div class="wrap">
+    <span class="tag rv">ENTRADA NA CIDADE</span>
+    <h2 class="rv">Uma caixa de <em>suprimentos</em>.<br>Tudo dentro.</h2>
+    <div class="offer">
+      <div class="box-art rv" aria-hidden="true">
+        <div class="lid">▼ ABRE ▼</div>
+        <div class="cr"></div>
+        <div class="sp" style="left:6%;background-image:url(img/sp_leonardo.png)"></div>
+        <div class="sp" style="right:6%;background-image:url(img/sp_boris.png);transform:scaleX(-1)"></div>
+      </div>
+      <div class="panel or crate rv">
+        <span class="lbl">ACESSO COMPLETO</span>
+        <ul>
+          <li>7 módulos em vídeo</li>
+          <li>Motor da cidade (código-base)</li>
+          <li>Roteiros-modelo e kit de votação</li>
+          <li>Checklist de postagem</li>
+          <li>Atualizações do curso</li>
+        </ul>
+        <!-- TROCAR: preço, parcelas e link de checkout -->
+        <div class="price">R$ —,— <small>à vista</small></div>
+        <button class="btn" data-open>Garantir minha vaga <span class="arrow"></span></button>
+        <p class="terms">Pagamento seguro. Política de garantia: defina antes de publicar.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="radio" data-cam="180,1110">
+  <div class="wrap">
+    <span class="tag rv">FREQUÊNCIA DE RÁDIO</span>
+    <h2 class="rv">Perguntas que<br>chegaram pelo <em>rádio</em>.</h2>
+    <div class="panel teal faq rv">
+      <details><summary>Preciso saber programar?</summary><p>Não. O código vem pronto e as aulas mostram onde mudar textos, cores e personagens.</p></details>
+      <details><summary>Preciso saber desenhar?</summary><p>Não. O cenário e os personagens são gerados pelo código, pixel a pixel.</p></details>
+      <details><summary>Posso fazer com outro tema?</summary><p>Pode. Ilha, nave, escola, prisão. O formato funciona com qualquer cenário onde o público vira personagem.</p></details>
+      <details><summary>Quanto tempo leva um episódio?</summary><p>O curso mostra o fluxo para produzir um episódio por dia depois que o motor está montado.</p></details>
+      <details><summary>Tem garantia?</summary><p>Defina aqui a sua política de reembolso antes de publicar a página.</p></details>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL -->
+<section class="final" data-cam="459,120">
+  <div class="wrap">
+    <div class="winbig rv" aria-hidden="true"></div>
+    <span class="tag rv">ÚLTIMA TRANSMISSÃO</span>
+    <h2 class="rv">A janela piscou<br><em>três vezes</em>.</h2>
+    <p class="lead rv">Alguém lá em cima está chamando. A próxima cidade pode ser a sua.</p>
+    <div class="cta-row rv" style="justify-content:center"><button class="btn" data-open>Entrar na cidade <span class="arrow"></span></button></div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap"><span>© Cidade Apagada · @cidadeapagada</span><span>Fim da transmissão.</span></div>
+</footer>
+
+<!-- MODAL: ficha de sobrevivente -->
+<div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="mt">
+  <form class="panel teal" id="ficha" novalidate>
+    <span class="tag">FICHA DE SOBREVIVENTE</span>
+    <h3 id="mt">Seu nome entra na lista.</h3>
+    <label for="f1">NOME</label><input id="f1" name="nome" autocomplete="name" required>
+    <label for="f2">E-MAIL</label><input id="f2" name="email" type="email" autocomplete="email" required>
+    <label for="f3">WHATSAPP</label><input id="f3" name="whats" type="tel" autocomplete="tel">
+    <div class="msg" id="msg"></div>
+    <div class="row"><button type="button" class="x" data-close>FECHAR</button><button class="btn" type="submit">Enviar ficha</button></div>
+  </form>
+</div>
+
+<script>
+(() => {
+  const MAP_W = 636, MAP_H = 1176;
+  const cam = document.getElementById('cam'), hud = document.getElementById('hud');
+  const secs = [...document.querySelectorAll('[data-cam]')].map(el => ({el, p: el.dataset.cam.split(',').map(Number)}));
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  let cx = 459, cy = 150, tx = cx, ty = cy, s = 2;
+
+  function scale() { s = Math.max(innerWidth / MAP_W * 1.12, innerHeight / MAP_H * 1.3, 2); }
+  function target() {
+    const mid = innerHeight / 2;
+    let a = secs[0], b = secs[0], k = 0;
+    for (let i = 0; i < secs.length; i++) {
+      const r = secs[i].el.getBoundingClientRect();
+      const c = r.top + r.height / 2;
+      if (c <= mid) { a = secs[i]; b = secs[Math.min(i + 1, secs.length - 1)]; }
+    }
+    if (a !== b) {
+      const ra = a.el.getBoundingClientRect(), rb = b.el.getBoundingClientRect();
+      const ca = ra.top + ra.height / 2, cb = rb.top + rb.height / 2;
+      k = Math.min(1, Math.max(0, (mid - ca) / (cb - ca)));
+      k = k * k * (3 - 2 * k);
+    }
+    tx = a.p[0] + (b.p[0] - a.p[0]) * k; ty = a.p[1] + (b.p[1] - a.p[1]) * k;
+  }
+  function draw() {
+    const vw = innerWidth / s, vh = innerHeight / s;
+    const x0 = Math.min(Math.max(cx - vw / 2, 0), MAP_W - vw), y0 = Math.min(Math.max(cy - vh / 2, 0), MAP_H - vh);
+    const px = Math.round(-x0 * s), py = Math.round(-y0 * s);
+    cam.style.transform = `translate3d(${px}px,${py}px,0) scale(${s})`;
+    hud.textContent = `CAM X:${String(Math.round(cx)).padStart(3,'0')} Y:${String(Math.round(cy)).padStart(4,'0')} · ZOOM x${s.toFixed(1)}`;
+  }
+  function loop() {
+    target();
+    const e = reduce ? 1 : .08;
+    cx += (tx - cx) * e; cy += (ty - cy) * e;
+    draw(); requestAnimationFrame(loop);
+  }
+  addEventListener('resize', scale); scale(); loop();
+
+  // walkers
+  const chars = ['rodrgs','kayky','botte','dhaner','flavio','boris','leonardo','davi','maguels','berkeley'];
+  const st = document.getElementById('street');
+  chars.forEach((c, i) => {
+    const w = document.createElement('div');
+    w.className = 'walker' + (i % 3 === 1 ? ' back' : '');
+    w.style.backgroundImage = `url(img/sp_${c}.png)`;
+    const dur = 16 + (i * 7) % 13;
+    w.style.setProperty('--dur', dur + 's');
+    w.style.setProperty('--del', (-(i * 4.3) % dur) + 's');
+    w.style.bottom = (30 + (i % 3) * 6) + 'px';
+    st.appendChild(w);
+  });
+
+  // elenco
+  const roles = {rodrgs:'LÍDER DOS CAÇADORES',kayky:'CAÇADOR',botte:'COZINHEIRO',dhaner:'ATIRADOR',flavio:'POLICIAL',boris:'FERREIRO',leonardo:'PEDREIRO',davi:'LÍDER DOS ENGENHEIROS',maguels:'MÉDICO',berkeley:'MÉDICO'};
+  const cast = document.getElementById('cast');
+  chars.forEach(c => {
+    const d = document.createElement('div');
+    d.innerHTML = `<div class="sp" style="background-image:url(img/sp_${c}.png)"></div><small>${roles[c]}</small>`;
+    cast.appendChild(d);
+  });
+
+  // mapa do curso
+  const MODS = [
+    {n:'01',t:'Formato',l:'Praça da fogueira',x:50.0,y:90.0,d:'A base de tudo: como funciona uma série em que o público vira morador.',b:['Escolher o cenário e a premissa','Personagem nascido de comentário','Gancho, história e votação em cada episódio']},
+    {n:'02',t:'Pixel art',l:'A oficina',x:28.3,y:48.57,d:'O motor da cidade: mapa top-down, sprites e câmera, tudo gerado por código.',b:['Mapa, prédios e ruas','Sprites de 24x28 px com contorno','Câmera suave sem tremer']},
+    {n:'03',t:'Narração',l:'Prédio da janela',x:72.17,y:7.29,d:'A voz que conta a história e o encaixe de cada frase na cena certa.',b:['Voz gerada ou gravada','Detectar as pausas de cada frase','Legenda sincronizada']},
+    {n:'04',t:'Áudio',l:'Ônibus amarelo',x:53.62,y:60.57,d:'O clima da cidade: vento, fogo e silêncio no lugar certo.',b:['Ambiente e efeitos','Mixagem com a narração','Volume pronto para o Reels']},
+    {n:'05',t:'Engajamento',l:'A barricada',x:42.14,y:80.86,d:'Como transformar comentário em personagem e voto em história.',b:['Ler e escolher os comentários','Enquete no story','Mostrar o resultado no episódio']},
+    {n:'06',t:'Publicação',l:'Farmácia',x:68.55,y:73.57,d:'Tudo que vai junto com o vídeo: perfil, capa, legenda e ritmo.',b:['Bio e foto de perfil','Legenda com CTA','Calendário de postagem']},
+    {n:'07',t:'Métricas',l:'Mirante norte',x:10.06,y:12.86,d:'Como ler os números e decidir o próximo episódio com base neles.',b:['O que olhar em cada post','Retenção e comentários','Quando mudar o formato']}
+  ];
+  const box = document.getElementById('mapbox'), info = document.getElementById('modinfo');
+  const chips = document.createElement('div'); chips.className = 'chips';
+  function sel(i) {
+    const m = MODS[i];
+    box.querySelectorAll('.pin').forEach((p, j) => p.classList.toggle('on', j === i));
+    info.innerHTML = `<div class="where">LOCAL: ${m.l.toUpperCase()}</div><div class="num">${m.n}</div><h3>${m.t}</h3><p>${m.d}</p><ul>${m.b.map(x => `<li>${x}</li>`).join('')}</ul>`;
+    info.appendChild(chips);
+    chips.querySelectorAll('button').forEach((c, j) => c.classList.toggle('on', j === i));
+  }
+  MODS.forEach((m, i) => {
+    const p = document.createElement('button');
+    p.className = 'pin'; p.style.left = m.x + '%'; p.style.top = m.y + '%';
+    p.setAttribute('aria-label', `Módulo ${m.n}: ${m.t}, ${m.l}`);
+    p.innerHTML = `<span>${m.n}</span>`; p.onclick = () => sel(i);
+    box.appendChild(p);
+    const c = document.createElement('button'); c.textContent = `${m.n} ${m.t}`; c.onclick = () => sel(i);
+    chips.appendChild(c);
+  });
+  // pins posicionados sobre a imagem (descontando o padding do painel)
+  function placePins() {
+    const img = box.querySelector('img'), r = img.getBoundingClientRect(), br = box.getBoundingClientRect();
+    box.querySelectorAll('.pin').forEach((p, i) => {
+      p.style.left = (r.left - br.left + r.width * MODS[i].x / 100) + 'px';
+      p.style.top = (r.top - br.top + r.height * MODS[i].y / 100) + 'px';
+    });
+  }
+  addEventListener('resize', placePins); box.querySelector('img').addEventListener('load', placePins); placePins();
+  sel(0);
+
+  // revelar + contadores
+  const io = new IntersectionObserver(es => es.forEach(e => {
+    if (!e.isIntersecting) return;
+    e.target.classList.add('in');
+    e.target.querySelectorAll('[data-count]').forEach(v => {
+      const end = +v.dataset.count; let n = 0; const stp = Math.ceil(end / 24);
+      const t = setInterval(() => { n = Math.min(end, n + stp); v.textContent = n; if (n >= end) clearInterval(t); }, 45);
+    });
+    e.target.querySelectorAll('[data-w]').forEach(b => b.style.width = b.dataset.w + '%');
+    io.unobserve(e.target);
+  }), {threshold: .2});
+  document.querySelectorAll('.rv').forEach(el => io.observe(el));
+  setTimeout(placePins, 600);
+
+  // modal
+  const modal = document.getElementById('modal'), msg = document.getElementById('msg');
+  let last = null;
+  document.querySelectorAll('[data-open]').forEach(b => b.addEventListener('click', () => {
+    last = b; modal.classList.add('open'); msg.textContent = ''; setTimeout(() => document.getElementById('f1').focus(), 50);
+  }));
+  function close() { modal.classList.remove('open'); if (last) last.focus(); }
+  modal.querySelector('[data-close]').onclick = close;
+  modal.addEventListener('click', e => { if (e.target === modal) close(); });
+  addEventListener('keydown', e => { if (e.key === 'Escape' && modal.classList.contains('open')) close(); });
+  document.getElementById('ficha').addEventListener('submit', e => {
+    e.preventDefault();
+    const f = e.target;
+    if (!f.nome.value.trim() || !/^\S+@\S+\.\S+$/.test(f.email.value)) { msg.textContent = 'Preencha nome e um e-mail válido.'; return; }
+    // TROCAR: enviar para o checkout / ferramenta de lista
+    msg.textContent = 'Ficha recebida. (Conecte este formulário ao seu checkout.)';
+  });
+  document.getElementById('playBtn').onclick = () => {
+    document.querySelector('.screen .cap').textContent = 'VSL EM BREVE · SINAL CHEGANDO';
+  };
+})();
+</script>
+</body>
+</html>
